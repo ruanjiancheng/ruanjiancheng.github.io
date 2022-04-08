@@ -141,7 +141,7 @@
 <h2 id="CMake-是什么"><a href="#CMake-是什么" class="headerlink" title="CMake 是什么"></a>CMake 是什么</h2><ul>
 <li>CMake 是一个跨平台的安装编译工具，可以使用简单的语句来描述所有平台的安装(编译过程)</li>
 </ul>
-<img lazyload src="/images/loading.svg" data-src="./cmake/image-20220315140635766.jpg" alt="image-20220315140635766" style="zoom:50%;">
+<img src="/2022/04/07/cmake/image-20220315140635766.jpg" alt="image-20220315140635766" style="zoom:50%;">
 
 <center>为什么 CMake 跨平台</center>
 
@@ -229,7 +229,7 @@
 <li>内部构件，在当前文件夹下，执行 make 命令。<strong>杂乱无章</strong></li>
 <li>外部构建 <strong>推荐</strong>，创建 build 文件夹，编译上级目录的 CMakeLists.txt 文件</li>
 </ul>
-<h3 id="CMake-实战"><a href="#CMake-实战" class="headerlink" title="CMake 实战"></a>CMake 实战</h3><p><img lazyload src="/images/loading.svg" data-src="/./cmake/image-20220315155252463.jpg" alt="image-20220315155252463"></p>
+<h3 id="CMake-实战"><a href="#CMake-实战" class="headerlink" title="CMake 实战"></a>CMake 实战</h3><p><img src="/2022/04/07/cmake/image-20220315155252463.jpg" alt="image-20220315155252463"></p>
 <center>两个工程的结构</center>
 
 <h4 id="构建-proj1"><a href="#构建-proj1" class="headerlink" title="构建 proj1"></a>构建 proj1</h4><p><code>g++ helloworld.cpp -o helloworld</code></p>
@@ -253,7 +253,7 @@
 </ol>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在 build 文件夹中构建</span></span><br><span class="line"><span class="built_in">mkdir</span> build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line"><span class="comment"># 生成 Makefile</span></span><br><span class="line">cmake ..</span><br><span class="line"><span class="comment"># make Makefile make 是编译的过程</span></span><br><span class="line">make</span><br></pre></td></tr></table></figure></li>
 </ol>
-<p><img lazyload src="/images/loading.svg" data-src="/./cmake/image-20220315161112258.jpg" alt="image-20220315161112258"></p>
+<p><img src="/2022/04/07/cmake/image-20220315161112258.jpg" alt="image-20220315161112258"></p>
 <center>外部构建</center>
 
 <h4 id="构建-proj2"><a href="#构建-proj2" class="headerlink" title="构建 proj2"></a>构建 proj2</h4><p><code>g++ main.cpp ./src/swap.cpp -I ./include -o main</code></p>
@@ -261,7 +261,7 @@
 
 
 
-<h1 id="实战-proj3"><a href="#实战-proj3" class="headerlink" title="实战 proj3"></a>实战 proj3</h1><p><img lazyload src="/images/loading.svg" data-src="/./cmake/image-20220315164644371.jpg" alt="image-20220315164644371"></p>
+<h1 id="实战-proj3"><a href="#实战-proj3" class="headerlink" title="实战 proj3"></a>实战 proj3</h1><p><img src="/2022/04/07/cmake/image-20220315164644371.jpg" alt="image-20220315164644371"></p>
 <p><code>g++ main.cpp src/Gun.cpp src/Solider.cpp -I ./include/ -o main</code></p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">project</span>(GO)</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -g -O2 -Wall -std=c++11&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含头文件</span></span><br><span class="line"><span class="keyword">include_directories</span>(<span class="keyword">include</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(main_cmake main.cpp src/Gun.cpp src/Solider.cpp)</span><br></pre></td></tr></table></figure>
 
@@ -379,7 +379,7 @@
 <li>数据大小：Cookie 保存的数据最多不超过 <code>4k</code> ，一般浏览器限制一个站点最多保存 20 个 Cookie</li>
 </ul>
 <h2 id="HTTP-缓存"><a href="#HTTP-缓存" class="headerlink" title="HTTP 缓存"></a>HTTP 缓存</h2><p>一般只用于 GET 请求</p>
-<img lazyload src="/images/loading.svg" data-src="计网.assets/edfb851e-fa61-4386-9c10-bf2105f55331-12785011.jpg" alt="img" style="zoom:50%;">
+<img src="/2022/04/07/compute-network/edfb851e-fa61-4386-9c10-bf2105f55331-12785011.jpg" alt="img" style="zoom:50%;">
 
 <center>HTTP 缓存流程图</center>
 
@@ -393,7 +393,7 @@
 <li>非对称加密：<strong>可以使用公钥模拟用户发送信息，也存在问题</strong>，</li>
 </ul>
 <h4 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h4><p><strong>解决：第三方仿照 server 给 client 发送自己的公钥，并且中间截获的问题</strong></p>
-<img lazyload src="/images/loading.svg" data-src="计网.assets/attack1.cfda3eb1.png" alt="img" style="zoom: 80%;">
+<img src="/2022/04/07/compute-network/attack1.cfda3eb1.png" alt="img" style="zoom: 80%;">
 
 <center>中间人攻击，server 根本看不懂密文的内容</center>
 
@@ -408,12 +408,12 @@
 <li>server 将证书发给 client 时，client 向 CA 获取加密摘要所用的公钥，并自己计算摘要，与 CA 解密出来的摘要进行比对。</li>
 <li>如果相同，则成功</li>
 </ul>
-<img lazyload src="/images/loading.svg" data-src="计网.assets/image-20220313151431722.png" alt="image-20220313151431722" style="zoom:50%;">
+<img src="/2022/04/07/compute-network/image-20220313151431722.png" alt="image-20220313151431722" style="zoom:50%;">
 
 <center>CA 数字签名的详细验证过程</center>
 
 <p>总结：通过引入第三方机构 CA 对 server 的公钥进行验证。</p>
-<img lazyload src="/images/loading.svg" data-src="计网.assets/image-20220313151635199.png" alt="image-20220313151635199" style="zoom: 33%;">
+<img src="/2022/04/07/compute-network/image-20220313151635199.png" alt="image-20220313151635199" style="zoom: 33%;">
 
 <center>CA 的认证过程</center>
 
@@ -433,7 +433,7 @@
 <ul>
 <li>资源消耗远大于对称加密</li>
 </ul>
-<img lazyload src="/images/loading.svg" data-src="计网.assets/image-20220314172756595.png" alt="image-20220314172756595" style="zoom: 33%;">
+<img src="/2022/04/07/compute-network/image-20220314172756595.png" alt="image-20220314172756595" style="zoom: 33%;">
 
 
 
@@ -483,7 +483,7 @@
 <li>在数据包之间设置边界，添加特殊字符等</li>
 <li>设置消息定长</li>
 </ul>
-<h2 id="TCP-三次握手和四次挥手"><a href="#TCP-三次握手和四次挥手" class="headerlink" title="TCP 三次握手和四次挥手"></a>TCP 三次握手和四次挥手</h2><img lazyload src="/images/loading.svg" data-src="计网.assets/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA4oCNb09vT29Pb29PTw==,size_20,color_FFFFFF,t_70,g_se,x_16.png" alt="img" style="zoom:50%;">
+<h2 id="TCP-三次握手和四次挥手"><a href="#TCP-三次握手和四次挥手" class="headerlink" title="TCP 三次握手和四次挥手"></a>TCP 三次握手和四次挥手</h2><img src="/2022/04/07/compute-network/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA4oCNb09vT29Pb29PTw==,size_20,color_FFFFFF,t_70,g_se,x_16.png" alt="img" style="zoom:50%;">
 
 <h2 id="TCP-与-UDP-的区别"><a href="#TCP-与-UDP-的区别" class="headerlink" title="TCP 与 UDP 的区别"></a>TCP 与 UDP 的区别</h2><table>
 <thead>
@@ -511,26 +511,6 @@
 </tbody></table>
 <p>TCP：FTP、HTTP、HTTPS、SSH、SMTP、Telnet</p>
 <p>UDP：DNS、DHCP、TFTP</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/04/06/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a class="link" href="https://hexo.io/">Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link" href="https://hexo.io/docs/">documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link" href="https://hexo.io/docs/troubleshooting.html">troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link" href="https://github.com/hexojs/hexo/issues">GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/writing.html">Writing<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/server.html">Server<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/generating.html">Generating<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/one-command-deployment.html">Deployment<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="add-picture-use-relative-path"><a href="#add-picture-use-relative-path" class="headerlink" title="add picture use relative path"></a>add picture use relative path</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./<span class="variable">$&#123;filename&#125;</span>/name</span><br></pre></td></tr></table></figure>
-
 ]]></content>
   </entry>
   <entry>
@@ -791,5 +771,25 @@
       <tags>
         <tag>docker</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/04/06/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a class="link" href="https://hexo.io/">Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link" href="https://hexo.io/docs/">documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link" href="https://hexo.io/docs/troubleshooting.html">troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link" href="https://github.com/hexojs/hexo/issues">GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/writing.html">Writing<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/server.html">Server<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/generating.html">Generating<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/one-command-deployment.html">Deployment<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="add-picture-use-relative-path"><a href="#add-picture-use-relative-path" class="headerlink" title="add picture use relative path"></a>add picture use relative path</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./<span class="variable">$&#123;filename&#125;</span>/name</span><br></pre></td></tr></table></figure>
+
+]]></content>
   </entry>
 </search>
