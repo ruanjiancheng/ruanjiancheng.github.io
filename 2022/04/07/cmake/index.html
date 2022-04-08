@@ -221,7 +221,7 @@ home：除,"/>
 <h2 id="CMake-是什么"><a href="#CMake-是什么" class="headerlink" title="CMake 是什么"></a>CMake 是什么</h2><ul>
 <li>CMake 是一个跨平台的安装编译工具，可以使用简单的语句来描述所有平台的安装(编译过程)</li>
 </ul>
-<img src="cmake/image-20220315140635766.jpg" alt="image-20220315140635766" style="zoom:50%;" />
+<img src="/2022/04/07/cmake/image-20220315140635766.jpg" alt="image-20220315140635766" style="zoom:50%;">
 
 <center>为什么 CMake 跨平台</center>
 
@@ -309,7 +309,7 @@ home：除,"/>
 <li>内部构件，在当前文件夹下，执行 make 命令。<strong>杂乱无章</strong></li>
 <li>外部构建 <strong>推荐</strong>，创建 build 文件夹，编译上级目录的 CMakeLists.txt 文件</li>
 </ul>
-<h3 id="CMake-实战"><a href="#CMake-实战" class="headerlink" title="CMake 实战"></a>CMake 实战</h3><p><img src="/cmake/image-20220315155252463.jpg" alt="image-20220315155252463"></p>
+<h3 id="CMake-实战"><a href="#CMake-实战" class="headerlink" title="CMake 实战"></a>CMake 实战</h3><p><img src="/2022/04/07/cmake/image-20220315155252463.jpg" alt="image-20220315155252463"></p>
 <center>两个工程的结构</center>
 
 <h4 id="构建-proj1"><a href="#构建-proj1" class="headerlink" title="构建 proj1"></a>构建 proj1</h4><p><code>g++ helloworld.cpp -o helloworld</code></p>
@@ -333,7 +333,7 @@ home：除,"/>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 build 文件夹中构建</span></span><br><span class="line"><span class="built_in">mkdir</span> build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line"><span class="comment"># 生成 Makefile</span></span><br><span class="line">cmake ..</span><br><span class="line"><span class="comment"># make Makefile make 是编译的过程</span></span><br><span class="line">make</span><br></pre></td></tr></table></figure></li>
 </ol>
-<p><img src="/cmake/image-20220315161112258.jpg" alt="image-20220315161112258"></p>
+<p><img src="/2022/04/07/cmake/image-20220315161112258.jpg" alt="image-20220315161112258"></p>
 <center>外部构建</center>
 
 <h4 id="构建-proj2"><a href="#构建-proj2" class="headerlink" title="构建 proj2"></a>构建 proj2</h4><p><code>g++ main.cpp ./src/swap.cpp -I ./include -o main</code></p>
@@ -341,7 +341,7 @@ home：除,"/>
 
 
 
-<h1 id="实战-proj3"><a href="#实战-proj3" class="headerlink" title="实战 proj3"></a>实战 proj3</h1><p><img src="/cmake/image-20220315164644371.jpg" alt="image-20220315164644371"></p>
+<h1 id="实战-proj3"><a href="#实战-proj3" class="headerlink" title="实战 proj3"></a>实战 proj3</h1><p><img src="/2022/04/07/cmake/image-20220315164644371.jpg" alt="image-20220315164644371"></p>
 <p><code>g++ main.cpp src/Gun.cpp src/Solider.cpp -I ./include/ -o main</code></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">project</span>(GO)</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -g -O2 -Wall -std=c++11&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含头文件</span></span><br><span class="line"><span class="keyword">include_directories</span>(<span class="keyword">include</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(main_cmake main.cpp src/Gun.cpp src/Solider.cpp)</span><br></pre></td></tr></table></figure>
 
