@@ -1,88 +1,201 @@
-
 <!DOCTYPE html>
-<html lang="zh" class="loading">
+<html lang="zh">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>cmake - auggie&#39;s blog</title>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate" />
-    <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="write something interesting,linux 简介1.1 目录结构
-bin：存储二进制指令
-sbin：只能 sudo 的指令
-etc：配置文件
-dev：IO 设备，需要被挂载
-mnt：IO 设备被 mount 的文件夹
-home：除,"> 
-    <meta name="author" content="auggie"> 
-    <link rel="alternative" href="atom.xml" title="auggie&#39;s blog" type="application/atom+xml"> 
-    <link rel="icon" href="/img/favicon.png"> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="write something interesting">
+    <meta name="author" content="Auggie">
     
+    <title>
+        
+            cmake |
+        
+        Auggie&#39;s blog
+    </title>
     
-    
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="cmake - auggie&#39;s blog"/>
-    <meta name="twitter:description" content="write something interesting,linux 简介1.1 目录结构
-bin：存储二进制指令
-sbin：只能 sudo 的指令
-etc：配置文件
-dev：IO 设备，需要被挂载
-mnt：IO 设备被 mount 的文件夹
-home：除,"/>
-    
-    
-    
-    
-    <meta property="og:site_name" content="auggie&#39;s blog"/>
-    <meta property="og:type" content="object"/>
-    <meta property="og:title" content="cmake - auggie&#39;s blog"/>
-    <meta property="og:description" content="write something interesting,linux 简介1.1 目录结构
-bin：存储二进制指令
-sbin：只能 sudo 的指令
-etc：配置文件
-dev：IO 设备，需要被挂载
-mnt：IO 设备被 mount 的文件夹
-home：除,"/>
-    
-<link rel="stylesheet" href="/css/diaspora.css">
+<link rel="stylesheet" href="/css/style.css">
 
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"你的压力来源于无法自律"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
 <meta name="generator" content="Hexo 6.1.0"></head>
 
-<body class="loading">
-    <span id="config-title" style="display:none">auggie&#39;s blog</span>
-    <div id="loader"></div>
-    <div id="single">
-    <div id="top" style="display: block;">
-    <div class="bar" style="width: 0;"></div>
-    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
-    <div title="播放/暂停" class="iconfont icon-play"></div>
-    <h3 class="subtitle">cmake</h3>
-    <div class="social">
-        <div>
-            <div class="share">
-                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
-            </div>
-            <div id="qr"></div>
-        </div>
-    </div>
-    <div class="scrollbar"></div>
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
 </div>
 
-    <div class="section">
-        <div class="article">
-    <div class='main'>
-        <h1 class="title">cmake</h1>
-        <div class="stuff">
-            <span>四月 07, 2022</span>
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
             
-  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/cmake/" rel="tag">cmake</a></li></ul>
+            <a class="logo-title" href="/">
+                Auggie&#39;s blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
 
 
         </div>
-        <div class="content markdown">
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">cmake</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Auggie</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-04-07 16:23:03</span>
+        <span class="mobile">2022-04-07 16:23</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/cmake/">cmake</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.2k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>9 Mins</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
             <h1 id="linux-简介"><a href="#linux-简介" class="headerlink" title="linux 简介"></a>linux 简介</h1><h2 id="1-1-目录结构"><a href="#1-1-目录结构" class="headerlink" title="1.1 目录结构"></a>1.1 目录结构</h2><ul>
 <li>bin：存储二进制指令</li>
 <li>sbin：只能 sudo 的指令</li>
@@ -221,7 +334,7 @@ home：除,"/>
 <h2 id="CMake-是什么"><a href="#CMake-是什么" class="headerlink" title="CMake 是什么"></a>CMake 是什么</h2><ul>
 <li>CMake 是一个跨平台的安装编译工具，可以使用简单的语句来描述所有平台的安装(编译过程)</li>
 </ul>
-<img src="/2022/04/07/cmake/image-20220315140635766.jpg" alt="image-20220315140635766" style="zoom:50%;">
+<img lazyload src="/images/loading.svg" data-src="./cmake/image-20220315140635766.jpg" alt="image-20220315140635766" style="zoom:50%;">
 
 <center>为什么 CMake 跨平台</center>
 
@@ -309,7 +422,7 @@ home：除,"/>
 <li>内部构件，在当前文件夹下，执行 make 命令。<strong>杂乱无章</strong></li>
 <li>外部构建 <strong>推荐</strong>，创建 build 文件夹，编译上级目录的 CMakeLists.txt 文件</li>
 </ul>
-<h3 id="CMake-实战"><a href="#CMake-实战" class="headerlink" title="CMake 实战"></a>CMake 实战</h3><p><img src="/2022/04/07/cmake/image-20220315155252463.jpg" alt="image-20220315155252463"></p>
+<h3 id="CMake-实战"><a href="#CMake-实战" class="headerlink" title="CMake 实战"></a>CMake 实战</h3><p><img lazyload src="/images/loading.svg" data-src="/./cmake/image-20220315155252463.jpg" alt="image-20220315155252463"></p>
 <center>两个工程的结构</center>
 
 <h4 id="构建-proj1"><a href="#构建-proj1" class="headerlink" title="构建 proj1"></a>构建 proj1</h4><p><code>g++ helloworld.cpp -o helloworld</code></p>
@@ -333,7 +446,7 @@ home：除,"/>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 build 文件夹中构建</span></span><br><span class="line"><span class="built_in">mkdir</span> build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line"><span class="comment"># 生成 Makefile</span></span><br><span class="line">cmake ..</span><br><span class="line"><span class="comment"># make Makefile make 是编译的过程</span></span><br><span class="line">make</span><br></pre></td></tr></table></figure></li>
 </ol>
-<p><img src="/2022/04/07/cmake/image-20220315161112258.jpg" alt="image-20220315161112258"></p>
+<p><img lazyload src="/images/loading.svg" data-src="/./cmake/image-20220315161112258.jpg" alt="image-20220315161112258"></p>
 <center>外部构建</center>
 
 <h4 id="构建-proj2"><a href="#构建-proj2" class="headerlink" title="构建 proj2"></a>构建 proj2</h4><p><code>g++ main.cpp ./src/swap.cpp -I ./include -o main</code></p>
@@ -341,7 +454,7 @@ home：除,"/>
 
 
 
-<h1 id="实战-proj3"><a href="#实战-proj3" class="headerlink" title="实战 proj3"></a>实战 proj3</h1><p><img src="/2022/04/07/cmake/image-20220315164644371.jpg" alt="image-20220315164644371"></p>
+<h1 id="实战-proj3"><a href="#实战-proj3" class="headerlink" title="实战 proj3"></a>实战 proj3</h1><p><img lazyload src="/images/loading.svg" data-src="/./cmake/image-20220315164644371.jpg" alt="image-20220315164644371"></p>
 <p><code>g++ main.cpp src/Gun.cpp src/Solider.cpp -I ./include/ -o main</code></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">project</span>(GO)</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -g -O2 -Wall -std=c++11&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含头文件</span></span><br><span class="line"><span class="keyword">include_directories</span>(<span class="keyword">include</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(main_cmake main.cpp src/Gun.cpp src/Solider.cpp)</span><br></pre></td></tr></table></figure>
 
@@ -356,116 +469,272 @@ home：除,"/>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>常用 cmake 指令</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定最小版本号</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 项目名称</span></span><br><span class="line"><span class="keyword">project</span>(GO)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含头文件</span></span><br><span class="line"><span class="keyword">include</span>(./lib)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置编译参数</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -O2 -g&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置编译模式 Debug | Release</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_BUILD_TYPE Debug)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译</span></span><br><span class="line"><span class="keyword">add_executable</span>(main_cmake main.cpp [其他文件])</span><br></pre></td></tr></table></figure>
 
-            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
-                <source type="audio/mpeg" src="">
-            </audio>
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：cmake</li>
+        <li>Post author：Auggie</li>
+        <li>Create time：2022-04-07 16:23:03</li>
+        <li>
+            Post link：https://ruanjiancheng.github.io/2022/04/07/cmake/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/cmake/">#cmake</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/04/07/compute-network/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">compute network</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
             
-                <ul id="audio-list" style="display:none">
-                    
-                        
-                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
-                        
-                    
-                        
-                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
-                        
-                    
-                </ul>
+              <span>2022</span>
+              -
             
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Auggie</a>
         </div>
         
-    <div id="gitalk-container" class="comment link"
-		data-enable="false"
-        data-ae="false"
-        data-ci=""
-        data-cs=""
-        data-r=""
-        data-o=""
-        data-a=""
-        data-d="false"
-    >查看评论</div>
-
-
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
     </div>
+</footer>
+
+        </div>
+    </div>
+
     
-        <div class="side">
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">linux 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E6%96%87%E4%BB%B6%E6%8C%87%E4%BB%A4"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 文件指令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#g"><span class="toc-number">2.</span> <span class="toc-text">g++</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#gcc"><span class="toc-number">2.1.</span> <span class="toc-text">gcc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B"><span class="toc-number">2.1.1.</span> <span class="toc-text">编译过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#g-%E9%87%8D%E8%A6%81%E7%9A%84%E7%BC%96%E8%AF%91%E5%8F%82%E6%95%B0"><span class="toc-number">2.1.2.</span> <span class="toc-text">g++ 重要的编译参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E7%BC%96%E8%AF%91"><span class="toc-number">2.1.3.</span> <span class="toc-text">直接编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E5%BA%93%E6%96%87%E4%BB%B6%E5%B9%B6%E7%BC%96%E8%AF%91"><span class="toc-number">2.1.4.</span> <span class="toc-text">生成静态库文件并编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%8A%A8%E6%80%81%E5%BA%93%E6%96%87%E4%BB%B6"><span class="toc-number">2.1.5.</span> <span class="toc-text">生成动态库文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GDB-%E8%B0%83%E8%AF%95%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">GDB 调试器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E8%B0%83%E8%AF%95%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0"><span class="toc-number">3.1.</span> <span class="toc-text">常用的调试命令参数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vscode"><span class="toc-number">4.</span> <span class="toc-text">vscode</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">4.1.</span> <span class="toc-text">常用快捷键</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cmake"><span class="toc-number">5.</span> <span class="toc-text">cmake</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CMake-%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">5.1.</span> <span class="toc-text">CMake 是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E4%BB%8B%E7%BB%8D"><span class="toc-number">5.2.</span> <span class="toc-text">基本语法介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="toc-number">5.3.</span> <span class="toc-text">重要的指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CMake-%E5%B8%B8%E7%94%A8%E5%8F%98%E9%87%8F"><span class="toc-number">5.4.</span> <span class="toc-text">CMake 常用变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CMake-%E7%BC%96%E8%AF%91%E5%B7%A5%E7%A8%8B"><span class="toc-number">5.5.</span> <span class="toc-text">CMake 编译工程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B"><span class="toc-number">5.5.1.</span> <span class="toc-text">编译流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">5.5.2.</span> <span class="toc-text">构建的两种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CMake-%E5%AE%9E%E6%88%98"><span class="toc-number">5.5.3.</span> <span class="toc-text">CMake 实战</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA-proj1"><span class="toc-number">5.5.3.1.</span> <span class="toc-text">构建 proj1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA-proj2"><span class="toc-number">5.5.3.2.</span> <span class="toc-text">构建 proj2</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E6%88%98-proj3"><span class="toc-number">6.</span> <span class="toc-text">实战 proj3</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GDB"><span class="toc-number">7.</span> <span class="toc-text">GDB</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#launch-json"><span class="toc-number">7.1.</span> <span class="toc-text">launch.json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tasks-json"><span class="toc-number">7.2.</span> <span class="toc-text">Tasks.json</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">8.</span> <span class="toc-text">总结</span></a></li></ol>	
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
         </div>
     
-</div>
 
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
 
     </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux-%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">linux 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%96%87%E4%BB%B6%E6%8C%87%E4%BB%A4"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 文件指令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#g"><span class="nav-number">2.</span> <span class="nav-text">g++</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#gcc"><span class="nav-number">2.1.</span> <span class="nav-text">gcc</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B"><span class="nav-number">2.1.1.</span> <span class="nav-text">编译过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#g-%E9%87%8D%E8%A6%81%E7%9A%84%E7%BC%96%E8%AF%91%E5%8F%82%E6%95%B0"><span class="nav-number">2.1.2.</span> <span class="nav-text">g++ 重要的编译参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E7%BC%96%E8%AF%91"><span class="nav-number">2.1.3.</span> <span class="nav-text">直接编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E5%BA%93%E6%96%87%E4%BB%B6%E5%B9%B6%E7%BC%96%E8%AF%91"><span class="nav-number">2.1.4.</span> <span class="nav-text">生成静态库文件并编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E5%8A%A8%E6%80%81%E5%BA%93%E6%96%87%E4%BB%B6"><span class="nav-number">2.1.5.</span> <span class="nav-text">生成动态库文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GDB-%E8%B0%83%E8%AF%95%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">GDB 调试器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E8%B0%83%E8%AF%95%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0"><span class="nav-number">3.1.</span> <span class="nav-text">常用的调试命令参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vscode"><span class="nav-number">4.</span> <span class="nav-text">vscode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">4.1.</span> <span class="nav-text">常用快捷键</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cmake"><span class="nav-number">5.</span> <span class="nav-text">cmake</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CMake-%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">5.1.</span> <span class="nav-text">CMake 是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E4%BB%8B%E7%BB%8D"><span class="nav-number">5.2.</span> <span class="nav-text">基本语法介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="nav-number">5.3.</span> <span class="nav-text">重要的指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CMake-%E5%B8%B8%E7%94%A8%E5%8F%98%E9%87%8F"><span class="nav-number">5.4.</span> <span class="nav-text">CMake 常用变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CMake-%E7%BC%96%E8%AF%91%E5%B7%A5%E7%A8%8B"><span class="nav-number">5.5.</span> <span class="nav-text">CMake 编译工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B"><span class="nav-number">5.5.1.</span> <span class="nav-text">编译流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">5.5.2.</span> <span class="nav-text">构建的两种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMake-%E5%AE%9E%E6%88%98"><span class="nav-number">5.5.3.</span> <span class="nav-text">CMake 实战</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA-proj1"><span class="nav-number">5.5.3.1.</span> <span class="nav-text">构建 proj1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA-proj2"><span class="nav-number">5.5.3.2.</span> <span class="nav-text">构建 proj2</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E6%88%98-proj3"><span class="nav-number">6.</span> <span class="nav-text">实战 proj3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GDB"><span class="nav-number">7.</span> <span class="nav-text">GDB</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#launch-json"><span class="nav-number">7.1.</span> <span class="nav-text">launch.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tasks-json"><span class="nav-number">7.2.</span> <span class="nav-text">Tasks.json</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol>
+    </div>
 </div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
 </body>
-
-
-<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
-<script src="/js/plugin.js"></script>
-<script src="/js/typed.js"></script>
-<script src="/js/diaspora.js"></script>
-
-
-<link rel="stylesheet" href="/photoswipe/photoswipe.css">
-<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
-
-
-<script src="/photoswipe/photoswipe.min.js"></script>
-<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
-
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
 </html>

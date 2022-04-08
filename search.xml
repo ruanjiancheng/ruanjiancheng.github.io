@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/04/06/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a class="link" href="https://hexo.io/">Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link" href="https://hexo.io/docs/">documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link" href="https://hexo.io/docs/troubleshooting.html">troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link" href="https://github.com/hexojs/hexo/issues">GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/writing.html">Writing<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/server.html">Server<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/generating.html">Generating<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/one-command-deployment.html">Deployment<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="add-picture-use-relative-path"><a href="#add-picture-use-relative-path" class="headerlink" title="add picture use relative path"></a>add picture use relative path</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./<span class="variable">$&#123;filename&#125;</span>/name</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>cmake</title>
+    <url>/2022/04/07/cmake/</url>
+    <content><![CDATA[<h1 id="linux-简介"><a href="#linux-简介" class="headerlink" title="linux 简介"></a>linux 简介</h1><h2 id="1-1-目录结构"><a href="#1-1-目录结构" class="headerlink" title="1.1 目录结构"></a>1.1 目录结构</h2><ul>
+<li>bin：存储二进制指令</li>
+<li>sbin：只能 sudo 的指令</li>
+<li>etc：配置文件</li>
+<li>dev：IO 设备，需要被挂载</li>
+<li>mnt：IO 设备被 mount 的文件夹</li>
+<li>home：除了 root 之外，其他用户的目录</li>
+<li>proc：存储 linux 运行时的进程</li>
+<li>tmp：临时文件</li>
+<li>usr：存放文虎自己安装的文件，<code>program files</code></li>
+<li>var：存放程序和日志文件</li>
+</ul>
+<h2 id="1-2-文件指令"><a href="#1-2-文件指令" class="headerlink" title="1.2 文件指令"></a>1.2 文件指令</h2><ul>
+<li><p>命令 [option] [object]</p>
+</li>
+<li><p>pwd：print current working directory</p>
+</li>
+<li><p>ls：list</p>
+</li>
+<li><p>cd：change directory</p>
+</li>
+<li><p>mkdir：make directory，创建文件夹</p>
+<ul>
+<li>-p：创建多层不存在的文件夹</li>
+</ul>
+</li>
+<li><p>touch：创建文件</p>
+</li>
+<li><p>rm：删除文件或文件夹</p>
+</li>
+<li><p>cp：复制文件或文件夹 <code>cp [src] [dest]</code></p>
+<ul>
+<li>-r 递归复制，文件夹</li>
+</ul>
+</li>
+<li><p>mv：移动文件</p>
+</li>
+<li><p>time：time [指令] 用于计时</p>
+</li>
+</ul>
+<h1 id="g"><a href="#g" class="headerlink" title="g++"></a>g++</h1><p>switch user do: sudo （root do）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum update</span><br><span class="line"><span class="comment"># 安装 gcc g++ gdb</span></span><br><span class="line">sudo yum install build-essential gdb</span><br><span class="line"><span class="comment"># 安装 cmake</span></span><br><span class="line">sudo yum install cmake</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install -y http://mirror.centos.org/centos/7/extras/x86_64/Packages/centos-release-scl-rh-2-3.el7.centos.noarch.rpm</span><br><span class="line"></span><br><span class="line">sudo yum install -y http://mirror.centos.org/centos/7/extras/x86_64/Packages/centos-release-scl-2-3.el7.centos.noarch.rpm</span><br><span class="line"></span><br><span class="line">sudo yum install devtoolset-9-gcc-c++</span><br><span class="line"></span><br><span class="line">source /opt/rh/devtoolset-9/enable</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="gcc"><a href="#gcc" class="headerlink" title="gcc"></a>gcc</h2><h3 id="编译过程"><a href="#编译过程" class="headerlink" title="编译过程"></a>编译过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 预处理</span></span><br><span class="line"><span class="comment"># -E 仅对文件进行预处理</span></span><br><span class="line"><span class="comment"># 将 include 展开为代码</span></span><br><span class="line">g++ -E t.cpp -o t.i</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译</span></span><br><span class="line"><span class="comment"># -S 产生汇编语言文件</span></span><br><span class="line"><span class="comment"># 中间代码生成，汇编文件</span></span><br><span class="line">g++ -S t.i -o t.s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 汇编</span></span><br><span class="line"><span class="comment"># -c 源代码 -&gt; 机器语言的目标代码</span></span><br><span class="line"><span class="comment"># 二进制文件</span></span><br><span class="line">g++ -c t.s -o t.o</span><br><span class="line"></span><br><span class="line"><span class="comment"># 链接</span></span><br><span class="line"><span class="comment"># 生成可执行文件</span></span><br><span class="line">g++ t.o -o t</span><br></pre></td></tr></table></figure>
+
+<h3 id="g-重要的编译参数"><a href="#g-重要的编译参数" class="headerlink" title="g++ 重要的编译参数"></a>g++ 重要的编译参数</h3><ul>
+<li>-g：产生带调试信息的可执行文件</li>
+<li>-O[n] 优化源代码</li>
+<li>-l 指定<strong>库</strong>文件，用于链接</li>
+<li>-L 指定<strong>库</strong>文件路径 （默认：<code>/lib</code> <code>/usr/lib</code> <code>/usr/local/lib</code>）</li>
+<li>-I 指定<strong>头文件</strong>的搜索目录</li>
+<li>-Wall 打印警告信息</li>
+<li>-w 关闭警报信息</li>
+<li>-std&#x3D;c++[x]</li>
+<li>-o 指定输出名</li>
+<li>-D 定义宏</li>
+</ul>
+<h3 id="直接编译"><a href="#直接编译" class="headerlink" title="直接编译"></a>直接编译</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">g++ main.cpp /src/swap.cpp -Iinclude</span><br></pre></td></tr></table></figure>
+
+<p>mian.cpp 中使用了 swap.cpp 中的函数</p>
+<h3 id="生成静态库文件并编译"><a href="#生成静态库文件并编译" class="headerlink" title="生成静态库文件并编译"></a>生成静态库文件并编译</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成 .o 文件</span></span><br><span class="line">g++ Swap.cpp -c -I../include</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成静态库文件 LibSwap.a</span></span><br><span class="line">ar rs libSwap.a Swap.o</span><br><span class="line"></span><br><span class="line"><span class="comment"># 链接静态库</span></span><br><span class="line">g++ mian.cpp -lswap -L./src -Iinclude -o static_main</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行文件</span></span><br><span class="line">./static_main</span><br></pre></td></tr></table></figure>
+
+<h3 id="生成动态库文件"><a href="#生成动态库文件" class="headerlink" title="生成动态库文件"></a>生成动态库文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成动态库文件 libSwap.so</span></span><br><span class="line"><span class="comment"># -shared 生成动态库文件</span></span><br><span class="line">g++ swap.cpp -I../include -fPIC -shared -o libSwap.so</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 .o 文件</span></span><br><span class="line"><span class="comment"># g++ Swap.cpp -I../include -c -fPIC</span></span><br><span class="line"><span class="comment"># g++ -shared -o libSwap.so Swap.o</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用动态库编译</span></span><br><span class="line">g++ main.cpp -Iinclude -lswap -Lsrc -o dyna_main</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行可执行文件</span></span><br><span class="line"><span class="comment"># 需要先指定动态库文件的搜索路径</span></span><br><span class="line"><span class="comment"># LD_LIBRARY_PATH=[dir] ./[bin]</span></span><br><span class="line">LD_LIBRARY_PATH=src ./dyna_mian</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="GDB-调试器"><a href="#GDB-调试器" class="headerlink" title="GDB 调试器"></a>GDB 调试器</h1><p>GDB(GNU Debugger) 是一个调试 C&#x2F;C++ 程序的调试器</p>
+<ul>
+<li>设置<strong>断点</strong></li>
+<li><strong>单步</strong>执行程序，便于调试</li>
+<li>查看程序中的<strong>变量值</strong>的变化</li>
+</ul>
+<h2 id="常用的调试命令参数"><a href="#常用的调试命令参数" class="headerlink" title="常用的调试命令参数"></a>常用的调试命令参数</h2><p>gdb [exefilename]，exefilename 为可执行文件名</p>
+<ul>
+<li><p>run(r)：重新开始运行程序</p>
+</li>
+<li><p>start：单步执行，运行程序</p>
+</li>
+<li><p>list：查看源代码，list-x 从第 x 行开始查看代码，list+func 查看 func 函数</p>
+</li>
+<li><p>set：设置变量的值</p>
+</li>
+<li><p>next：单步调试，逐过程，函数直接执行</p>
+</li>
+<li><p>step：单步调试，逐语句，跳入函数体内部</p>
+</li>
+<li><p>finish：结束当前函数的执行</p>
+</li>
+<li><p>continue(c)：继续执行</p>
+</li>
+</ul>
+<p>查看：</p>
+<ul>
+<li>print(p): print [var] 输出 var 的值</li>
+<li>display：display [var] 一直监视 var 的值</li>
+<li>list(l)：显示当前附近的代码</li>
+</ul>
+<p>添加断点：</p>
+<ul>
+<li><p>break：break [n]（b [n]） 在第 n 行添加断点</p>
+</li>
+<li><p>info breakpoints (i b) 查看全部的断点信息</p>
+</li>
+<li><p>quit 结束 gdb</p>
+</li>
+</ul>
+<blockquote>
+<p>在 g++ 编译的时候，需要加入 -g 指令才能使用 gdb 调试</p>
+<p>enter 键，重复执行上一次的命令</p>
+<p>ctrl + l 清屏</p>
+</blockquote>
+<h1 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h1><blockquote>
+<p>使用命令行打开 vscode：code [filedir]</p>
+</blockquote>
+<h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><ul>
+<li>切换文件：<code>strl + p</code></li>
+<li>打开命令面板：<code>ctrl + shift + p</code></li>
+<li>打开终端：ctrl + &#96;</li>
+<li>关闭侧边栏：<code>ctrl + b</code></li>
+<li>变量同一重命名：<code>F2</code></li>
+<li>转到定义出：<code>F12</code></li>
+<li>格式化代码：<code>ctrl + shift + F</code></li>
+</ul>
+<h1 id="cmake"><a href="#cmake" class="headerlink" title="cmake"></a>cmake</h1><ul>
+<li>是什么是 cmake</li>
+<li>语法特性介绍</li>
+<li>重要指令和 cmake 常用变量</li>
+<li>cmake 编译工程</li>
+</ul>
+<h2 id="CMake-是什么"><a href="#CMake-是什么" class="headerlink" title="CMake 是什么"></a>CMake 是什么</h2><ul>
+<li>CMake 是一个跨平台的安装编译工具，可以使用简单的语句来描述所有平台的安装(编译过程)</li>
+</ul>
+<img lazyload src="/images/loading.svg" data-src="./cmake/image-20220315140635766.jpg" alt="image-20220315140635766" style="zoom:50%;">
+
+<center>为什么 CMake 跨平台</center>
+
+<p>通过 <code>CMakeList</code> 构建不同平台的 <code>build tool</code></p>
+<h2 id="基本语法介绍"><a href="#基本语法介绍" class="headerlink" title="基本语法介绍"></a>基本语法介绍</h2><ul>
+<li>基本语法格式：指令(参数1 参数2)<ul>
+<li>参数使用()</li>
+<li>参数之间使用空格或分号</li>
+</ul>
+</li>
+<li>类似于 redis ，指令是不区分大小写的，参数和变量是区分的</li>
+<li>变量使用 ${} 方式取值，到那时在 IF 语句中是直接使用变量名取值的</li>
+</ul>
+<h2 id="重要的指令"><a href="#重要的指令" class="headerlink" title="重要的指令"></a>重要的指令</h2><ul>
+<li>cmake_minimum_required 指定 CMake 的最小版本要求<ul>
+<li><code>cmake_minimum_required(VERSION 2.8.3)</code></li>
+</ul>
+</li>
+<li>project 定义工程名称，并可指定工程指定的语言<ul>
+<li><code>project(HELLOWORLD)</code></li>
+</ul>
+</li>
+<li>set 显示定义变量<ul>
+<li><code>set(SRC swap.cpp hello.cpp)</code></li>
+</ul>
+</li>
+<li>include_directories 向工程添加特定的<strong>头文件</strong>的搜索路径<ul>
+<li><code>include_directories(/usr/include ./include)</code></li>
+</ul>
+</li>
+<li>link_directories 向工程添加多个特定的<strong>库文件</strong>搜索路径<ul>
+<li><code>linkdirectories(/usr/lib/ ./lib)</code></li>
+</ul>
+</li>
+<li>add_library 生成库文件<ul>
+<li><code>add_library(libname [SHARED|STATIC] src1 src2)</code></li>
+<li><code>add_library(hello SHARED $&#123;SRC&#125;)</code></li>
+</ul>
+</li>
+<li>add_compile_options 添加编译参数<ul>
+<li><code>add_compile_options(-Wall -std=c++14 -o2)</code></li>
+</ul>
+</li>
+<li>add_executable 生成可执行文件，编译 mian.cpp 生成可执行文件 main<ul>
+<li><code>add_executable(mian mian.cpp)</code></li>
+</ul>
+</li>
+<li>target_link_libraries 为 target 添加需要连接的共享库 相当于 -l 参数<ul>
+<li><code>target_link_libraries(mian hello)</code> 将 hello 动态库链接到 mian 中</li>
+</ul>
+</li>
+<li>add_subdirectory 向当前工程添加源文件的子目录<ul>
+<li><code>add_subdirectory(src)</code> src 文件夹中必须存在一个 CMakeList.txt</li>
+</ul>
+</li>
+<li>aux_source_directory 发下一个目录下所有的源文件并将列表存储在一个变量中，这个指令临时用来自动构建源文件列表 <strong>？？？？不懂</strong></li>
+</ul>
+<h2 id="CMake-常用变量"><a href="#CMake-常用变量" class="headerlink" title="CMake 常用变量"></a>CMake 常用变量</h2><ul>
+<li>CMAKE_C_FLAGS gcc 编译选项</li>
+<li>CMAKE_CXX_FLAGS g++ 编译选项</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在 CMAKE_CXX_FLAGS 编译选项后追加 -std=c++11</span></span><br><span class="line"><span class="keyword">set</span>( CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -std=c++11&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>CMAKE_BUILD_TYPE 编译类型(debug, release)</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span>(CMAKE_BUILD_TYPE Debug)</span><br><span class="line"><span class="keyword">set</span>(CMAKE_BUILD_TYPE Release)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="CMake-编译工程"><a href="#CMake-编译工程" class="headerlink" title="CMake 编译工程"></a>CMake 编译工程</h2><p>CMake 目录结构：项目主目录存在 CMakeLists.txt</p>
+<p>两种方式设置编译规则：</p>
+<ol>
+<li>包含源文件的子文件夹包含 CMakeLists.txt 文件，主目录的 CMakelists.txt 通过 <code>add_subdirectory</code> 添加子目录即可</li>
+<li>包含源文件的子文件夹未包含 CMakeLists.txt 文件，子目录的编译规则体现在主目录的 CMakeLists.txt 中</li>
+</ol>
+<h3 id="编译流程"><a href="#编译流程" class="headerlink" title="编译流程"></a>编译流程</h3><ul>
+<li>手动编写 CMakeLists.txt </li>
+<li>执行命令 <code>cmake PATH</code> 生成 Makefile (PATH 是顶层 CMakeLists.txt 所在的目录)</li>
+<li>执行命令 <code>make</code> 进行</li>
+</ul>
+<h3 id="构建的两种方式"><a href="#构建的两种方式" class="headerlink" title="构建的两种方式"></a>构建的两种方式</h3><ul>
+<li>内部构件，在当前文件夹下，执行 make 命令。<strong>杂乱无章</strong></li>
+<li>外部构建 <strong>推荐</strong>，创建 build 文件夹，编译上级目录的 CMakeLists.txt 文件</li>
+</ul>
+<h3 id="CMake-实战"><a href="#CMake-实战" class="headerlink" title="CMake 实战"></a>CMake 实战</h3><p><img lazyload src="/images/loading.svg" data-src="/./cmake/image-20220315155252463.jpg" alt="image-20220315155252463"></p>
+<center>两个工程的结构</center>
+
+<h4 id="构建-proj1"><a href="#构建-proj1" class="headerlink" title="构建 proj1"></a>构建 proj1</h4><p><code>g++ helloworld.cpp -o helloworld</code></p>
+<ol>
+<li>编写 CMakeLists.txt</li>
+</ol>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 指定版本号</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定工程文件名</span></span><br><span class="line"><span class="keyword">project</span>(HELLOWORLD)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 等价于 g++ helloworld.cpp -o helloworld_cmake</span></span><br><span class="line"><span class="keyword">add_executable</span>(helloWorld_cmake helloworld.cpp)</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p><strong>内部构建</strong>在 bash 中</p>
+<ol>
+<li><code>cmake .</code> 构建 <code>Makefile</code></li>
+<li><code>make</code> make Makefile</li>
+</ol>
+</li>
+<li><p><strong>外部构建</strong>在 bash 中</p>
+<ol>
+<li><code>mkdir build</code></li>
+<li><code>cd build</code></li>
+<li><code>cmake ..</code> 在 build 文件夹构建上一级目录的 <code>CMakeLists.txt</code></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在 build 文件夹中构建</span></span><br><span class="line"><span class="built_in">mkdir</span> build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line"><span class="comment"># 生成 Makefile</span></span><br><span class="line">cmake ..</span><br><span class="line"><span class="comment"># make Makefile make 是编译的过程</span></span><br><span class="line">make</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><img lazyload src="/images/loading.svg" data-src="/./cmake/image-20220315161112258.jpg" alt="image-20220315161112258"></p>
+<center>外部构建</center>
+
+<h4 id="构建-proj2"><a href="#构建-proj2" class="headerlink" title="构建 proj2"></a>构建 proj2</h4><p><code>g++ main.cpp ./src/swap.cpp -I ./include -o main</code></p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">project</span>(SWAP)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含头文件搜索路径 -I 选项</span></span><br><span class="line"><span class="keyword">include_directories</span>(./<span class="keyword">include</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 类似于 g++ main.cpp ./src/swap.cpp</span></span><br><span class="line"><span class="keyword">add_executable</span>(main_cmake main.cpp ./src/swap.cpp)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="实战-proj3"><a href="#实战-proj3" class="headerlink" title="实战 proj3"></a>实战 proj3</h1><p><img lazyload src="/images/loading.svg" data-src="/./cmake/image-20220315164644371.jpg" alt="image-20220315164644371"></p>
+<p><code>g++ main.cpp src/Gun.cpp src/Solider.cpp -I ./include/ -o main</code></p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">project</span>(GO)</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -g -O2 -Wall -std=c++11&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含头文件</span></span><br><span class="line"><span class="keyword">include_directories</span>(<span class="keyword">include</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(main_cmake main.cpp src/Gun.cpp src/Solider.cpp)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="GDB"><a href="#GDB" class="headerlink" title="GDB"></a>GDB</h1><h2 id="launch-json"><a href="#launch-json" class="headerlink" title="launch.json"></a>launch.json</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line"></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;(gdb) 启动&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cppdbg&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;request&quot;</span><span class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="comment">// ***** 可执行文件路径</span></span><br><span class="line">            <span class="attr">&quot;program&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;/build/main_cmake&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;stopAtEntry&quot;</span><span class="punctuation">:</span> <span class="keyword">false</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;fileDirname&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;environment&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;externalConsole&quot;</span><span class="punctuation">:</span> <span class="keyword">false</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;MIMode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gdb&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;setupCommands&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;为 gdb 启用整齐打印&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;text&quot;</span><span class="punctuation">:</span> <span class="string">&quot;-enable-pretty-printing&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;ignoreFailures&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span></span><br><span class="line">                <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;将反汇编风格设置为 Intel&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;text&quot;</span><span class="punctuation">:</span> <span class="string">&quot;-gdb-set disassembly-flavor intel&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;ignoreFailures&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span></span><br><span class="line">                <span class="punctuation">&#125;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="comment">// ***** 指向 Task.json 中的 Build</span></span><br><span class="line">            <span class="attr">&quot;preLaunchTask&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Build&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Tasks-json"><a href="#Tasks-json" class="headerlink" title="Tasks.json"></a>Tasks.json</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;options&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="comment">// cd ./build</span></span><br><span class="line">        <span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;/build&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="comment">// cmake ..</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cmake&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cmake&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;..&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">                </span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="comment">// make</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;make&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;kind&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;isDefault&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;make&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line"></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Build&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;dependsOrder&quot;</span><span class="punctuation">:</span> <span class="string">&quot;sequence&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;dependsOn&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="comment">// 调用 cmake 和 make 命令</span></span><br><span class="line">                <span class="string">&quot;cmake&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;make&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>常用 cmake 指令</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 指定最小版本号</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 项目名称</span></span><br><span class="line"><span class="keyword">project</span>(GO)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含头文件</span></span><br><span class="line"><span class="keyword">include</span>(./lib)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置编译参数</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -O2 -g&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置编译模式 Debug | Release</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_BUILD_TYPE Debug)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译</span></span><br><span class="line"><span class="keyword">add_executable</span>(main_cmake main.cpp [其他文件])</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>cmake</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker</title>
+    <url>/2022/04/07/my-new-post/</url>
+    <content><![CDATA[<h1 id="docker-安装以及-opengauss-安装"><a href="#docker-安装以及-opengauss-安装" class="headerlink" title="docker 安装以及 opengauss 安装"></a>docker 安装以及 opengauss 安装</h1><h2 id="docker-安装"><a href="#docker-安装" class="headerlink" title="docker 安装"></a>docker 安装</h2><ol>
+<li><p>docker 依赖环境安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install -y yum-utils</span><br><span class="line">sudo yum-config-manager \</span><br><span class="line">   --add-repo \</span><br><span class="line">   https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>docker 引擎安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum install docker-ce docker-ce-cli containerd.io</span><br><span class="line">yum list docker-ce --showduplicates | <span class="built_in">sort</span> -r</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动 docker</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>docker 换源 阿里云</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">mkdir</span> -p /etc/docker</span><br><span class="line">sudo <span class="built_in">tee</span> /etc/docker/daemon.json &lt;&lt;-<span class="string">&#x27;EOF&#x27;</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://2e1o9u0t.mirror.aliyuncs.com&quot;</span>]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="opengauss-安装"><a href="#opengauss-安装" class="headerlink" title="opengauss 安装"></a>opengauss 安装</h2><ol>
+<li><p>安装 opengauss 镜像</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull enmotech/opengauss</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动镜像</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run --name opengauss --privileged=<span class="literal">true</span> -d -e GS_PASSWORD=Secretpassword@123 -p 8181:5432 enmotech/opengauss</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看是否启动</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>开放安全组</p>
+<p>在华为云安全组将 <code>8181</code> 端口开放，外部即可连接。</p>
+</li>
+<li><p>连接，选择 <code>postgre</code> 数据库</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it opengauss sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到 omm 用户</span></span><br><span class="line">su - omm</span><br><span class="line"></span><br><span class="line"><span class="comment"># 登陆数据库</span></span><br><span class="line">gsql</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建用户，然后就可以用连接了，密码好像有强度要求。</span></span><br><span class="line">CREATE USER auggie CREATEROLE PASSWORD <span class="string">&#x27;3263265Rjc&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有用户</span></span><br><span class="line">SELECT * FROM pg_user;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h2 id="Docker-常用命令"><a href="#Docker-常用命令" class="headerlink" title="Docker 常用命令"></a>Docker 常用命令</h2><h3 id="帮助信息"><a href="#帮助信息" class="headerlink" title="帮助信息"></a>帮助信息</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker 命令 --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker images <span class="comment"># 查看镜像</span></span><br><span class="line"></span><br><span class="line">docker search [] <span class="comment"># 搜索镜像</span></span><br><span class="line"></span><br><span class="line">docker pull repo:[tag] <span class="comment"># 下载镜像</span></span><br><span class="line"></span><br><span class="line">docker rmi -f [image ID | image name]</span><br></pre></td></tr></table></figure>
+
+<h3 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h3><p>有了<strong>镜像</strong>才可以创建<strong>容器</strong></p>
+<h4 id="新建容器并启动"><a href="#新建容器并启动" class="headerlink" title="新建容器并启动"></a>新建容器并启动</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run [option] image</span><br><span class="line"></span><br><span class="line">--name=<span class="string">&quot;Name&quot;</span>	容器名字，用来区分容器</span><br><span class="line">-d 				后台方式运行</span><br><span class="line">-it 			使用交互方式运行</span><br><span class="line">-p				指定容器端口</span><br><span class="line">	-p ip:主机端口:容器端口</span><br><span class="line">	-p 主机端口:容器端口</span><br><span class="line">	-p 容器端口</span><br><span class="line">-P				随机指定端口</span><br><span class="line">-e				配置环境</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@auggie ~]<span class="comment"># docker run -it centos</span></span><br><span class="line">[root@7eb2206cb300 /]<span class="comment"># exit</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="列出运行的容器"><a href="#列出运行的容器" class="headerlink" title="列出运行的容器"></a>列出运行的容器</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker ps [option]</span><br><span class="line"></span><br><span class="line">-a		列出所有</span><br><span class="line">-q 		只列出编号</span><br><span class="line">-n=? 	查看最近运行</span><br></pre></td></tr></table></figure>
+
+<h4 id="退出容器"><a href="#退出容器" class="headerlink" title="退出容器"></a>退出容器</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">exit</span>			关闭退出</span><br><span class="line">ctrl + p + q	不关闭退出</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">rm</span> [-f] 容器ID</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除全部</span></span><br><span class="line">docker <span class="built_in">rm</span> -f $(docker ps -q)</span><br><span class="line">docker ps -q | xargs docker <span class="built_in">rm</span> </span><br></pre></td></tr></table></figure>
+
+<h4 id="启动和停止容器"><a href="#启动和停止容器" class="headerlink" title="启动和停止容器"></a>启动和停止容器</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker start <span class="built_in">id</span>		启动</span><br><span class="line">docker restart <span class="built_in">id</span>	重启</span><br><span class="line">docker stop <span class="built_in">id</span>		停止容器</span><br><span class="line">docker <span class="built_in">kill</span> <span class="built_in">id</span>		强制停止</span><br></pre></td></tr></table></figure>
+
+<h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><p><strong>后台启动 docker</strong></p>
+<p>通过 -d 后台启动</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@auggie ~]<span class="comment"># docker run -d centos /bin/sh -c &quot;while true;do echo hello;sleep 1;done&quot;</span></span><br><span class="line">9819e426f325dac27c1180ea6239a637e059a3d9fe549d072e8be66a5d30d389</span><br><span class="line">[root@auggie ~]<span class="comment"># docker ps</span></span><br><span class="line">CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS     NAMES</span><br><span class="line">9819e426f325   centos    <span class="string">&quot;/bin/sh -c &#x27;while t…&quot;</span>   About a minute ago   Up About a minute             objective_zhukovsky</span><br></pre></td></tr></table></figure>
+
+<p><strong>查看日志</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker logs -ft --<span class="built_in">tail</span> n ID</span><br><span class="line"></span><br><span class="line">-f 		持续</span><br><span class="line">-t 		显示时间戳</span><br><span class="line">--<span class="built_in">tail</span> 	<span class="built_in">tail</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>查看 docker 内部的进程信息</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker top ID</span><br></pre></td></tr></table></figure>
+
+<p><strong>查看容器元信息</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker inspect ID</span><br></pre></td></tr></table></figure>
+
+<p><strong>进入当前正在进行的容器</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 进入后台方式运行的容器</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建终端</span></span><br><span class="line">docker <span class="built_in">exec</span> -it ID /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入当前终端</span></span><br><span class="line">docker attach ID</span><br></pre></td></tr></table></figure>
+
+<p><strong>从容器内拷贝文件到主机</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">cp</span> ID:src dest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以通过卷来实现</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h2><p><code>portainer</code> 是一个图形化界面管理工具</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d -p 8181:9000\</span><br><span class="line">--restart=always -v /var/run/docker.sock:/var/run/docker.sock --privileged=<span class="literal">true</span> portainer/portainer</span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker-镜像"><a href="#Docker-镜像" class="headerlink" title="Docker 镜像"></a>Docker 镜像</h2><h3 id="镜像是什么"><a href="#镜像是什么" class="headerlink" title="镜像是什么"></a>镜像是什么</h3><p>镜像是一种轻量级、可执行的独立<strong>软件包</strong>，用来打包<strong>软件运行环境</strong>和基于环境开发的<strong>软件</strong>。</p>
+<p>如何获得镜像：</p>
+<ul>
+<li>远程仓库下载</li>
+<li>自己制作</li>
+</ul>
+<h3 id="镜像加载原理"><a href="#镜像加载原理" class="headerlink" title="镜像加载原理"></a>镜像加载原理</h3><blockquote>
+<p>UnionFS（联合文件系统）</p>
+</blockquote>
+<p>docker 下载时分层</p>
+<blockquote>
+<p>Docker 镜像加载原理</p>
+</blockquote>
+<ul>
+<li>bootfs(boot file system)</li>
+<li>rootfs(root file system)</li>
+</ul>
+<p>为什么 docker 中的 centos 很小？</p>
+<p>对于一个精简的 OS，rootfs 可以很小。对于不同的 linux 发行版本，bootfs 基本一致，rootfs 会有差别。</p>
+<h3 id="commit-镜像"><a href="#commit-镜像" class="headerlink" title="commit 镜像"></a>commit 镜像</h3><p>用于生成新镜像，相当于快照。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker commit </span><br><span class="line"></span><br><span class="line">docker commit -m=<span class="string">&quot;msg&quot;</span> -a=<span class="string">&quot;author&quot;</span> ID dest:[tag]</span><br><span class="line"></span><br><span class="line">[root@iZuf694tmueqwc1qv0nwwdZ ~]<span class="comment"># docker commit -m=&quot;add webapps&quot; -a=&quot;auggie&quot; bd01ec9750b6 tomcat01:1.0</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>简单总结 docker 的一些命令：</p>
+<ul>
+<li>镜像<ul>
+<li>docker images</li>
+<li>docker search</li>
+<li>docker pull</li>
+<li>docker rmi</li>
+</ul>
+</li>
+<li>容器<ul>
+<li>docker run</li>
+<li>docker ps</li>
+<li>docker inspect ID</li>
+<li>docker top ID</li>
+<li>docker logs -ft –tial n ID</li>
+<li>exit &amp;&amp; ctrl + p + q</li>
+<li>docker stop &#x2F; kill &#x2F; start &#x2F; restart</li>
+</ul>
+</li>
+<li>容器 -&gt; 镜像<ul>
+<li>docker commit -m&#x3D;”” -a&#x3D;”” ID img:[tag]</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="容器数据卷（数据持久化，双向绑定）"><a href="#容器数据卷（数据持久化，双向绑定）" class="headerlink" title="容器数据卷（数据持久化，双向绑定）"></a>容器数据卷（数据持久化，<strong>双向绑定</strong>）</h2><p>问题：如果容器删除，数据就会丢失！</p>
+<p>需求：数据持久化</p>
+<h3 id="使用数据卷"><a href="#使用数据卷" class="headerlink" title="使用数据卷"></a>使用数据卷</h3><blockquote>
+<ol>
+<li>使用命令挂载</li>
+</ol>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -it -v 主机目录:容器内目录 </span><br><span class="line"></span><br><span class="line">[root@iZuf694tmueqwc1qv0nwwdZ ~]<span class="comment"># docker run -it -v /home/test:/home centos</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># docker inspect ID</span></span><br><span class="line"><span class="string">&quot;Mounts&quot;</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;Type&quot;</span>: <span class="string">&quot;bind&quot;</span>,</span><br><span class="line">                <span class="string">&quot;Source&quot;</span>: <span class="string">&quot;/home/test&quot;</span>,</span><br><span class="line">                <span class="string">&quot;Destination&quot;</span>: <span class="string">&quot;/home&quot;</span>,</span><br><span class="line">                <span class="string">&quot;Mode&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">                <span class="string">&quot;RW&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">                <span class="string">&quot;Propagation&quot;</span>: <span class="string">&quot;rprivate&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br></pre></td></tr></table></figure>
+
+<h3 id="挂载-mysql"><a href="#挂载-mysql" class="headerlink" title="挂载 mysql"></a>挂载 mysql</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -v dest:src --name mysql01 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123 -d mysql</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="具名和匿名挂载"><a href="#具名和匿名挂载" class="headerlink" title="具名和匿名挂载"></a>具名和匿名挂载</h3><p>通过 <code>docker volume ls</code> 可以查看挂载，使用 <code>docker volume inspect Name</code> 可以查看挂载位置</p>
+<ol>
+<li><p>匿名挂载</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@iZuf694tmueqwc1qv0nwwdZ test]# docker run -d --name nginx03 -v /etc/nginx nginx</span><br><span class="line">00faee8254a84238b2f464e84b1501198276420cac82ffc2c62fbfd32a103b08</span><br><span class="line"></span><br><span class="line">&quot;Mounts&quot;: [</span><br><span class="line">            &#123;</span><br><span class="line">                &quot;Type&quot;: &quot;volume&quot;,</span><br><span class="line">                &quot;Name&quot;: &quot;675fde039bc4823c18c279a40099e656cda5f351d18ae1410df561ee07bd591e&quot;,</span><br><span class="line">                &quot;Source&quot;: &quot;/var/lib/docker/volumes/675fde039bc4823c18c279a40099e656cda5f351d18ae1410df561ee07bd591e/_data&quot;,</span><br><span class="line">                &quot;Destination&quot;: &quot;/etc/nginx&quot;,</span><br><span class="line">                &quot;Driver&quot;: &quot;local&quot;,</span><br><span class="line">                &quot;Mode&quot;: &quot;&quot;,</span><br><span class="line">                &quot;RW&quot;: true,</span><br><span class="line">                &quot;Propagation&quot;: &quot;&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>具名挂载</p>
+<p>含有名字的挂载</p>
+</li>
+</ol>
+<blockquote>
+<ol start="2">
+<li>DockerFile</li>
+</ol>
+</blockquote>
+<p>Dockerfile 用来构建 docker 镜像的构建文件</p>
+<ol>
+<li><p>编写 dockerfile</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="keyword">FROM</span> centos</span><br><span class="line"></span><br><span class="line"><span class="comment"># 匿名挂载</span></span><br><span class="line"><span class="keyword">VOLUME</span><span class="language-bash"> [<span class="string">&quot;volume01&quot;</span>, <span class="string">&quot;volume02&quot;</span>]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> <span class="built_in">echo</span> <span class="string">&quot;---end---&quot;</span></span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> /bin/bash</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成镜像</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker build -f ./dockerfile1 -t auggie/centos .</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>创建的两个容器：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">&quot;Mounts&quot;: [</span><br><span class="line">           &#123;</span><br><span class="line">               &quot;Type&quot;: &quot;volume&quot;,</span><br><span class="line">               &quot;Name&quot;: &quot;e77305721d3246561557da99c7adcfbfdbe25591746ce688bc38c60df2840a8d&quot;,</span><br><span class="line">               &quot;Source&quot;: &quot;/var/lib/docker/volumes/e77305721d3246561557da99c7adcfbfdbe25591746ce688bc38c60df2840a8d/_data&quot;,</span><br><span class="line">               &quot;Destination&quot;: &quot;volume02&quot;,</span><br><span class="line">               &quot;Driver&quot;: &quot;local&quot;,</span><br><span class="line">               &quot;Mode&quot;: &quot;&quot;,</span><br><span class="line">               &quot;RW&quot;: true,</span><br><span class="line">               &quot;Propagation&quot;: &quot;&quot;</span><br><span class="line">           &#125;,</span><br><span class="line">           &#123;</span><br><span class="line">               &quot;Type&quot;: &quot;volume&quot;,</span><br><span class="line">               &quot;Name&quot;: &quot;97203bca5396ef84cc8ed6ae0cce96d019dc2deb5dceae54c2e16fc167f8ea02&quot;,</span><br><span class="line">               &quot;Source&quot;: &quot;/var/lib/docker/volumes/97203bca5396ef84cc8ed6ae0cce96d019dc2deb5dceae54c2e16fc167f8ea02/_data&quot;,</span><br><span class="line">               &quot;Destination&quot;: &quot;volume01&quot;,</span><br><span class="line">               &quot;Driver&quot;: &quot;local&quot;,</span><br><span class="line">               &quot;Mode&quot;: &quot;&quot;,</span><br><span class="line">               &quot;RW&quot;: true,</span><br><span class="line">               &quot;Propagation&quot;: &quot;&quot;</span><br><span class="line">           &#125;</span><br><span class="line">       ],</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h2><p>dockerfile 用于构建一个 docker 镜像</p>
+<p>构建过程：</p>
+<ol>
+<li>编写一个 dockerfile 文件</li>
+<li>docker build 构建成为一个<strong>镜像</strong></li>
+<li>docker run 将镜像生成<strong>容器</strong></li>
+</ol>
+<h3 id="dockerfile-的构建过程"><a href="#dockerfile-的构建过程" class="headerlink" title="dockerfile 的构建过程"></a>dockerfile 的构建过程</h3><h4 id="基础知识："><a href="#基础知识：" class="headerlink" title="基础知识："></a>基础知识：</h4><ol>
+<li>每一个 keyword 都是大写字母</li>
+<li>从上到下构建</li>
+<li>每一个指令都会创建提交一个新的镜像层，并提交</li>
+</ol>
+<p>dockerfile ：用于构建 docker images</p>
+<p>docker images 是通过 dockerfile 构建生成的镜像，最终发布和运行的产品</p>
+<p>docker container 是通过 docker image 构建的容器</p>
+<h3 id="dockerfile-的指令"><a href="#dockerfile-的指令" class="headerlink" title="dockerfile 的指令"></a>dockerfile 的指令</h3><ul>
+<li>FROM<ul>
+<li>这个镜像的妈妈是谁</li>
+<li>指定基础镜像</li>
+</ul>
+</li>
+<li>MAINTAINER<ul>
+<li>指定维护者的信息</li>
+</ul>
+</li>
+<li>RUN<ul>
+<li>构建镜像的时候，需要运行的命令</li>
+</ul>
+</li>
+<li>ADD<ul>
+<li>添加文件，例如部署 tomcat，则要添加 tomcat 的压缩包</li>
+</ul>
+</li>
+<li>COPY<ul>
+<li>类似 ADD，将文件拷贝到镜像中</li>
+</ul>
+</li>
+<li>WORKDIR<ul>
+<li>镜像的工作目录</li>
+</ul>
+</li>
+<li>VOLUME<ul>
+<li>挂在卷</li>
+</ul>
+</li>
+<li>EXPOSE<ul>
+<li>暴露端口</li>
+</ul>
+</li>
+<li>CMD<ul>
+<li>指定这个容器启动的时候，需要运行的命令；只有最后一条会生效</li>
+</ul>
+</li>
+<li>ENTRYPOINT<ul>
+<li>指定这个容器启动的时候，需要运行的命令；可以追加</li>
+</ul>
+</li>
+<li>ENV<ul>
+<li>设置环境变量，用于设置 mysql 的密码</li>
+</ul>
+</li>
+</ul>
+<h3 id="发布镜像"><a href="#发布镜像" class="headerlink" title="发布镜像"></a>发布镜像</h3><ol>
+<li>登陆 <code>docker login -u$user -p$pass</code></li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker login -u</span><br><span class="line"></span><br><span class="line">[root@iZuf694tmueqwc1qv0nwwdZ docker_programs]# docker login -uaugg1e</span><br><span class="line">Password:</span><br><span class="line">WARNING! Your password will be stored unencrypted in /root/.docker/config.json.</span><br><span class="line">Configure a credential helper to remove this warning. See</span><br><span class="line">https://docs.docker.com/engine/reference/commandline/login/#credentials-store</span><br><span class="line"></span><br><span class="line">Login Succeeded</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>发布 <code>dcoker push username/name:[tag]</code><ol>
+<li>镜像需要以 username&#x2F;repo 的格式命名</li>
+</ol>
+</li>
+</ol>
+<h3 id="发布-springboot-项目"><a href="#发布-springboot-项目" class="headerlink" title="发布 springboot 项目"></a>发布 springboot 项目</h3><ol>
+<li><p>向 springboot 项目打包 .jar</p>
+</li>
+<li><p>编写 Dockerfile</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在 jdk11 上面构建</span></span><br><span class="line"><span class="keyword">FROM</span> openjdk:<span class="number">11</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 .jar 文件拷贝到容器中</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> docker-0.0.1-SNAPSHOT.jar /app.jar</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行命令</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;echo&quot;</span>, <span class="string">&quot;hello docker&quot;</span>]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行命令</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="language-bash"> [<span class="string">&quot;java&quot;</span>, <span class="string">&quot;-jar&quot;</span>, <span class="string">&quot;/app.jar&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将 jar 包和 Dockerfile 发送到服务器</p>
+</li>
+<li><p><code>docker build -t &quot;name&quot; .</code> 构建镜像</p>
+</li>
+<li><p><code>docker run name</code> 生成容器</p>
+</li>
+</ol>
+<h2 id="Docker-网络"><a href="#Docker-网络" class="headerlink" title="Docker 网络"></a>Docker 网络</h2>]]></content>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>compute network</title>
+    <url>/2022/04/07/compute-network/</url>
+    <content><![CDATA[<h1 id="HTTP-专题"><a href="#HTTP-专题" class="headerlink" title="HTTP 专题"></a>HTTP 专题</h1><ol>
+<li>HTTP 报文</li>
+<li>GET 和 POST 方法</li>
+<li>Cookie 和 Session</li>
+<li>HTTP 缓存</li>
+<li>HTTPS</li>
+</ol>
+<h2 id="HTTP-报文"><a href="#HTTP-报文" class="headerlink" title="HTTP 报文"></a>HTTP 报文</h2><h3 id="HTTP-请求报文"><a href="#HTTP-请求报文" class="headerlink" title="HTTP 请求报文"></a>HTTP 请求报文</h3><ul>
+<li>请求行<ul>
+<li>请求方法</li>
+<li>HTTP 版本</li>
+<li>URL</li>
+</ul>
+</li>
+<li>首部行<ul>
+<li>Connection 表示要不要持续链接</li>
+<li>Accept-language 表示希望收到的语言版本</li>
+</ul>
+</li>
+<li>空行</li>
+<li>请求体：供 POST 方法使用</li>
+</ul>
+<h3 id="HTTP-响应报文"><a href="#HTTP-响应报文" class="headerlink" title="HTTP 响应报文"></a>HTTP 响应报文</h3><ul>
+<li>响应行<ul>
+<li>HTTP 版本</li>
+<li>状态码：<a class="link" href="https://github.com/TieMuZhen/Blog/issues/87">HTTP 常见的状态码和适用场景<i class="fas fa-external-link-alt"></i></a></li>
+<li>响应状态信息描述</li>
+</ul>
+</li>
+<li>首部行</li>
+<li>空行</li>
+<li>响应体</li>
+</ul>
+<h2 id="GET-和-POST-方法的区别"><a href="#GET-和-POST-方法的区别" class="headerlink" title="GET 和 POST 方法的区别"></a>GET 和 POST 方法的区别</h2><ul>
+<li>GET 方法把参数包含在 URL 中，POST 通过 Request Body 传递参数</li>
+<li>GET 方法比 POST 方法更快<ul>
+<li>POST 请求包含更多的首部行</li>
+<li><strong>POST 先将请求头发送给服务器进行确认，然后才真正发送数据</strong></li>
+</ul>
+</li>
+<li>GET 会将数据缓存起来</li>
+</ul>
+<blockquote>
+<p>总结</p>
+</blockquote>
+<ul>
+<li>POST 更安全，不会作为 URL 的一部分，不会被缓存。</li>
+<li>POST 发送的数据更大，GET 有 URL 长度限制</li>
+<li>POST 能发送跟多的数据类型，GET 只能发送 ASCII 字符</li>
+<li>POST 比 GET 慢</li>
+<li>POST 一般用于修改和写入数据，GET 一般用于搜索排序和筛选</li>
+</ul>
+<h2 id="Cookie-和-Session"><a href="#Cookie-和-Session" class="headerlink" title="Cookie 和 Session"></a>Cookie 和 Session</h2><ul>
+<li>Cookie</li>
+<li>Session</li>
+<li>Cookie 和 Session 的联系</li>
+<li>Cookie 和 Session 的区别</li>
+</ul>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p>问题：Web 站点希望能够识别用户，来对用户进行专门化服务，就生成一个唯一 ID，作为<strong>索引</strong>在数据库中产生表项。</p>
+<p>服务器通过一个包含 Set-cookie 首部行的 HTTP 响应报文进行响应。</p>
+<ul>
+<li>如果没有设置 Cookie 失效日期，他们仅保存在浏览器会话期间</li>
+<li>大多数浏览器支持的 Cookie 最大存储的数据量是 <code>4K</code>，因此不用来保存大数据</li>
+<li>Cookie 以明文的方式存储，并不安全</li>
+<li>Cookie 是不跨域名的</li>
+</ul>
+<h4 id="Cookie-的修改和删除"><a href="#Cookie-的修改和删除" class="headerlink" title="Cookie 的修改和删除"></a>Cookie 的修改和删除</h4><p>Cookie <strong>并不提供修改和删除</strong></p>
+<ul>
+<li>如果想要<strong>修改</strong>，需要服务器在 HTTP 响应报文中返回一个<strong>同名</strong>的 Cookie</li>
+<li>如果想要<strong>删除</strong>，只需要返回一个同名的 Cookie，并发 maxAge 设置为 0</li>
+</ul>
+<blockquote>
+<p>注意：返回同名 Cookie 的时候，需要除 maxAge，value 之外的全部信息都和原 Cookie 相同</p>
+</blockquote>
+<h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><p>client 访问 server 的时候，server 将 client 信息记录在 server 上面，这就是 session。</p>
+<p>用户和服务器建立连接的时候，服务器会为其分配一个 SessionId</p>
+<blockquote>
+<p>Session 的生命周期</p>
+</blockquote>
+<ul>
+<li>Session 在用户的第一次访问服务器的时候创建，只访问静态资源并不会创建 Session</li>
+<li>server 会将长时间没有活动的 Session 从服务器内存中清除，此时 Session 便失效。Tomcat 的默认失效时间为 30 min</li>
+<li>计时从 Session 未被访问的时候开始算起</li>
+</ul>
+<h3 id="Session-和-Cookie-的联系"><a href="#Session-和-Cookie-的联系" class="headerlink" title="Session 和 Cookie 的联系"></a>Session 和 Cookie 的联系</h3><p>Session 需要通过 Cookie 实现，服务器要向 client 发送一个 JSESSIONID 的 Cookie，它的值就是该 Session 的 id，Session 依据此 Cookie 来识别是否为同一用户</p>
+<ul>
+<li>该 Cookie 是服务器自动生成的，maxAge 一般为 <code>-1</code>，也就是关闭浏览器就会失效。</li>
+<li>因此同一计算机的两个浏览器窗口访问服务器时会生成两个不同的 Session ，但是由子窗口会共享父窗口的 Cookie ，共享一个 Session</li>
+</ul>
+<h3 id="Cookie-和-Session-的区别"><a href="#Cookie-和-Session-的区别" class="headerlink" title="Cookie 和 Session 的区别"></a>Cookie 和 Session 的区别</h3><ul>
+<li>存储位置</li>
+<li>安全性</li>
+<li>对服务器的影响</li>
+<li>数据大小：Cookie 保存的数据最多不超过 <code>4k</code> ，一般浏览器限制一个站点最多保存 20 个 Cookie</li>
+</ul>
+<h2 id="HTTP-缓存"><a href="#HTTP-缓存" class="headerlink" title="HTTP 缓存"></a>HTTP 缓存</h2><p>一般只用于 GET 请求</p>
+<img lazyload src="/images/loading.svg" data-src="计网.assets/edfb851e-fa61-4386-9c10-bf2105f55331-12785011.jpg" alt="img" style="zoom:50%;">
+
+<center>HTTP 缓存流程图</center>
+
+<h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><ul>
+<li>引入 CA 使用数字证书来<strong>保证公钥的合法性</strong>，避免了中间人攻击。</li>
+<li>使用<strong>非对称加密</strong>来约定<strong>对称加密</strong>要使用的 key</li>
+<li><strong>信息传递过程</strong>使用<strong>对称加密</strong>来实现</li>
+</ul>
+<h3 id="HTTPS-的核心-SSL-x2F-TLS-协议的工作原理"><a href="#HTTPS-的核心-SSL-x2F-TLS-协议的工作原理" class="headerlink" title="HTTPS 的核心 SSL&#x2F;TLS 协议的工作原理"></a>HTTPS 的核心 SSL&#x2F;TLS 协议的工作原理</h3><ul>
+<li>对称加密：如何约定密钥在计算机网络中存在问题，性能高很多</li>
+<li>非对称加密：<strong>可以使用公钥模拟用户发送信息，也存在问题</strong>，</li>
+</ul>
+<h4 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h4><p><strong>解决：第三方仿照 server 给 client 发送自己的公钥，并且中间截获的问题</strong></p>
+<img lazyload src="/images/loading.svg" data-src="计网.assets/attack1.cfda3eb1.png" alt="img" style="zoom: 80%;">
+
+<center>中间人攻击，server 根本看不懂密文的内容</center>
+
+<p>为了公钥传输的信赖性问题，第三方机构应运而生——证书颁发机构（CA，Certificate Authority）。CA 默认是受信任的第三方。CA 会给各个服务器颁发证书，证书存储在服务器上，并附有 CA 的<strong>电子签名</strong></p>
+<ol>
+<li>client 向 server 发送 HTTPS 请求时</li>
+<li>获取目标服务器的证书，并验证合法性</li>
+<li>证书内存在 server 的公钥</li>
+</ol>
+<h4 id="如何生成数字签名"><a href="#如何生成数字签名" class="headerlink" title="如何生成数字签名"></a>如何生成数字签名</h4><ul>
+<li>CA 使用<strong>散列</strong>技术生成一个<strong>摘要</strong>，并使用 CA 的密钥对<strong>摘要</strong>进行加密，然后将证书发给 server</li>
+<li>server 将证书发给 client 时，client 向 CA 获取加密摘要所用的公钥，并自己计算摘要，与 CA 解密出来的摘要进行比对。</li>
+<li>如果相同，则成功</li>
+</ul>
+<img lazyload src="/images/loading.svg" data-src="计网.assets/image-20220313151431722.png" alt="image-20220313151431722" style="zoom:50%;">
+
+<center>CA 数字签名的详细验证过程</center>
+
+<p>总结：通过引入第三方机构 CA 对 server 的公钥进行验证。</p>
+<img lazyload src="/images/loading.svg" data-src="计网.assets/image-20220313151635199.png" alt="image-20220313151635199" style="zoom: 33%;">
+
+<center>CA 的认证过程</center>
+
+<ul>
+<li>HTTP 协议运行在 TCP 之上，所有传输的内容都是明文，客户端和服务器端都无法验证对方的身份。</li>
+<li>HTTPS 是运行在 SSL&#x2F;TLS 之上的 HTTP 协议，SSL&#x2F;TLS 运行在 TCP 之上。所有传输的内容都经过加密，加密采用<strong>对称加密</strong>，但<strong>对称加密的密钥用服务器方的证书进行了非对称加密</strong>。所以说，HTTP 安全性没有 HTTPS 高，但是 HTTPS 比 HTTP 耗费更多服务器资源。</li>
+</ul>
+<h3 id="HTTPS-的工作流程"><a href="#HTTPS-的工作流程" class="headerlink" title="HTTPS 的工作流程"></a>HTTPS 的工作流程</h3><ul>
+<li>client 向 server 发起 HTTPS 请求</li>
+<li>server 将数字证书发送给 client</li>
+<li>client 校正数字证书的合法性，如果不通过产生 HTTPS 警告信息</li>
+<li>client <strong>通过公钥对对称加密要使用的 key 进行加密</strong>，发送给客户端</li>
+<li>server 通过密钥解密对称加密要使用的 key</li>
+<li>client 和 server 进行对称加密传输</li>
+</ul>
+<p>为什么不适用非对称加密？</p>
+<ul>
+<li>资源消耗远大于对称加密</li>
+</ul>
+<img lazyload src="/images/loading.svg" data-src="计网.assets/image-20220314172756595.png" alt="image-20220314172756595" style="zoom: 33%;">
+
+
+
+
+
+<h1 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h1><h2 id="TCP-报文格式"><a href="#TCP-报文格式" class="headerlink" title="TCP 报文格式"></a>TCP 报文格式</h2><ol>
+<li><p>序号 &amp;&amp; 确认号 (32 位)</p>
+<p>TCP 的 ACK 并不是立即发出的，因为 TCP 会采取累计确认的方式，一旦延迟期间后面的数据包也来了，就可以直接发送最新的 ACK，提高效率</p>
+</li>
+<li><p>首部长度 (4 位)</p>
+<p>一个单位表示 4 字节，最长是 64 字节</p>
+</li>
+<li><p>窗口大小 (16 位)</p>
+<p>用于流量控制，设置 cwnd</p>
+</li>
+<li><p>TCP 校验和 (16 位)</p>
+</li>
+</ol>
+<h2 id="拥塞控制-amp-流量控制"><a href="#拥塞控制-amp-流量控制" class="headerlink" title="拥塞控制 &amp; 流量控制"></a>拥塞控制 &amp; 流量控制</h2><h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><p>通过拥塞窗口实现</p>
+<p>TCP 维持一个 cwnd 和一个门限值</p>
+<ul>
+<li>慢开始</li>
+<li>拥塞避免</li>
+<li>快重传</li>
+<li>快恢复</li>
+</ul>
+<h3 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h3><p>通过滑动窗口来实现</p>
+<ul>
+<li>发送方维持一个 rwnd，接收方可以通过 TCP 报文来控制 rwnd</li>
+</ul>
+<h3 id="拥塞控制和流量控制的区别"><a href="#拥塞控制和流量控制的区别" class="headerlink" title="拥塞控制和流量控制的区别"></a>拥塞控制和流量控制的区别</h3><ul>
+<li>流量控制解决的是发送方和接收方<strong>速率不匹配</strong></li>
+<li>拥塞控制解决的是<strong>避免网络资源被耗尽</strong>的问题，全局性。</li>
+</ul>
+<h2 id="差错控制"><a href="#差错控制" class="headerlink" title="差错控制"></a>差错控制</h2><p>通过 TCP 校验和实现，如果发现错误，则不发送 ACK，等待重传。</p>
+<blockquote>
+<p>应用层可以使用更强力的手段，例如 CRC</p>
+</blockquote>
+<h2 id="TCP-粘包、拆包"><a href="#TCP-粘包、拆包" class="headerlink" title="TCP 粘包、拆包"></a>TCP 粘包、拆包</h2><p>发生的原因：</p>
+<ul>
+<li>要发送的数据大于或小于 TCP 发送缓冲区剩余空间大小</li>
+<li>待发送的数据大于 MSS</li>
+</ul>
+<p>解决方式：</p>
+<ul>
+<li>给每个数据包添加包首部，包含数据包的长度</li>
+<li>在数据包之间设置边界，添加特殊字符等</li>
+<li>设置消息定长</li>
+</ul>
+<h2 id="TCP-三次握手和四次挥手"><a href="#TCP-三次握手和四次挥手" class="headerlink" title="TCP 三次握手和四次挥手"></a>TCP 三次握手和四次挥手</h2><img lazyload src="/images/loading.svg" data-src="计网.assets/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA4oCNb09vT29Pb29PTw==,size_20,color_FFFFFF,t_70,g_se,x_16.png" alt="img" style="zoom:50%;">
+
+<h2 id="TCP-与-UDP-的区别"><a href="#TCP-与-UDP-的区别" class="headerlink" title="TCP 与 UDP 的区别"></a>TCP 与 UDP 的区别</h2><table>
+<thead>
+<tr>
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>面向连接，提供可靠交付</td>
+<td>无连接，尽最大努力交付</td>
+</tr>
+<tr>
+<td>面向字节流</td>
+<td>面向报文</td>
+</tr>
+<tr>
+<td>一对一</td>
+<td>一对多、一对一、多对一、多对多</td>
+</tr>
+<tr>
+<td>有拥塞控制、流量控制</td>
+<td>首部开销小</td>
+</tr>
+</tbody></table>
+<p>TCP：FTP、HTTP、HTTPS、SSH、SMTP、Telnet</p>
+<p>UDP：DNS、DHCP、TFTP</p>
+]]></content>
+  </entry>
+</search>
