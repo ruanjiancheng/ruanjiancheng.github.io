@@ -1,319 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>字节跳动面经</title>
-    <url>/2022/04/09/ByteDance-1/</url>
-    <content><![CDATA[<h1 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h1><p>3月15日，50 min</p>
-<ul>
-<li>自我介绍</li>
-</ul>
-<hr>
-<p>项目相关：</p>
-<ul>
-<li><code>redis</code> 为什么快</li>
-<li><code>redis</code> IO 多路复用</li>
-<li><code>redis</code> 的数据一致性</li>
-<li><code>mysql</code> 中密码如何存储</li>
-<li><code>mysql</code> 表的结构</li>
-<li><code>HTTP</code> 的 GET 和 POST 的区别</li>
-<li><code>HTTP</code> 的流程， <code>HTTP</code> 缓存</li>
-<li><code>HTTP</code> 状态码</li>
-<li><code>HTTP</code> 请求、响应报文格式</li>
-<li><code>RESTful</code> 风格开发的好处</li>
-</ul>
-<hr>
-<p>基础知识：</p>
-<ul>
-<li>设计模式</li>
-<li>C++ 代码编译过程</li>
-<li>深拷贝浅拷贝</li>
-<li>栈和堆是什么</li>
-</ul>
-<hr>
-<p>算法题：</p>
-<ol>
-<li>链表倒置，时间复杂度<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="4.844ex" height="2.262ex" role="img" focusable="false" viewbox="0 -750 2141 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="mi" transform="translate(1152,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mo" transform="translate(1752,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container>，空间复杂度 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="4.618ex" height="2.262ex" role="img" focusable="false" viewbox="0 -750 2041 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="mn" transform="translate(1152,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/></g><g data-mml-node="mo" transform="translate(1652,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></li>
-<li>最长公共子串，时间复杂度<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewbox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container>，空间复杂度 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewbox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></li>
-</ol>
-<hr>
-<p>反问：</p>
-<ol>
-<li>部门业务</li>
-<li>使用的语言</li>
-</ol>
-<p>第三天约二面</p>
-<h1 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h1><p>本来是 20 号的二面，结果面试官鸽了。</p>
-<p>3月23日，70 min</p>
-<ul>
-<li>自我介绍</li>
-<li>能实习多久</li>
-<li>会什么语言</li>
-</ul>
-<hr>
-<p>项目相关：</p>
-<ul>
-<li><code>redis</code> 的数据一致性，面试官一直不懂我的操作（雾）</li>
-<li><code>redis</code> 的基础数据结构</li>
-<li>对 <code>redis</code> 的理解，面试官嫌我数据库太菜了，就没有问我 <code>mysql</code> 了</li>
-</ul>
-<hr>
-<p>基础知识：</p>
-<ul>
-<li>堆排序（给他把十大排序讲了一遍）</li>
-</ul>
-<hr>
-<p>算法题：</p>
-<ul>
-<li>编辑距离，时间复杂度<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewbox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container>，空间复杂度 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewbox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></li>
-</ul>
-<hr>
-<p>反问：</p>
-<ul>
-<li>一般优化性能是重构代码降低复杂度，还是多加几台服务器</li>
-</ul>
-<p>10 min 后约三面</p>
-<h1 id="hr-面"><a href="#hr-面" class="headerlink" title="hr 面"></a>hr 面</h1><p>3月28日，10 min</p>
-<p><img src="/2022/04/09/ByteDance-1/image-20220409140426049.jpg" alt="image-20220409140426049"></p>
-<p><img src="/2022/04/09/ByteDance-1/image-20220409140616659.jpg" alt="image-20220409140616659"></p>
-]]></content>
-      <tags>
-        <tag>日常</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>compute network</title>
-    <url>/2022/04/07/compute-network/</url>
-    <content><![CDATA[<h1 id="HTTP-专题"><a href="#HTTP-专题" class="headerlink" title="HTTP 专题"></a>HTTP 专题</h1><ol>
-<li>HTTP 报文</li>
-<li>GET 和 POST 方法</li>
-<li>Cookie 和 Session</li>
-<li>HTTP 缓存</li>
-<li>HTTPS</li>
-</ol>
-<h2 id="HTTP-报文"><a href="#HTTP-报文" class="headerlink" title="HTTP 报文"></a>HTTP 报文</h2><h3 id="HTTP-请求报文"><a href="#HTTP-请求报文" class="headerlink" title="HTTP 请求报文"></a>HTTP 请求报文</h3><ul>
-<li>请求行<ul>
-<li>请求方法</li>
-<li>HTTP 版本</li>
-<li>URL</li>
-</ul>
-</li>
-<li>首部行<ul>
-<li>Connection 表示要不要持续链接</li>
-<li>Accept-language 表示希望收到的语言版本</li>
-</ul>
-</li>
-<li>空行</li>
-<li>请求体：供 POST 方法使用</li>
-</ul>
-<h3 id="HTTP-响应报文"><a href="#HTTP-响应报文" class="headerlink" title="HTTP 响应报文"></a>HTTP 响应报文</h3><ul>
-<li>响应行<ul>
-<li>HTTP 版本</li>
-<li>状态码：<a class="link" href="https://github.com/TieMuZhen/Blog/issues/87">HTTP 常见的状态码和适用场景<i class="fas fa-external-link-alt"></i></a></li>
-<li>响应状态信息描述</li>
-</ul>
-</li>
-<li>首部行</li>
-<li>空行</li>
-<li>响应体</li>
-</ul>
-<h2 id="GET-和-POST-方法的区别"><a href="#GET-和-POST-方法的区别" class="headerlink" title="GET 和 POST 方法的区别"></a>GET 和 POST 方法的区别</h2><ul>
-<li>GET 方法把参数包含在 URL 中，POST 通过 Request Body 传递参数</li>
-<li>GET 方法比 POST 方法更快<ul>
-<li>POST 请求包含更多的首部行</li>
-<li><strong>POST 先将请求头发送给服务器进行确认，然后才真正发送数据</strong></li>
-</ul>
-</li>
-<li>GET 会将数据缓存起来</li>
-</ul>
-<blockquote>
-<p>总结</p>
-</blockquote>
-<ul>
-<li>POST 更安全，不会作为 URL 的一部分，不会被缓存。</li>
-<li>POST 发送的数据更大，GET 有 URL 长度限制</li>
-<li>POST 能发送跟多的数据类型，GET 只能发送 ASCII 字符</li>
-<li>POST 比 GET 慢</li>
-<li>POST 一般用于修改和写入数据，GET 一般用于搜索排序和筛选</li>
-</ul>
-<h2 id="Cookie-和-Session"><a href="#Cookie-和-Session" class="headerlink" title="Cookie 和 Session"></a>Cookie 和 Session</h2><ul>
-<li>Cookie</li>
-<li>Session</li>
-<li>Cookie 和 Session 的联系</li>
-<li>Cookie 和 Session 的区别</li>
-</ul>
-<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p>问题：Web 站点希望能够识别用户，来对用户进行专门化服务，就生成一个唯一 ID，作为<strong>索引</strong>在数据库中产生表项。</p>
-<p>服务器通过一个包含 Set-cookie 首部行的 HTTP 响应报文进行响应。</p>
-<ul>
-<li>如果没有设置 Cookie 失效日期，他们仅保存在浏览器会话期间</li>
-<li>大多数浏览器支持的 Cookie 最大存储的数据量是 <code>4K</code>，因此不用来保存大数据</li>
-<li>Cookie 以明文的方式存储，并不安全</li>
-<li>Cookie 是不跨域名的</li>
-</ul>
-<h4 id="Cookie-的修改和删除"><a href="#Cookie-的修改和删除" class="headerlink" title="Cookie 的修改和删除"></a>Cookie 的修改和删除</h4><p>Cookie <strong>并不提供修改和删除</strong></p>
-<ul>
-<li>如果想要<strong>修改</strong>，需要服务器在 HTTP 响应报文中返回一个<strong>同名</strong>的 Cookie</li>
-<li>如果想要<strong>删除</strong>，只需要返回一个同名的 Cookie，并发 maxAge 设置为 0</li>
-</ul>
-<blockquote>
-<p>注意：返回同名 Cookie 的时候，需要除 maxAge，value 之外的全部信息都和原 Cookie 相同</p>
-</blockquote>
-<h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><p>client 访问 server 的时候，server 将 client 信息记录在 server 上面，这就是 session。</p>
-<p>用户和服务器建立连接的时候，服务器会为其分配一个 SessionId</p>
-<blockquote>
-<p>Session 的生命周期</p>
-</blockquote>
-<ul>
-<li>Session 在用户的第一次访问服务器的时候创建，只访问静态资源并不会创建 Session</li>
-<li>server 会将长时间没有活动的 Session 从服务器内存中清除，此时 Session 便失效。Tomcat 的默认失效时间为 30 min</li>
-<li>计时从 Session 未被访问的时候开始算起</li>
-</ul>
-<h3 id="Session-和-Cookie-的联系"><a href="#Session-和-Cookie-的联系" class="headerlink" title="Session 和 Cookie 的联系"></a>Session 和 Cookie 的联系</h3><p>Session 需要通过 Cookie 实现，服务器要向 client 发送一个 JSESSIONID 的 Cookie，它的值就是该 Session 的 id，Session 依据此 Cookie 来识别是否为同一用户</p>
-<ul>
-<li>该 Cookie 是服务器自动生成的，maxAge 一般为 <code>-1</code>，也就是关闭浏览器就会失效。</li>
-<li>因此同一计算机的两个浏览器窗口访问服务器时会生成两个不同的 Session ，但是由子窗口会共享父窗口的 Cookie ，共享一个 Session</li>
-</ul>
-<h3 id="Cookie-和-Session-的区别"><a href="#Cookie-和-Session-的区别" class="headerlink" title="Cookie 和 Session 的区别"></a>Cookie 和 Session 的区别</h3><ul>
-<li>存储位置</li>
-<li>安全性</li>
-<li>对服务器的影响</li>
-<li>数据大小：Cookie 保存的数据最多不超过 <code>4k</code> ，一般浏览器限制一个站点最多保存 20 个 Cookie</li>
-</ul>
-<h2 id="HTTP-缓存"><a href="#HTTP-缓存" class="headerlink" title="HTTP 缓存"></a>HTTP 缓存</h2><p>一般只用于 GET 请求</p>
-<img src="/2022/04/07/compute-network/edfb851e-fa61-4386-9c10-bf2105f55331-12785011.jpg" alt="img" style="zoom:50%;">
-
-<center>HTTP 缓存流程图</center>
-
-<h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><ul>
-<li>引入 CA 使用数字证书来<strong>保证公钥的合法性</strong>，避免了中间人攻击。</li>
-<li>使用<strong>非对称加密</strong>来约定<strong>对称加密</strong>要使用的 key</li>
-<li><strong>信息传递过程</strong>使用<strong>对称加密</strong>来实现</li>
-</ul>
-<h3 id="HTTPS-的核心-SSL-x2F-TLS-协议的工作原理"><a href="#HTTPS-的核心-SSL-x2F-TLS-协议的工作原理" class="headerlink" title="HTTPS 的核心 SSL&#x2F;TLS 协议的工作原理"></a>HTTPS 的核心 SSL&#x2F;TLS 协议的工作原理</h3><ul>
-<li>对称加密：如何约定密钥在计算机网络中存在问题，性能高很多</li>
-<li>非对称加密：<strong>可以使用公钥模拟用户发送信息，也存在问题</strong>，</li>
-</ul>
-<h4 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h4><p><strong>解决：第三方仿照 server 给 client 发送自己的公钥，并且中间截获的问题</strong></p>
-<img src="/2022/04/07/compute-network/attack1.cfda3eb1.png" alt="img" style="zoom: 80%;">
-
-<center>中间人攻击，server 根本看不懂密文的内容</center>
-
-<p>为了公钥传输的信赖性问题，第三方机构应运而生——证书颁发机构（CA，Certificate Authority）。CA 默认是受信任的第三方。CA 会给各个服务器颁发证书，证书存储在服务器上，并附有 CA 的<strong>电子签名</strong></p>
-<ol>
-<li>client 向 server 发送 HTTPS 请求时</li>
-<li>获取目标服务器的证书，并验证合法性</li>
-<li>证书内存在 server 的公钥</li>
-</ol>
-<h4 id="如何生成数字签名"><a href="#如何生成数字签名" class="headerlink" title="如何生成数字签名"></a>如何生成数字签名</h4><ul>
-<li>CA 使用<strong>散列</strong>技术生成一个<strong>摘要</strong>，并使用 CA 的密钥对<strong>摘要</strong>进行加密，然后将证书发给 server</li>
-<li>server 将证书发给 client 时，client 向 CA 获取加密摘要所用的公钥，并自己计算摘要，与 CA 解密出来的摘要进行比对。</li>
-<li>如果相同，则成功</li>
-</ul>
-<img src="/2022/04/07/compute-network/image-20220313151431722.png" alt="image-20220313151431722" style="zoom:50%;">
-
-<center>CA 数字签名的详细验证过程</center>
-
-<p>总结：通过引入第三方机构 CA 对 server 的公钥进行验证。</p>
-<img src="/2022/04/07/compute-network/image-20220313151635199.png" alt="image-20220313151635199" style="zoom: 33%;">
-
-<center>CA 的认证过程</center>
-
-<ul>
-<li>HTTP 协议运行在 TCP 之上，所有传输的内容都是明文，客户端和服务器端都无法验证对方的身份。</li>
-<li>HTTPS 是运行在 SSL&#x2F;TLS 之上的 HTTP 协议，SSL&#x2F;TLS 运行在 TCP 之上。所有传输的内容都经过加密，加密采用<strong>对称加密</strong>，但<strong>对称加密的密钥用服务器方的证书进行了非对称加密</strong>。所以说，HTTP 安全性没有 HTTPS 高，但是 HTTPS 比 HTTP 耗费更多服务器资源。</li>
-</ul>
-<h3 id="HTTPS-的工作流程"><a href="#HTTPS-的工作流程" class="headerlink" title="HTTPS 的工作流程"></a>HTTPS 的工作流程</h3><ul>
-<li>client 向 server 发起 HTTPS 请求</li>
-<li>server 将数字证书发送给 client</li>
-<li>client 校正数字证书的合法性，如果不通过产生 HTTPS 警告信息</li>
-<li>client <strong>通过公钥对对称加密要使用的 key 进行加密</strong>，发送给客户端</li>
-<li>server 通过密钥解密对称加密要使用的 key</li>
-<li>client 和 server 进行对称加密传输</li>
-</ul>
-<p>为什么不适用非对称加密？</p>
-<ul>
-<li>资源消耗远大于对称加密</li>
-</ul>
-<img src="/2022/04/07/compute-network/image-20220314172756595.png" alt="image-20220314172756595" style="zoom: 33%;">
-
-
-
-
-
-<h1 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h1><h2 id="TCP-报文格式"><a href="#TCP-报文格式" class="headerlink" title="TCP 报文格式"></a>TCP 报文格式</h2><ol>
-<li><p>序号 &amp;&amp; 确认号 (32 位)</p>
-<p>TCP 的 ACK 并不是立即发出的，因为 TCP 会采取累计确认的方式，一旦延迟期间后面的数据包也来了，就可以直接发送最新的 ACK，提高效率</p>
-</li>
-<li><p>首部长度 (4 位)</p>
-<p>一个单位表示 4 字节，最长是 64 字节</p>
-</li>
-<li><p>窗口大小 (16 位)</p>
-<p>用于流量控制，设置 cwnd</p>
-</li>
-<li><p>TCP 校验和 (16 位)</p>
-</li>
-</ol>
-<h2 id="拥塞控制-amp-流量控制"><a href="#拥塞控制-amp-流量控制" class="headerlink" title="拥塞控制 &amp; 流量控制"></a>拥塞控制 &amp; 流量控制</h2><h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><p>通过拥塞窗口实现</p>
-<p>TCP 维持一个 cwnd 和一个门限值</p>
-<ul>
-<li>慢开始</li>
-<li>拥塞避免</li>
-<li>快重传</li>
-<li>快恢复</li>
-</ul>
-<h3 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h3><p>通过滑动窗口来实现</p>
-<ul>
-<li>发送方维持一个 rwnd，接收方可以通过 TCP 报文来控制 rwnd</li>
-</ul>
-<h3 id="拥塞控制和流量控制的区别"><a href="#拥塞控制和流量控制的区别" class="headerlink" title="拥塞控制和流量控制的区别"></a>拥塞控制和流量控制的区别</h3><ul>
-<li>流量控制解决的是发送方和接收方<strong>速率不匹配</strong></li>
-<li>拥塞控制解决的是<strong>避免网络资源被耗尽</strong>的问题，全局性。</li>
-</ul>
-<h2 id="差错控制"><a href="#差错控制" class="headerlink" title="差错控制"></a>差错控制</h2><p>通过 TCP 校验和实现，如果发现错误，则不发送 ACK，等待重传。</p>
-<blockquote>
-<p>应用层可以使用更强力的手段，例如 CRC</p>
-</blockquote>
-<h2 id="TCP-粘包、拆包"><a href="#TCP-粘包、拆包" class="headerlink" title="TCP 粘包、拆包"></a>TCP 粘包、拆包</h2><p>发生的原因：</p>
-<ul>
-<li>要发送的数据大于或小于 TCP 发送缓冲区剩余空间大小</li>
-<li>待发送的数据大于 MSS</li>
-</ul>
-<p>解决方式：</p>
-<ul>
-<li>给每个数据包添加包首部，包含数据包的长度</li>
-<li>在数据包之间设置边界，添加特殊字符等</li>
-<li>设置消息定长</li>
-</ul>
-<h2 id="TCP-三次握手和四次挥手"><a href="#TCP-三次握手和四次挥手" class="headerlink" title="TCP 三次握手和四次挥手"></a>TCP 三次握手和四次挥手</h2><img src="/2022/04/07/compute-network/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA4oCNb09vT29Pb29PTw==,size_20,color_FFFFFF,t_70,g_se,x_16.png" alt="img" style="zoom:50%;">
-
-<h2 id="TCP-与-UDP-的区别"><a href="#TCP-与-UDP-的区别" class="headerlink" title="TCP 与 UDP 的区别"></a>TCP 与 UDP 的区别</h2><table>
-<thead>
-<tr>
-<th>TCP</th>
-<th>UDP</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>面向连接，提供可靠交付</td>
-<td>无连接，尽最大努力交付</td>
-</tr>
-<tr>
-<td>面向字节流</td>
-<td>面向报文</td>
-</tr>
-<tr>
-<td>一对一</td>
-<td>一对多、一对一、多对一、多对多</td>
-</tr>
-<tr>
-<td>有拥塞控制、流量控制</td>
-<td>首部开销小</td>
-</tr>
-</tbody></table>
-<p>TCP：FTP、HTTP、HTTPS、SSH、SMTP、Telnet</p>
-<p>UDP：DNS、DHCP、TFTP</p>
-]]></content>
-  </entry>
-  <entry>
     <title>cmake</title>
     <url>/2022/04/07/cmake/</url>
     <content><![CDATA[<h1 id="linux-简介"><a href="#linux-简介" class="headerlink" title="linux 简介"></a>linux 简介</h1><h2 id="1-1-目录结构"><a href="#1-1-目录结构" class="headerlink" title="1.1 目录结构"></a>1.1 目录结构</h2><ul>
@@ -591,6 +278,318 @@
 ]]></content>
       <tags>
         <tag>cmake</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>compute network</title>
+    <url>/2022/04/07/compute-network/</url>
+    <content><![CDATA[<h1 id="HTTP-专题"><a href="#HTTP-专题" class="headerlink" title="HTTP 专题"></a>HTTP 专题</h1><ol>
+<li>HTTP 报文</li>
+<li>GET 和 POST 方法</li>
+<li>Cookie 和 Session</li>
+<li>HTTP 缓存</li>
+<li>HTTPS</li>
+</ol>
+<h2 id="HTTP-报文"><a href="#HTTP-报文" class="headerlink" title="HTTP 报文"></a>HTTP 报文</h2><h3 id="HTTP-请求报文"><a href="#HTTP-请求报文" class="headerlink" title="HTTP 请求报文"></a>HTTP 请求报文</h3><ul>
+<li>请求行<ul>
+<li>请求方法</li>
+<li>HTTP 版本</li>
+<li>URL</li>
+</ul>
+</li>
+<li>首部行<ul>
+<li>Connection 表示要不要持续链接</li>
+<li>Accept-language 表示希望收到的语言版本</li>
+</ul>
+</li>
+<li>空行</li>
+<li>请求体：供 POST 方法使用</li>
+</ul>
+<h3 id="HTTP-响应报文"><a href="#HTTP-响应报文" class="headerlink" title="HTTP 响应报文"></a>HTTP 响应报文</h3><ul>
+<li>响应行<ul>
+<li>HTTP 版本</li>
+<li>状态码：<a class="link" href="https://github.com/TieMuZhen/Blog/issues/87">HTTP 常见的状态码和适用场景<i class="fas fa-external-link-alt"></i></a></li>
+<li>响应状态信息描述</li>
+</ul>
+</li>
+<li>首部行</li>
+<li>空行</li>
+<li>响应体</li>
+</ul>
+<h2 id="GET-和-POST-方法的区别"><a href="#GET-和-POST-方法的区别" class="headerlink" title="GET 和 POST 方法的区别"></a>GET 和 POST 方法的区别</h2><ul>
+<li>GET 方法把参数包含在 URL 中，POST 通过 Request Body 传递参数</li>
+<li>GET 方法比 POST 方法更快<ul>
+<li>POST 请求包含更多的首部行</li>
+<li><strong>POST 先将请求头发送给服务器进行确认，然后才真正发送数据</strong></li>
+</ul>
+</li>
+<li>GET 会将数据缓存起来</li>
+</ul>
+<blockquote>
+<p>总结</p>
+</blockquote>
+<ul>
+<li>POST 更安全，不会作为 URL 的一部分，不会被缓存。</li>
+<li>POST 发送的数据更大，GET 有 URL 长度限制</li>
+<li>POST 能发送跟多的数据类型，GET 只能发送 ASCII 字符</li>
+<li>POST 比 GET 慢</li>
+<li>POST 一般用于修改和写入数据，GET 一般用于搜索排序和筛选</li>
+</ul>
+<h2 id="Cookie-和-Session"><a href="#Cookie-和-Session" class="headerlink" title="Cookie 和 Session"></a>Cookie 和 Session</h2><ul>
+<li>Cookie</li>
+<li>Session</li>
+<li>Cookie 和 Session 的联系</li>
+<li>Cookie 和 Session 的区别</li>
+</ul>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p>问题：Web 站点希望能够识别用户，来对用户进行专门化服务，就生成一个唯一 ID，作为<strong>索引</strong>在数据库中产生表项。</p>
+<p>服务器通过一个包含 Set-cookie 首部行的 HTTP 响应报文进行响应。</p>
+<ul>
+<li>如果没有设置 Cookie 失效日期，他们仅保存在浏览器会话期间</li>
+<li>大多数浏览器支持的 Cookie 最大存储的数据量是 <code>4K</code>，因此不用来保存大数据</li>
+<li>Cookie 以明文的方式存储，并不安全</li>
+<li>Cookie 是不跨域名的</li>
+</ul>
+<h4 id="Cookie-的修改和删除"><a href="#Cookie-的修改和删除" class="headerlink" title="Cookie 的修改和删除"></a>Cookie 的修改和删除</h4><p>Cookie <strong>并不提供修改和删除</strong></p>
+<ul>
+<li>如果想要<strong>修改</strong>，需要服务器在 HTTP 响应报文中返回一个<strong>同名</strong>的 Cookie</li>
+<li>如果想要<strong>删除</strong>，只需要返回一个同名的 Cookie，并发 maxAge 设置为 0</li>
+</ul>
+<blockquote>
+<p>注意：返回同名 Cookie 的时候，需要除 maxAge，value 之外的全部信息都和原 Cookie 相同</p>
+</blockquote>
+<h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><p>client 访问 server 的时候，server 将 client 信息记录在 server 上面，这就是 session。</p>
+<p>用户和服务器建立连接的时候，服务器会为其分配一个 SessionId</p>
+<blockquote>
+<p>Session 的生命周期</p>
+</blockquote>
+<ul>
+<li>Session 在用户的第一次访问服务器的时候创建，只访问静态资源并不会创建 Session</li>
+<li>server 会将长时间没有活动的 Session 从服务器内存中清除，此时 Session 便失效。Tomcat 的默认失效时间为 30 min</li>
+<li>计时从 Session 未被访问的时候开始算起</li>
+</ul>
+<h3 id="Session-和-Cookie-的联系"><a href="#Session-和-Cookie-的联系" class="headerlink" title="Session 和 Cookie 的联系"></a>Session 和 Cookie 的联系</h3><p>Session 需要通过 Cookie 实现，服务器要向 client 发送一个 JSESSIONID 的 Cookie，它的值就是该 Session 的 id，Session 依据此 Cookie 来识别是否为同一用户</p>
+<ul>
+<li>该 Cookie 是服务器自动生成的，maxAge 一般为 <code>-1</code>，也就是关闭浏览器就会失效。</li>
+<li>因此同一计算机的两个浏览器窗口访问服务器时会生成两个不同的 Session ，但是由子窗口会共享父窗口的 Cookie ，共享一个 Session</li>
+</ul>
+<h3 id="Cookie-和-Session-的区别"><a href="#Cookie-和-Session-的区别" class="headerlink" title="Cookie 和 Session 的区别"></a>Cookie 和 Session 的区别</h3><ul>
+<li>存储位置</li>
+<li>安全性</li>
+<li>对服务器的影响</li>
+<li>数据大小：Cookie 保存的数据最多不超过 <code>4k</code> ，一般浏览器限制一个站点最多保存 20 个 Cookie</li>
+</ul>
+<h2 id="HTTP-缓存"><a href="#HTTP-缓存" class="headerlink" title="HTTP 缓存"></a>HTTP 缓存</h2><p>一般只用于 GET 请求</p>
+<img src="/2022/04/07/compute-network/edfb851e-fa61-4386-9c10-bf2105f55331-12785011.jpg" alt="img" style="zoom:50%;">
+
+<center>HTTP 缓存流程图</center>
+
+<h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><ul>
+<li>引入 CA 使用数字证书来<strong>保证公钥的合法性</strong>，避免了中间人攻击。</li>
+<li>使用<strong>非对称加密</strong>来约定<strong>对称加密</strong>要使用的 key</li>
+<li><strong>信息传递过程</strong>使用<strong>对称加密</strong>来实现</li>
+</ul>
+<h3 id="HTTPS-的核心-SSL-x2F-TLS-协议的工作原理"><a href="#HTTPS-的核心-SSL-x2F-TLS-协议的工作原理" class="headerlink" title="HTTPS 的核心 SSL&#x2F;TLS 协议的工作原理"></a>HTTPS 的核心 SSL&#x2F;TLS 协议的工作原理</h3><ul>
+<li>对称加密：如何约定密钥在计算机网络中存在问题，性能高很多</li>
+<li>非对称加密：<strong>可以使用公钥模拟用户发送信息，也存在问题</strong>，</li>
+</ul>
+<h4 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h4><p><strong>解决：第三方仿照 server 给 client 发送自己的公钥，并且中间截获的问题</strong></p>
+<img src="/2022/04/07/compute-network/attack1.cfda3eb1.png" alt="img" style="zoom: 80%;">
+
+<center>中间人攻击，server 根本看不懂密文的内容</center>
+
+<p>为了公钥传输的信赖性问题，第三方机构应运而生——证书颁发机构（CA，Certificate Authority）。CA 默认是受信任的第三方。CA 会给各个服务器颁发证书，证书存储在服务器上，并附有 CA 的<strong>电子签名</strong></p>
+<ol>
+<li>client 向 server 发送 HTTPS 请求时</li>
+<li>获取目标服务器的证书，并验证合法性</li>
+<li>证书内存在 server 的公钥</li>
+</ol>
+<h4 id="如何生成数字签名"><a href="#如何生成数字签名" class="headerlink" title="如何生成数字签名"></a>如何生成数字签名</h4><ul>
+<li>CA 使用<strong>散列</strong>技术生成一个<strong>摘要</strong>，并使用 CA 的密钥对<strong>摘要</strong>进行加密，然后将证书发给 server</li>
+<li>server 将证书发给 client 时，client 向 CA 获取加密摘要所用的公钥，并自己计算摘要，与 CA 解密出来的摘要进行比对。</li>
+<li>如果相同，则成功</li>
+</ul>
+<img src="/2022/04/07/compute-network/image-20220313151431722.png" alt="image-20220313151431722" style="zoom:50%;">
+
+<center>CA 数字签名的详细验证过程</center>
+
+<p>总结：通过引入第三方机构 CA 对 server 的公钥进行验证。</p>
+<img src="/2022/04/07/compute-network/image-20220313151635199.png" alt="image-20220313151635199" style="zoom: 33%;">
+
+<center>CA 的认证过程</center>
+
+<ul>
+<li>HTTP 协议运行在 TCP 之上，所有传输的内容都是明文，客户端和服务器端都无法验证对方的身份。</li>
+<li>HTTPS 是运行在 SSL&#x2F;TLS 之上的 HTTP 协议，SSL&#x2F;TLS 运行在 TCP 之上。所有传输的内容都经过加密，加密采用<strong>对称加密</strong>，但<strong>对称加密的密钥用服务器方的证书进行了非对称加密</strong>。所以说，HTTP 安全性没有 HTTPS 高，但是 HTTPS 比 HTTP 耗费更多服务器资源。</li>
+</ul>
+<h3 id="HTTPS-的工作流程"><a href="#HTTPS-的工作流程" class="headerlink" title="HTTPS 的工作流程"></a>HTTPS 的工作流程</h3><ul>
+<li>client 向 server 发起 HTTPS 请求</li>
+<li>server 将数字证书发送给 client</li>
+<li>client 校正数字证书的合法性，如果不通过产生 HTTPS 警告信息</li>
+<li>client <strong>通过公钥对对称加密要使用的 key 进行加密</strong>，发送给客户端</li>
+<li>server 通过密钥解密对称加密要使用的 key</li>
+<li>client 和 server 进行对称加密传输</li>
+</ul>
+<p>为什么不适用非对称加密？</p>
+<ul>
+<li>资源消耗远大于对称加密</li>
+</ul>
+<img src="/2022/04/07/compute-network/image-20220314172756595.png" alt="image-20220314172756595" style="zoom: 33%;">
+
+
+
+
+
+<h1 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h1><h2 id="TCP-报文格式"><a href="#TCP-报文格式" class="headerlink" title="TCP 报文格式"></a>TCP 报文格式</h2><ol>
+<li><p>序号 &amp;&amp; 确认号 (32 位)</p>
+<p>TCP 的 ACK 并不是立即发出的，因为 TCP 会采取累计确认的方式，一旦延迟期间后面的数据包也来了，就可以直接发送最新的 ACK，提高效率</p>
+</li>
+<li><p>首部长度 (4 位)</p>
+<p>一个单位表示 4 字节，最长是 64 字节</p>
+</li>
+<li><p>窗口大小 (16 位)</p>
+<p>用于流量控制，设置 cwnd</p>
+</li>
+<li><p>TCP 校验和 (16 位)</p>
+</li>
+</ol>
+<h2 id="拥塞控制-amp-流量控制"><a href="#拥塞控制-amp-流量控制" class="headerlink" title="拥塞控制 &amp; 流量控制"></a>拥塞控制 &amp; 流量控制</h2><h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><p>通过拥塞窗口实现</p>
+<p>TCP 维持一个 cwnd 和一个门限值</p>
+<ul>
+<li>慢开始</li>
+<li>拥塞避免</li>
+<li>快重传</li>
+<li>快恢复</li>
+</ul>
+<h3 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h3><p>通过滑动窗口来实现</p>
+<ul>
+<li>发送方维持一个 rwnd，接收方可以通过 TCP 报文来控制 rwnd</li>
+</ul>
+<h3 id="拥塞控制和流量控制的区别"><a href="#拥塞控制和流量控制的区别" class="headerlink" title="拥塞控制和流量控制的区别"></a>拥塞控制和流量控制的区别</h3><ul>
+<li>流量控制解决的是发送方和接收方<strong>速率不匹配</strong></li>
+<li>拥塞控制解决的是<strong>避免网络资源被耗尽</strong>的问题，全局性。</li>
+</ul>
+<h2 id="差错控制"><a href="#差错控制" class="headerlink" title="差错控制"></a>差错控制</h2><p>通过 TCP 校验和实现，如果发现错误，则不发送 ACK，等待重传。</p>
+<blockquote>
+<p>应用层可以使用更强力的手段，例如 CRC</p>
+</blockquote>
+<h2 id="TCP-粘包、拆包"><a href="#TCP-粘包、拆包" class="headerlink" title="TCP 粘包、拆包"></a>TCP 粘包、拆包</h2><p>发生的原因：</p>
+<ul>
+<li>要发送的数据大于或小于 TCP 发送缓冲区剩余空间大小</li>
+<li>待发送的数据大于 MSS</li>
+</ul>
+<p>解决方式：</p>
+<ul>
+<li>给每个数据包添加包首部，包含数据包的长度</li>
+<li>在数据包之间设置边界，添加特殊字符等</li>
+<li>设置消息定长</li>
+</ul>
+<h2 id="TCP-三次握手和四次挥手"><a href="#TCP-三次握手和四次挥手" class="headerlink" title="TCP 三次握手和四次挥手"></a>TCP 三次握手和四次挥手</h2><img src="/2022/04/07/compute-network/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA4oCNb09vT29Pb29PTw==,size_20,color_FFFFFF,t_70,g_se,x_16.png" alt="img" style="zoom:50%;">
+
+<h2 id="TCP-与-UDP-的区别"><a href="#TCP-与-UDP-的区别" class="headerlink" title="TCP 与 UDP 的区别"></a>TCP 与 UDP 的区别</h2><table>
+<thead>
+<tr>
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>面向连接，提供可靠交付</td>
+<td>无连接，尽最大努力交付</td>
+</tr>
+<tr>
+<td>面向字节流</td>
+<td>面向报文</td>
+</tr>
+<tr>
+<td>一对一</td>
+<td>一对多、一对一、多对一、多对多</td>
+</tr>
+<tr>
+<td>有拥塞控制、流量控制</td>
+<td>首部开销小</td>
+</tr>
+</tbody></table>
+<p>TCP：FTP、HTTP、HTTPS、SSH、SMTP、Telnet</p>
+<p>UDP：DNS、DHCP、TFTP</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>字节跳动面经</title>
+    <url>/2022/04/09/ByteDance-1/</url>
+    <content><![CDATA[<p><img src="/2022/04/09/ByteDance-1/image-20220409140426049.jpg" alt="image-20220409140426049"></p>
+<h1 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h1><p>3月15日，50 min</p>
+<ul>
+<li>自我介绍</li>
+</ul>
+<hr>
+<p>项目相关：</p>
+<ul>
+<li><code>redis</code> 为什么快</li>
+<li><code>redis</code> IO 多路复用</li>
+<li><code>redis</code> 的数据一致性</li>
+<li><code>mysql</code> 中密码如何存储</li>
+<li><code>mysql</code> 表的结构</li>
+<li><code>HTTP</code> 的 GET 和 POST 的区别</li>
+<li><code>HTTP</code> 的流程， <code>HTTP</code> 缓存</li>
+<li><code>HTTP</code> 状态码</li>
+<li><code>HTTP</code> 请求、响应报文格式</li>
+<li><code>RESTful</code> 风格开发的好处</li>
+</ul>
+<hr>
+<p>基础知识：</p>
+<ul>
+<li>设计模式</li>
+<li>C++ 代码编译过程</li>
+<li>深拷贝浅拷贝</li>
+<li>栈和堆是什么</li>
+</ul>
+<hr>
+<p>算法题：</p>
+<ol>
+<li>链表倒置，时间复杂度<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="4.844ex" height="2.262ex" role="img" focusable="false" viewbox="0 -750 2141 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="mi" transform="translate(1152,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mo" transform="translate(1752,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container>，空间复杂度 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="4.618ex" height="2.262ex" role="img" focusable="false" viewbox="0 -750 2041 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="mn" transform="translate(1152,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/></g><g data-mml-node="mo" transform="translate(1652,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></li>
+<li>最长公共子串，时间复杂度<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewbox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container>，空间复杂度 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewbox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></li>
+</ol>
+<hr>
+<p>反问：</p>
+<ol>
+<li>部门业务</li>
+<li>使用的语言</li>
+</ol>
+<p>第三天约二面</p>
+<h1 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h1><p>本来是 20 号的二面，结果面试官鸽了。</p>
+<p>3月23日，70 min</p>
+<ul>
+<li>自我介绍</li>
+<li>能实习多久</li>
+<li>会什么语言</li>
+</ul>
+<hr>
+<p>项目相关：</p>
+<ul>
+<li><code>redis</code> 的数据一致性，面试官一直不懂我的操作（雾）</li>
+<li><code>redis</code> 的基础数据结构</li>
+<li>对 <code>redis</code> 的理解，面试官嫌我数据库太菜了，就没有问我 <code>mysql</code> 了</li>
+</ul>
+<hr>
+<p>基础知识：</p>
+<ul>
+<li>堆排序（给他把十大排序讲了一遍）</li>
+</ul>
+<hr>
+<p>算法题：</p>
+<ul>
+<li>编辑距离，时间复杂度<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewbox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container>，空间复杂度 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewbox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></li>
+</ul>
+<hr>
+<p>反问：</p>
+<ul>
+<li>一般优化性能是重构代码降低复杂度，还是多加几台服务器</li>
+</ul>
+<p>10 min 后约三面</p>
+<h1 id="hr-面"><a href="#hr-面" class="headerlink" title="hr 面"></a>hr 面</h1><p>3月28日，10 min</p>
+]]></content>
+      <tags>
+        <tag>日常</tag>
       </tags>
   </entry>
   <entry>
