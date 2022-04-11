@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>字节跳动面经</title>
+    <url>/2022/04/09/ByteDance-1/</url>
+    <content><![CDATA[<p><img src="/2022/04/09/ByteDance-1/image-20220409140426049.jpg" alt="image-20220409140426049"></p>
+<h1 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h1><p>3月15日，50 min</p>
+<ul>
+<li>自我介绍</li>
+</ul>
+<hr>
+<p>项目相关：</p>
+<ul>
+<li><code>redis</code> 为什么快</li>
+<li><code>redis</code> IO 多路复用</li>
+<li><code>redis</code> 的数据一致性</li>
+<li><code>mysql</code> 中密码如何存储</li>
+<li><code>mysql</code> 表的结构</li>
+<li><code>HTTP</code> 的 GET 和 POST 的区别</li>
+<li><code>HTTP</code> 的流程， <code>HTTP</code> 缓存</li>
+<li><code>HTTP</code> 状态码</li>
+<li><code>HTTP</code> 请求、响应报文格式</li>
+<li><code>RESTful</code> 风格开发的好处</li>
+</ul>
+<hr>
+<p>基础知识：</p>
+<ul>
+<li>设计模式</li>
+<li>C++ 代码编译过程</li>
+<li>深拷贝浅拷贝</li>
+<li>栈和堆是什么</li>
+</ul>
+<hr>
+<p>算法题：</p>
+<ol>
+<li>链表倒置，时间复杂度<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="4.844ex" height="2.262ex" role="img" focusable="false" viewbox="0 -750 2141 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="mi" transform="translate(1152,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mo" transform="translate(1752,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container>，空间复杂度 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="4.618ex" height="2.262ex" role="img" focusable="false" viewbox="0 -750 2041 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="mn" transform="translate(1152,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/></g><g data-mml-node="mo" transform="translate(1652,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></li>
+<li>最长公共子串，时间复杂度<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewbox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container>，空间复杂度 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewbox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></li>
+</ol>
+<hr>
+<p>反问：</p>
+<ol>
+<li>部门业务</li>
+<li>使用的语言</li>
+</ol>
+<p>第三天约二面</p>
+<h1 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h1><p>本来是 20 号的二面，结果面试官鸽了。</p>
+<p>3月23日，70 min</p>
+<ul>
+<li>自我介绍</li>
+<li>能实习多久</li>
+<li>会什么语言</li>
+</ul>
+<hr>
+<p>项目相关：</p>
+<ul>
+<li><code>redis</code> 的数据一致性，面试官一直不懂我的操作（雾）</li>
+<li><code>redis</code> 的基础数据结构</li>
+<li>对 <code>redis</code> 的理解，面试官嫌我数据库太菜了，就没有问我 <code>mysql</code> 了</li>
+</ul>
+<hr>
+<p>基础知识：</p>
+<ul>
+<li>堆排序（给他把十大排序讲了一遍）</li>
+</ul>
+<hr>
+<p>算法题：</p>
+<ul>
+<li>编辑距离，时间复杂度<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewbox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container>，空间复杂度 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewbox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></li>
+</ul>
+<hr>
+<p>反问：</p>
+<ul>
+<li>一般优化性能是重构代码降低复杂度，还是多加几台服务器</li>
+</ul>
+<p>10 min 后约三面</p>
+<h1 id="hr-面"><a href="#hr-面" class="headerlink" title="hr 面"></a>hr 面</h1><p>3月28日，10 min</p>
+]]></content>
+      <tags>
+        <tag>日常</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>cmake</title>
     <url>/2022/04/07/cmake/</url>
     <content><![CDATA[<h1 id="linux-简介"><a href="#linux-简介" class="headerlink" title="linux 简介"></a>linux 简介</h1><h2 id="1-1-目录结构"><a href="#1-1-目录结构" class="headerlink" title="1.1 目录结构"></a>1.1 目录结构</h2><ul>
@@ -278,10 +357,11 @@
 ]]></content>
       <tags>
         <tag>cmake</tag>
+        <tag>技术</tag>
       </tags>
   </entry>
   <entry>
-    <title>compute network</title>
+    <title>计算机网络</title>
     <url>/2022/04/07/compute-network/</url>
     <content><![CDATA[<h1 id="HTTP-专题"><a href="#HTTP-专题" class="headerlink" title="HTTP 专题"></a>HTTP 专题</h1><ol>
 <li>HTTP 报文</li>
@@ -512,105 +592,9 @@
 <p>TCP：FTP、HTTP、HTTPS、SSH、SMTP、Telnet</p>
 <p>UDP：DNS、DHCP、TFTP</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>字节跳动面经</title>
-    <url>/2022/04/09/ByteDance-1/</url>
-    <content><![CDATA[<p><img src="/2022/04/09/ByteDance-1/image-20220409140426049.jpg" alt="image-20220409140426049"></p>
-<h1 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h1><p>3月15日，50 min</p>
-<ul>
-<li>自我介绍</li>
-</ul>
-<hr>
-<p>项目相关：</p>
-<ul>
-<li><code>redis</code> 为什么快</li>
-<li><code>redis</code> IO 多路复用</li>
-<li><code>redis</code> 的数据一致性</li>
-<li><code>mysql</code> 中密码如何存储</li>
-<li><code>mysql</code> 表的结构</li>
-<li><code>HTTP</code> 的 GET 和 POST 的区别</li>
-<li><code>HTTP</code> 的流程， <code>HTTP</code> 缓存</li>
-<li><code>HTTP</code> 状态码</li>
-<li><code>HTTP</code> 请求、响应报文格式</li>
-<li><code>RESTful</code> 风格开发的好处</li>
-</ul>
-<hr>
-<p>基础知识：</p>
-<ul>
-<li>设计模式</li>
-<li>C++ 代码编译过程</li>
-<li>深拷贝浅拷贝</li>
-<li>栈和堆是什么</li>
-</ul>
-<hr>
-<p>算法题：</p>
-<ol>
-<li>链表倒置，时间复杂度<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="4.844ex" height="2.262ex" role="img" focusable="false" viewbox="0 -750 2141 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="mi" transform="translate(1152,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mo" transform="translate(1752,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container>，空间复杂度 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="4.618ex" height="2.262ex" role="img" focusable="false" viewbox="0 -750 2041 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="mn" transform="translate(1152,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/></g><g data-mml-node="mo" transform="translate(1652,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></li>
-<li>最长公共子串，时间复杂度<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewbox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container>，空间复杂度 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewbox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></li>
-</ol>
-<hr>
-<p>反问：</p>
-<ol>
-<li>部门业务</li>
-<li>使用的语言</li>
-</ol>
-<p>第三天约二面</p>
-<h1 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h1><p>本来是 20 号的二面，结果面试官鸽了。</p>
-<p>3月23日，70 min</p>
-<ul>
-<li>自我介绍</li>
-<li>能实习多久</li>
-<li>会什么语言</li>
-</ul>
-<hr>
-<p>项目相关：</p>
-<ul>
-<li><code>redis</code> 的数据一致性，面试官一直不懂我的操作（雾）</li>
-<li><code>redis</code> 的基础数据结构</li>
-<li>对 <code>redis</code> 的理解，面试官嫌我数据库太菜了，就没有问我 <code>mysql</code> 了</li>
-</ul>
-<hr>
-<p>基础知识：</p>
-<ul>
-<li>堆排序（给他把十大排序讲了一遍）</li>
-</ul>
-<hr>
-<p>算法题：</p>
-<ul>
-<li>编辑距离，时间复杂度<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewbox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container>，空间复杂度 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewbox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"/></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></li>
-</ul>
-<hr>
-<p>反问：</p>
-<ul>
-<li>一般优化性能是重构代码降低复杂度，还是多加几台服务器</li>
-</ul>
-<p>10 min 后约三面</p>
-<h1 id="hr-面"><a href="#hr-面" class="headerlink" title="hr 面"></a>hr 面</h1><p>3月28日，10 min</p>
-]]></content>
       <tags>
-        <tag>日常</tag>
+        <tag>技术</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/04/06/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a class="link" href="https://hexo.io/">Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link" href="https://hexo.io/docs/">documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link" href="https://hexo.io/docs/troubleshooting.html">troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link" href="https://github.com/hexojs/hexo/issues">GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/writing.html">Writing<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/server.html">Server<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/generating.html">Generating<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/one-command-deployment.html">Deployment<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="add-picture-use-relative-path"><a href="#add-picture-use-relative-path" class="headerlink" title="add picture use relative path"></a>add picture use relative path</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./<span class="variable">$&#123;filename&#125;</span>/name</span><br></pre></td></tr></table></figure>
-
-]]></content>
   </entry>
   <entry>
     <title>docker</title>
@@ -868,7 +852,113 @@
 </ol>
 <h2 id="Docker-网络"><a href="#Docker-网络" class="headerlink" title="Docker 网络"></a>Docker 网络</h2>]]></content>
       <tags>
+        <tag>技术</tag>
         <tag>docker</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>python 编码规范</title>
+    <url>/2022/04/11/encode-python/</url>
+    <content><![CDATA[<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><ul>
+<li>无特殊情况，文件一律使用 UTF-8 编码</li>
+<li>无特殊情况，文件头部必须加入 <code># -*- coding: utf-8 -*-</code></li>
+</ul>
+<h3 id="缩进"><a href="#缩进" class="headerlink" title="缩进"></a>缩进</h3><ul>
+<li>统一使用 4 个空格进行缩进</li>
+</ul>
+<h3 id="引号"><a href="#引号" class="headerlink" title="引号"></a>引号</h3><ul>
+<li>自然语言，使用双引号。例如 <code>&quot;hello world&quot;</code></li>
+<li>机器标识，使用单引号。</li>
+<li>正则表达式，使用双引号。</li>
+<li>文档字符串，使用三引号。</li>
+</ul>
+<h3 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h3><ul>
+<li><strong>模块级函数</strong>和<strong>类定义</strong>之间空两行</li>
+<li><strong>类成员函数</strong>之间空一行</li>
+<li><strong>函数中</strong>可以使用空行分隔出逻辑相关的代码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">hello</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="import-语句"><a href="#import-语句" class="headerlink" title="import 语句"></a>import 语句</h3><ul>
+<li>import 应该分行书写</li>
+<li>import 应该使用 absolute import</li>
+<li>import 放在文件头部，置于模块说明及 <code>docstring</code> 之后，与全局变量之前<ul>
+<li><code>docstring</code></li>
+<li>import</li>
+<li>全局变量</li>
+</ul>
+</li>
+</ul>
+<h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><ul>
+<li>二元运算符两边</li>
+<li>函数的参数列表 <code>, </code> 之后要有空格</li>
+<li>函数的参数列表中，默认值等号两边不要加空格</li>
+<li>括号不需要加空格，字典类似</li>
+<li>不要添加多余空格，用于对齐 <code>=</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">foo</span>(<span class="params">a, b=<span class="number">10</span></span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">foo(&#123;a: <span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><blockquote>
+<p>python 支持括号内的换行，第二行缩进到括号的起始处，<strong>参数对齐</strong></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">bar = foo(a1, a2, </span><br><span class="line">a3, a4)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用反斜杠\换行，二元运算符+ .等应出现在行末；长字符串也可以用此法换行</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">session.query(MyTable).\</span><br><span class="line">        filter_by(<span class="built_in">id</span>=<span class="number">1</span>).\</span><br><span class="line">        one()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>if &#x2F; for &#x2F; while 独占一行</p>
+</blockquote>
+<h3 id="Docstring"><a href="#Docstring" class="headerlink" title="Docstring"></a>Docstring</h3><p>作为文档的 Docstring 一般出现在模块的头部、函数和类的头部，这样在 python 中可以通过对象的 <code>__doc__</code> 对象获取文档。编辑器和 IDE 也可以根据 Docstring 给出自动提示。</p>
+<ul>
+<li>所有的公共模块、函数、类、方法，都应该写 <code>docstring</code>。私有方法不一定需要，def 后提供一个块注释来说明</li>
+<li>docstirng 的结束，应该独占一行，除非只有一行</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;Return a foobar</span></span><br><span class="line"><span class="string">hello python</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;Oneline docstring&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>Google 风格：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;Example docstrings.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">This module demonstrates documentation as specified by the `Google Python</span></span><br><span class="line"><span class="string">Style Guide`_. Docstrings may extend over multiple lines. Sections are created</span></span><br><span class="line"><span class="string">with a section header and a colon followed by a block of indented text.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Example:</span></span><br><span class="line"><span class="string">    Examples can be given using either the ``Example`` or ``Examples``</span></span><br><span class="line"><span class="string">    sections. Sections support any reStructuredText formatting, including</span></span><br><span class="line"><span class="string">    literal blocks::</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        $ python example_google.py</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Section breaks are created by resuming unindented text. Section breaks</span></span><br><span class="line"><span class="string">are also implicitly created anytime a new section starts.</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><h4 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h4><p>模块尽量使用小写命名，首字母保持小写，尽量不要使用下划线</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 正确的模块名</span></span><br><span class="line"><span class="keyword">import</span> decoder</span><br><span class="line"><span class="keyword">import</span> html_parser</span><br><span class="line"></span><br><span class="line"><span class="comment"># 不推荐的模块名</span></span><br><span class="line"><span class="keyword">import</span> Decoder</span><br></pre></td></tr></table></figure>
+
+<h4 id="类名"><a href="#类名" class="headerlink" title="类名"></a>类名</h4><p>类名使用<strong>驼峰命名</strong>风格，首字母大写，私有类可用下划线开头。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Farm</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">AnimalFarm</span>(<span class="title class_ inherited__">Farm</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">_PrivateFarm</span>(<span class="title class_ inherited__">Farm</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>将相关的类和顶级函数放在同一个 module 里. 不像 Java , 没必要限制一个类一个 module.</p>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><p>函数名一律小写，有多个单词，使用下划线隔开。私有函数在函数前加一个下划线。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">run</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run_with_env</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>():</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_private_func</span>():</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="变量名"><a href="#变量名" class="headerlink" title="变量名"></a>变量名</h4><p>尽量使用小写，如有多个单词，使用下划线隔开</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    school_name = <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>使用全部大写 </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">MAX_CLIENT = <span class="number">100</span></span><br><span class="line">MAX_CONNECTION = <span class="number">1000</span></span><br><span class="line">CONNECTION_TIMEOUT = <span class="number">600</span></span><br><span class="line"></span><br><span class="line">MAX_OVERFLOW = <span class="number">100</span></span><br><span class="line"></span><br><span class="line">Class FooBar:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">foo_bar</span>(<span class="params">self, print_</span>):</span><br><span class="line">        <span class="built_in">print</span>(print_)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/04/06/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a class="link" href="https://hexo.io/">Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link" href="https://hexo.io/docs/">documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link" href="https://hexo.io/docs/troubleshooting.html">troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link" href="https://github.com/hexojs/hexo/issues">GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/writing.html">Writing<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/server.html">Server<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/generating.html">Generating<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/one-command-deployment.html">Deployment<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="add-picture-use-relative-path"><a href="#add-picture-use-relative-path" class="headerlink" title="add picture use relative path"></a>add picture use relative path</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./<span class="variable">$&#123;filename&#125;</span>/name</span><br></pre></td></tr></table></figure>
+
+]]></content>
   </entry>
 </search>
