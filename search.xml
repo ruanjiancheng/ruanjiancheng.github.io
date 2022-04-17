@@ -80,287 +80,6 @@
       </tags>
   </entry>
   <entry>
-    <title>cmake</title>
-    <url>/2022/04/07/cmake/</url>
-    <content><![CDATA[<h1 id="linux-简介"><a href="#linux-简介" class="headerlink" title="linux 简介"></a>linux 简介</h1><h2 id="1-1-目录结构"><a href="#1-1-目录结构" class="headerlink" title="1.1 目录结构"></a>1.1 目录结构</h2><ul>
-<li>bin：存储二进制指令</li>
-<li>sbin：只能 sudo 的指令</li>
-<li>etc：配置文件</li>
-<li>dev：IO 设备，需要被挂载</li>
-<li>mnt：IO 设备被 mount 的文件夹</li>
-<li>home：除了 root 之外，其他用户的目录</li>
-<li>proc：存储 linux 运行时的进程</li>
-<li>tmp：临时文件</li>
-<li>usr：存放文虎自己安装的文件，<code>program files</code></li>
-<li>var：存放程序和日志文件</li>
-</ul>
-<h2 id="1-2-文件指令"><a href="#1-2-文件指令" class="headerlink" title="1.2 文件指令"></a>1.2 文件指令</h2><ul>
-<li><p>命令 [option] [object]</p>
-</li>
-<li><p>pwd：print current working directory</p>
-</li>
-<li><p>ls：list</p>
-</li>
-<li><p>cd：change directory</p>
-</li>
-<li><p>mkdir：make directory，创建文件夹</p>
-<ul>
-<li>-p：创建多层不存在的文件夹</li>
-</ul>
-</li>
-<li><p>touch：创建文件</p>
-</li>
-<li><p>rm：删除文件或文件夹</p>
-</li>
-<li><p>cp：复制文件或文件夹 <code>cp [src] [dest]</code></p>
-<ul>
-<li>-r 递归复制，文件夹</li>
-</ul>
-</li>
-<li><p>mv：移动文件</p>
-</li>
-<li><p>time：time [指令] 用于计时</p>
-</li>
-</ul>
-<h1 id="g"><a href="#g" class="headerlink" title="g++"></a>g++</h1><p>switch user do: sudo （root do）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum update</span><br><span class="line"><span class="comment"># 安装 gcc g++ gdb</span></span><br><span class="line">sudo yum install build-essential gdb</span><br><span class="line"><span class="comment"># 安装 cmake</span></span><br><span class="line">sudo yum install cmake</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install -y http://mirror.centos.org/centos/7/extras/x86_64/Packages/centos-release-scl-rh-2-3.el7.centos.noarch.rpm</span><br><span class="line"></span><br><span class="line">sudo yum install -y http://mirror.centos.org/centos/7/extras/x86_64/Packages/centos-release-scl-2-3.el7.centos.noarch.rpm</span><br><span class="line"></span><br><span class="line">sudo yum install devtoolset-9-gcc-c++</span><br><span class="line"></span><br><span class="line">source /opt/rh/devtoolset-9/enable</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="gcc"><a href="#gcc" class="headerlink" title="gcc"></a>gcc</h2><h3 id="编译过程"><a href="#编译过程" class="headerlink" title="编译过程"></a>编译过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 预处理</span></span><br><span class="line"><span class="comment"># -E 仅对文件进行预处理</span></span><br><span class="line"><span class="comment"># 将 include 展开为代码</span></span><br><span class="line">g++ -E t.cpp -o t.i</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译</span></span><br><span class="line"><span class="comment"># -S 产生汇编语言文件</span></span><br><span class="line"><span class="comment"># 中间代码生成，汇编文件</span></span><br><span class="line">g++ -S t.i -o t.s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 汇编</span></span><br><span class="line"><span class="comment"># -c 源代码 -&gt; 机器语言的目标代码</span></span><br><span class="line"><span class="comment"># 二进制文件</span></span><br><span class="line">g++ -c t.s -o t.o</span><br><span class="line"></span><br><span class="line"><span class="comment"># 链接</span></span><br><span class="line"><span class="comment"># 生成可执行文件</span></span><br><span class="line">g++ t.o -o t</span><br></pre></td></tr></table></figure>
-
-<h3 id="g-重要的编译参数"><a href="#g-重要的编译参数" class="headerlink" title="g++ 重要的编译参数"></a>g++ 重要的编译参数</h3><ul>
-<li>-g：产生带调试信息的可执行文件</li>
-<li>-O[n] 优化源代码</li>
-<li>-l 指定<strong>库</strong>文件，用于链接</li>
-<li>-L 指定<strong>库</strong>文件路径 （默认：<code>/lib</code> <code>/usr/lib</code> <code>/usr/local/lib</code>）</li>
-<li>-I 指定<strong>头文件</strong>的搜索目录</li>
-<li>-Wall 打印警告信息</li>
-<li>-w 关闭警报信息</li>
-<li>-std&#x3D;c++[x]</li>
-<li>-o 指定输出名</li>
-<li>-D 定义宏</li>
-</ul>
-<h3 id="直接编译"><a href="#直接编译" class="headerlink" title="直接编译"></a>直接编译</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">g++ main.cpp /src/swap.cpp -Iinclude</span><br></pre></td></tr></table></figure>
-
-<p>mian.cpp 中使用了 swap.cpp 中的函数</p>
-<h3 id="生成静态库文件并编译"><a href="#生成静态库文件并编译" class="headerlink" title="生成静态库文件并编译"></a>生成静态库文件并编译</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成 .o 文件</span></span><br><span class="line">g++ Swap.cpp -c -I../include</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成静态库文件 LibSwap.a</span></span><br><span class="line">ar rs libSwap.a Swap.o</span><br><span class="line"></span><br><span class="line"><span class="comment"># 链接静态库</span></span><br><span class="line">g++ mian.cpp -lswap -L./src -Iinclude -o static_main</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行文件</span></span><br><span class="line">./static_main</span><br></pre></td></tr></table></figure>
-
-<h3 id="生成动态库文件"><a href="#生成动态库文件" class="headerlink" title="生成动态库文件"></a>生成动态库文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成动态库文件 libSwap.so</span></span><br><span class="line"><span class="comment"># -shared 生成动态库文件</span></span><br><span class="line">g++ swap.cpp -I../include -fPIC -shared -o libSwap.so</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 .o 文件</span></span><br><span class="line"><span class="comment"># g++ Swap.cpp -I../include -c -fPIC</span></span><br><span class="line"><span class="comment"># g++ -shared -o libSwap.so Swap.o</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用动态库编译</span></span><br><span class="line">g++ main.cpp -Iinclude -lswap -Lsrc -o dyna_main</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行可执行文件</span></span><br><span class="line"><span class="comment"># 需要先指定动态库文件的搜索路径</span></span><br><span class="line"><span class="comment"># LD_LIBRARY_PATH=[dir] ./[bin]</span></span><br><span class="line">LD_LIBRARY_PATH=src ./dyna_mian</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="GDB-调试器"><a href="#GDB-调试器" class="headerlink" title="GDB 调试器"></a>GDB 调试器</h1><p>GDB(GNU Debugger) 是一个调试 C&#x2F;C++ 程序的调试器</p>
-<ul>
-<li>设置<strong>断点</strong></li>
-<li><strong>单步</strong>执行程序，便于调试</li>
-<li>查看程序中的<strong>变量值</strong>的变化</li>
-</ul>
-<h2 id="常用的调试命令参数"><a href="#常用的调试命令参数" class="headerlink" title="常用的调试命令参数"></a>常用的调试命令参数</h2><p>gdb [exefilename]，exefilename 为可执行文件名</p>
-<ul>
-<li><p>run(r)：重新开始运行程序</p>
-</li>
-<li><p>start：单步执行，运行程序</p>
-</li>
-<li><p>list：查看源代码，list-x 从第 x 行开始查看代码，list+func 查看 func 函数</p>
-</li>
-<li><p>set：设置变量的值</p>
-</li>
-<li><p>next：单步调试，逐过程，函数直接执行</p>
-</li>
-<li><p>step：单步调试，逐语句，跳入函数体内部</p>
-</li>
-<li><p>finish：结束当前函数的执行</p>
-</li>
-<li><p>continue(c)：继续执行</p>
-</li>
-</ul>
-<p>查看：</p>
-<ul>
-<li>print(p): print [var] 输出 var 的值</li>
-<li>display：display [var] 一直监视 var 的值</li>
-<li>list(l)：显示当前附近的代码</li>
-</ul>
-<p>添加断点：</p>
-<ul>
-<li><p>break：break [n]（b [n]） 在第 n 行添加断点</p>
-</li>
-<li><p>info breakpoints (i b) 查看全部的断点信息</p>
-</li>
-<li><p>quit 结束 gdb</p>
-</li>
-</ul>
-<blockquote>
-<p>在 g++ 编译的时候，需要加入 -g 指令才能使用 gdb 调试</p>
-<p>enter 键，重复执行上一次的命令</p>
-<p>ctrl + l 清屏</p>
-</blockquote>
-<h1 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h1><blockquote>
-<p>使用命令行打开 vscode：code [filedir]</p>
-</blockquote>
-<h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><ul>
-<li>切换文件：<code>strl + p</code></li>
-<li>打开命令面板：<code>ctrl + shift + p</code></li>
-<li>打开终端：ctrl + &#96;</li>
-<li>关闭侧边栏：<code>ctrl + b</code></li>
-<li>变量同一重命名：<code>F2</code></li>
-<li>转到定义出：<code>F12</code></li>
-<li>格式化代码：<code>ctrl + shift + F</code></li>
-</ul>
-<h1 id="cmake"><a href="#cmake" class="headerlink" title="cmake"></a>cmake</h1><ul>
-<li>是什么是 cmake</li>
-<li>语法特性介绍</li>
-<li>重要指令和 cmake 常用变量</li>
-<li>cmake 编译工程</li>
-</ul>
-<h2 id="CMake-是什么"><a href="#CMake-是什么" class="headerlink" title="CMake 是什么"></a>CMake 是什么</h2><ul>
-<li>CMake 是一个跨平台的安装编译工具，可以使用简单的语句来描述所有平台的安装(编译过程)</li>
-</ul>
-<img src="/2022/04/07/cmake/image-20220315140635766.jpg" alt="image-20220315140635766" style="zoom:50%;">
-
-<center>为什么 CMake 跨平台</center>
-
-<p>通过 <code>CMakeList</code> 构建不同平台的 <code>build tool</code></p>
-<h2 id="基本语法介绍"><a href="#基本语法介绍" class="headerlink" title="基本语法介绍"></a>基本语法介绍</h2><ul>
-<li>基本语法格式：指令(参数1 参数2)<ul>
-<li>参数使用()</li>
-<li>参数之间使用空格或分号</li>
-</ul>
-</li>
-<li>类似于 redis ，指令是不区分大小写的，参数和变量是区分的</li>
-<li>变量使用 ${} 方式取值，到那时在 IF 语句中是直接使用变量名取值的</li>
-</ul>
-<h2 id="重要的指令"><a href="#重要的指令" class="headerlink" title="重要的指令"></a>重要的指令</h2><ul>
-<li>cmake_minimum_required 指定 CMake 的最小版本要求<ul>
-<li><code>cmake_minimum_required(VERSION 2.8.3)</code></li>
-</ul>
-</li>
-<li>project 定义工程名称，并可指定工程指定的语言<ul>
-<li><code>project(HELLOWORLD)</code></li>
-</ul>
-</li>
-<li>set 显示定义变量<ul>
-<li><code>set(SRC swap.cpp hello.cpp)</code></li>
-</ul>
-</li>
-<li>include_directories 向工程添加特定的<strong>头文件</strong>的搜索路径<ul>
-<li><code>include_directories(/usr/include ./include)</code></li>
-</ul>
-</li>
-<li>link_directories 向工程添加多个特定的<strong>库文件</strong>搜索路径<ul>
-<li><code>linkdirectories(/usr/lib/ ./lib)</code></li>
-</ul>
-</li>
-<li>add_library 生成库文件<ul>
-<li><code>add_library(libname [SHARED|STATIC] src1 src2)</code></li>
-<li><code>add_library(hello SHARED $&#123;SRC&#125;)</code></li>
-</ul>
-</li>
-<li>add_compile_options 添加编译参数<ul>
-<li><code>add_compile_options(-Wall -std=c++14 -o2)</code></li>
-</ul>
-</li>
-<li>add_executable 生成可执行文件，编译 mian.cpp 生成可执行文件 main<ul>
-<li><code>add_executable(mian mian.cpp)</code></li>
-</ul>
-</li>
-<li>target_link_libraries 为 target 添加需要连接的共享库 相当于 -l 参数<ul>
-<li><code>target_link_libraries(mian hello)</code> 将 hello 动态库链接到 mian 中</li>
-</ul>
-</li>
-<li>add_subdirectory 向当前工程添加源文件的子目录<ul>
-<li><code>add_subdirectory(src)</code> src 文件夹中必须存在一个 CMakeList.txt</li>
-</ul>
-</li>
-<li>aux_source_directory 发下一个目录下所有的源文件并将列表存储在一个变量中，这个指令临时用来自动构建源文件列表 <strong>？？？？不懂</strong></li>
-</ul>
-<h2 id="CMake-常用变量"><a href="#CMake-常用变量" class="headerlink" title="CMake 常用变量"></a>CMake 常用变量</h2><ul>
-<li>CMAKE_C_FLAGS gcc 编译选项</li>
-<li>CMAKE_CXX_FLAGS g++ 编译选项</li>
-</ul>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在 CMAKE_CXX_FLAGS 编译选项后追加 -std=c++11</span></span><br><span class="line"><span class="keyword">set</span>( CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -std=c++11&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>CMAKE_BUILD_TYPE 编译类型(debug, release)</li>
-</ul>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span>(CMAKE_BUILD_TYPE Debug)</span><br><span class="line"><span class="keyword">set</span>(CMAKE_BUILD_TYPE Release)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="CMake-编译工程"><a href="#CMake-编译工程" class="headerlink" title="CMake 编译工程"></a>CMake 编译工程</h2><p>CMake 目录结构：项目主目录存在 CMakeLists.txt</p>
-<p>两种方式设置编译规则：</p>
-<ol>
-<li>包含源文件的子文件夹包含 CMakeLists.txt 文件，主目录的 CMakelists.txt 通过 <code>add_subdirectory</code> 添加子目录即可</li>
-<li>包含源文件的子文件夹未包含 CMakeLists.txt 文件，子目录的编译规则体现在主目录的 CMakeLists.txt 中</li>
-</ol>
-<h3 id="编译流程"><a href="#编译流程" class="headerlink" title="编译流程"></a>编译流程</h3><ul>
-<li>手动编写 CMakeLists.txt </li>
-<li>执行命令 <code>cmake PATH</code> 生成 Makefile (PATH 是顶层 CMakeLists.txt 所在的目录)</li>
-<li>执行命令 <code>make</code> 进行</li>
-</ul>
-<h3 id="构建的两种方式"><a href="#构建的两种方式" class="headerlink" title="构建的两种方式"></a>构建的两种方式</h3><ul>
-<li>内部构件，在当前文件夹下，执行 make 命令。<strong>杂乱无章</strong></li>
-<li>外部构建 <strong>推荐</strong>，创建 build 文件夹，编译上级目录的 CMakeLists.txt 文件</li>
-</ul>
-<h3 id="CMake-实战"><a href="#CMake-实战" class="headerlink" title="CMake 实战"></a>CMake 实战</h3><p><img src="/2022/04/07/cmake/image-20220315155252463.jpg" alt="image-20220315155252463"></p>
-<center>两个工程的结构</center>
-
-<h4 id="构建-proj1"><a href="#构建-proj1" class="headerlink" title="构建 proj1"></a>构建 proj1</h4><p><code>g++ helloworld.cpp -o helloworld</code></p>
-<ol>
-<li>编写 CMakeLists.txt</li>
-</ol>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 指定版本号</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定工程文件名</span></span><br><span class="line"><span class="keyword">project</span>(HELLOWORLD)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 等价于 g++ helloworld.cpp -o helloworld_cmake</span></span><br><span class="line"><span class="keyword">add_executable</span>(helloWorld_cmake helloworld.cpp)</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><p><strong>内部构建</strong>在 bash 中</p>
-<ol>
-<li><code>cmake .</code> 构建 <code>Makefile</code></li>
-<li><code>make</code> make Makefile</li>
-</ol>
-</li>
-<li><p><strong>外部构建</strong>在 bash 中</p>
-<ol>
-<li><code>mkdir build</code></li>
-<li><code>cd build</code></li>
-<li><code>cmake ..</code> 在 build 文件夹构建上一级目录的 <code>CMakeLists.txt</code></li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在 build 文件夹中构建</span></span><br><span class="line"><span class="built_in">mkdir</span> build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line"><span class="comment"># 生成 Makefile</span></span><br><span class="line">cmake ..</span><br><span class="line"><span class="comment"># make Makefile make 是编译的过程</span></span><br><span class="line">make</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p><img src="/2022/04/07/cmake/image-20220315161112258.jpg" alt="image-20220315161112258"></p>
-<center>外部构建</center>
-
-<h4 id="构建-proj2"><a href="#构建-proj2" class="headerlink" title="构建 proj2"></a>构建 proj2</h4><p><code>g++ main.cpp ./src/swap.cpp -I ./include -o main</code></p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">project</span>(SWAP)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含头文件搜索路径 -I 选项</span></span><br><span class="line"><span class="keyword">include_directories</span>(./<span class="keyword">include</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 类似于 g++ main.cpp ./src/swap.cpp</span></span><br><span class="line"><span class="keyword">add_executable</span>(main_cmake main.cpp ./src/swap.cpp)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="实战-proj3"><a href="#实战-proj3" class="headerlink" title="实战 proj3"></a>实战 proj3</h1><p><img src="/2022/04/07/cmake/image-20220315164644371.jpg" alt="image-20220315164644371"></p>
-<p><code>g++ main.cpp src/Gun.cpp src/Solider.cpp -I ./include/ -o main</code></p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">project</span>(GO)</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -g -O2 -Wall -std=c++11&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含头文件</span></span><br><span class="line"><span class="keyword">include_directories</span>(<span class="keyword">include</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(main_cmake main.cpp src/Gun.cpp src/Solider.cpp)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="GDB"><a href="#GDB" class="headerlink" title="GDB"></a>GDB</h1><h2 id="launch-json"><a href="#launch-json" class="headerlink" title="launch.json"></a>launch.json</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line"></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;(gdb) 启动&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cppdbg&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;request&quot;</span><span class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="comment">// ***** 可执行文件路径</span></span><br><span class="line">            <span class="attr">&quot;program&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;/build/main_cmake&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;stopAtEntry&quot;</span><span class="punctuation">:</span> <span class="keyword">false</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;fileDirname&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;environment&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;externalConsole&quot;</span><span class="punctuation">:</span> <span class="keyword">false</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;MIMode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gdb&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;setupCommands&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;为 gdb 启用整齐打印&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;text&quot;</span><span class="punctuation">:</span> <span class="string">&quot;-enable-pretty-printing&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;ignoreFailures&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span></span><br><span class="line">                <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;将反汇编风格设置为 Intel&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;text&quot;</span><span class="punctuation">:</span> <span class="string">&quot;-gdb-set disassembly-flavor intel&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;ignoreFailures&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span></span><br><span class="line">                <span class="punctuation">&#125;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="comment">// ***** 指向 Task.json 中的 Build</span></span><br><span class="line">            <span class="attr">&quot;preLaunchTask&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Build&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Tasks-json"><a href="#Tasks-json" class="headerlink" title="Tasks.json"></a>Tasks.json</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;options&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="comment">// cd ./build</span></span><br><span class="line">        <span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;/build&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="comment">// cmake ..</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cmake&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cmake&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;..&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">                </span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="comment">// make</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;make&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;kind&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;isDefault&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;make&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line"></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Build&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;dependsOrder&quot;</span><span class="punctuation">:</span> <span class="string">&quot;sequence&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;dependsOn&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="comment">// 调用 cmake 和 make 命令</span></span><br><span class="line">                <span class="string">&quot;cmake&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;make&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>常用 cmake 指令</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 指定最小版本号</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 项目名称</span></span><br><span class="line"><span class="keyword">project</span>(GO)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含头文件</span></span><br><span class="line"><span class="keyword">include</span>(./lib)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置编译参数</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -O2 -g&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置编译模式 Debug | Release</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_BUILD_TYPE Debug)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译</span></span><br><span class="line"><span class="keyword">add_executable</span>(main_cmake main.cpp [其他文件])</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>cmake</tag>
-        <tag>技术</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>python 编码规范</title>
     <url>/2022/04/11/encode-python/</url>
     <content><![CDATA[<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><ul>
@@ -682,6 +401,287 @@
       </tags>
   </entry>
   <entry>
+    <title>cmake</title>
+    <url>/2022/04/07/cmake/</url>
+    <content><![CDATA[<h1 id="linux-简介"><a href="#linux-简介" class="headerlink" title="linux 简介"></a>linux 简介</h1><h2 id="1-1-目录结构"><a href="#1-1-目录结构" class="headerlink" title="1.1 目录结构"></a>1.1 目录结构</h2><ul>
+<li>bin：存储二进制指令</li>
+<li>sbin：只能 sudo 的指令</li>
+<li>etc：配置文件</li>
+<li>dev：IO 设备，需要被挂载</li>
+<li>mnt：IO 设备被 mount 的文件夹</li>
+<li>home：除了 root 之外，其他用户的目录</li>
+<li>proc：存储 linux 运行时的进程</li>
+<li>tmp：临时文件</li>
+<li>usr：存放文虎自己安装的文件，<code>program files</code></li>
+<li>var：存放程序和日志文件</li>
+</ul>
+<h2 id="1-2-文件指令"><a href="#1-2-文件指令" class="headerlink" title="1.2 文件指令"></a>1.2 文件指令</h2><ul>
+<li><p>命令 [option] [object]</p>
+</li>
+<li><p>pwd：print current working directory</p>
+</li>
+<li><p>ls：list</p>
+</li>
+<li><p>cd：change directory</p>
+</li>
+<li><p>mkdir：make directory，创建文件夹</p>
+<ul>
+<li>-p：创建多层不存在的文件夹</li>
+</ul>
+</li>
+<li><p>touch：创建文件</p>
+</li>
+<li><p>rm：删除文件或文件夹</p>
+</li>
+<li><p>cp：复制文件或文件夹 <code>cp [src] [dest]</code></p>
+<ul>
+<li>-r 递归复制，文件夹</li>
+</ul>
+</li>
+<li><p>mv：移动文件</p>
+</li>
+<li><p>time：time [指令] 用于计时</p>
+</li>
+</ul>
+<h1 id="g"><a href="#g" class="headerlink" title="g++"></a>g++</h1><p>switch user do: sudo （root do）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo yum update</span><br><span class="line"><span class="comment"># 安装 gcc g++ gdb</span></span><br><span class="line">sudo yum install build-essential gdb</span><br><span class="line"><span class="comment"># 安装 cmake</span></span><br><span class="line">sudo yum install cmake</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo yum install -y http://mirror.centos.org/centos/7/extras/x86_64/Packages/centos-release-scl-rh-2-3.el7.centos.noarch.rpm</span><br><span class="line"></span><br><span class="line">sudo yum install -y http://mirror.centos.org/centos/7/extras/x86_64/Packages/centos-release-scl-2-3.el7.centos.noarch.rpm</span><br><span class="line"></span><br><span class="line">sudo yum install devtoolset-9-gcc-c++</span><br><span class="line"></span><br><span class="line">source /opt/rh/devtoolset-9/enable</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="gcc"><a href="#gcc" class="headerlink" title="gcc"></a>gcc</h2><h3 id="编译过程"><a href="#编译过程" class="headerlink" title="编译过程"></a>编译过程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 预处理</span></span><br><span class="line"><span class="comment"># -E 仅对文件进行预处理</span></span><br><span class="line"><span class="comment"># 将 include 展开为代码</span></span><br><span class="line">g++ -E t.cpp -o t.i</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译</span></span><br><span class="line"><span class="comment"># -S 产生汇编语言文件</span></span><br><span class="line"><span class="comment"># 中间代码生成，汇编文件</span></span><br><span class="line">g++ -S t.i -o t.s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 汇编</span></span><br><span class="line"><span class="comment"># -c 源代码 -&gt; 机器语言的目标代码</span></span><br><span class="line"><span class="comment"># 二进制文件</span></span><br><span class="line">g++ -c t.s -o t.o</span><br><span class="line"></span><br><span class="line"><span class="comment"># 链接</span></span><br><span class="line"><span class="comment"># 生成可执行文件</span></span><br><span class="line">g++ t.o -o t</span><br></pre></td></tr></table></figure>
+
+<h3 id="g-重要的编译参数"><a href="#g-重要的编译参数" class="headerlink" title="g++ 重要的编译参数"></a>g++ 重要的编译参数</h3><ul>
+<li>-g：产生带调试信息的可执行文件</li>
+<li>-O[n] 优化源代码</li>
+<li>-l 指定<strong>库</strong>文件，用于链接</li>
+<li>-L 指定<strong>库</strong>文件路径 （默认：<code>/lib</code> <code>/usr/lib</code> <code>/usr/local/lib</code>）</li>
+<li>-I 指定<strong>头文件</strong>的搜索目录</li>
+<li>-Wall 打印警告信息</li>
+<li>-w 关闭警报信息</li>
+<li>-std&#x3D;c++[x]</li>
+<li>-o 指定输出名</li>
+<li>-D 定义宏</li>
+</ul>
+<h3 id="直接编译"><a href="#直接编译" class="headerlink" title="直接编译"></a>直接编译</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">g++ main.cpp /src/swap.cpp -Iinclude</span><br></pre></td></tr></table></figure>
+
+<p>mian.cpp 中使用了 swap.cpp 中的函数</p>
+<h3 id="生成静态库文件并编译"><a href="#生成静态库文件并编译" class="headerlink" title="生成静态库文件并编译"></a>生成静态库文件并编译</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成 .o 文件</span></span><br><span class="line">g++ Swap.cpp -c -I../include</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成静态库文件 LibSwap.a</span></span><br><span class="line">ar rs libSwap.a Swap.o</span><br><span class="line"></span><br><span class="line"><span class="comment"># 链接静态库</span></span><br><span class="line">g++ mian.cpp -lswap -L./src -Iinclude -o static_main</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行文件</span></span><br><span class="line">./static_main</span><br></pre></td></tr></table></figure>
+
+<h3 id="生成动态库文件"><a href="#生成动态库文件" class="headerlink" title="生成动态库文件"></a>生成动态库文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 生成动态库文件 libSwap.so</span></span><br><span class="line"><span class="comment"># -shared 生成动态库文件</span></span><br><span class="line">g++ swap.cpp -I../include -fPIC -shared -o libSwap.so</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 .o 文件</span></span><br><span class="line"><span class="comment"># g++ Swap.cpp -I../include -c -fPIC</span></span><br><span class="line"><span class="comment"># g++ -shared -o libSwap.so Swap.o</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用动态库编译</span></span><br><span class="line">g++ main.cpp -Iinclude -lswap -Lsrc -o dyna_main</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行可执行文件</span></span><br><span class="line"><span class="comment"># 需要先指定动态库文件的搜索路径</span></span><br><span class="line"><span class="comment"># LD_LIBRARY_PATH=[dir] ./[bin]</span></span><br><span class="line">LD_LIBRARY_PATH=src ./dyna_mian</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="GDB-调试器"><a href="#GDB-调试器" class="headerlink" title="GDB 调试器"></a>GDB 调试器</h1><p>GDB(GNU Debugger) 是一个调试 C&#x2F;C++ 程序的调试器</p>
+<ul>
+<li>设置<strong>断点</strong></li>
+<li><strong>单步</strong>执行程序，便于调试</li>
+<li>查看程序中的<strong>变量值</strong>的变化</li>
+</ul>
+<h2 id="常用的调试命令参数"><a href="#常用的调试命令参数" class="headerlink" title="常用的调试命令参数"></a>常用的调试命令参数</h2><p>gdb [exefilename]，exefilename 为可执行文件名</p>
+<ul>
+<li><p>run(r)：重新开始运行程序</p>
+</li>
+<li><p>start：单步执行，运行程序</p>
+</li>
+<li><p>list：查看源代码，list-x 从第 x 行开始查看代码，list+func 查看 func 函数</p>
+</li>
+<li><p>set：设置变量的值</p>
+</li>
+<li><p>next：单步调试，逐过程，函数直接执行</p>
+</li>
+<li><p>step：单步调试，逐语句，跳入函数体内部</p>
+</li>
+<li><p>finish：结束当前函数的执行</p>
+</li>
+<li><p>continue(c)：继续执行</p>
+</li>
+</ul>
+<p>查看：</p>
+<ul>
+<li>print(p): print [var] 输出 var 的值</li>
+<li>display：display [var] 一直监视 var 的值</li>
+<li>list(l)：显示当前附近的代码</li>
+</ul>
+<p>添加断点：</p>
+<ul>
+<li><p>break：break [n]（b [n]） 在第 n 行添加断点</p>
+</li>
+<li><p>info breakpoints (i b) 查看全部的断点信息</p>
+</li>
+<li><p>quit 结束 gdb</p>
+</li>
+</ul>
+<blockquote>
+<p>在 g++ 编译的时候，需要加入 -g 指令才能使用 gdb 调试</p>
+<p>enter 键，重复执行上一次的命令</p>
+<p>ctrl + l 清屏</p>
+</blockquote>
+<h1 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h1><blockquote>
+<p>使用命令行打开 vscode：code [filedir]</p>
+</blockquote>
+<h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><ul>
+<li>切换文件：<code>strl + p</code></li>
+<li>打开命令面板：<code>ctrl + shift + p</code></li>
+<li>打开终端：ctrl + &#96;</li>
+<li>关闭侧边栏：<code>ctrl + b</code></li>
+<li>变量同一重命名：<code>F2</code></li>
+<li>转到定义出：<code>F12</code></li>
+<li>格式化代码：<code>ctrl + shift + F</code></li>
+</ul>
+<h1 id="cmake"><a href="#cmake" class="headerlink" title="cmake"></a>cmake</h1><ul>
+<li>是什么是 cmake</li>
+<li>语法特性介绍</li>
+<li>重要指令和 cmake 常用变量</li>
+<li>cmake 编译工程</li>
+</ul>
+<h2 id="CMake-是什么"><a href="#CMake-是什么" class="headerlink" title="CMake 是什么"></a>CMake 是什么</h2><ul>
+<li>CMake 是一个跨平台的安装编译工具，可以使用简单的语句来描述所有平台的安装(编译过程)</li>
+</ul>
+<img src="/2022/04/07/cmake/image-20220315140635766.jpg" alt="image-20220315140635766" style="zoom:50%;">
+
+<center>为什么 CMake 跨平台</center>
+
+<p>通过 <code>CMakeList</code> 构建不同平台的 <code>build tool</code></p>
+<h2 id="基本语法介绍"><a href="#基本语法介绍" class="headerlink" title="基本语法介绍"></a>基本语法介绍</h2><ul>
+<li>基本语法格式：指令(参数1 参数2)<ul>
+<li>参数使用()</li>
+<li>参数之间使用空格或分号</li>
+</ul>
+</li>
+<li>类似于 redis ，指令是不区分大小写的，参数和变量是区分的</li>
+<li>变量使用 ${} 方式取值，到那时在 IF 语句中是直接使用变量名取值的</li>
+</ul>
+<h2 id="重要的指令"><a href="#重要的指令" class="headerlink" title="重要的指令"></a>重要的指令</h2><ul>
+<li>cmake_minimum_required 指定 CMake 的最小版本要求<ul>
+<li><code>cmake_minimum_required(VERSION 2.8.3)</code></li>
+</ul>
+</li>
+<li>project 定义工程名称，并可指定工程指定的语言<ul>
+<li><code>project(HELLOWORLD)</code></li>
+</ul>
+</li>
+<li>set 显示定义变量<ul>
+<li><code>set(SRC swap.cpp hello.cpp)</code></li>
+</ul>
+</li>
+<li>include_directories 向工程添加特定的<strong>头文件</strong>的搜索路径<ul>
+<li><code>include_directories(/usr/include ./include)</code></li>
+</ul>
+</li>
+<li>link_directories 向工程添加多个特定的<strong>库文件</strong>搜索路径<ul>
+<li><code>linkdirectories(/usr/lib/ ./lib)</code></li>
+</ul>
+</li>
+<li>add_library 生成库文件<ul>
+<li><code>add_library(libname [SHARED|STATIC] src1 src2)</code></li>
+<li><code>add_library(hello SHARED $&#123;SRC&#125;)</code></li>
+</ul>
+</li>
+<li>add_compile_options 添加编译参数<ul>
+<li><code>add_compile_options(-Wall -std=c++14 -o2)</code></li>
+</ul>
+</li>
+<li>add_executable 生成可执行文件，编译 mian.cpp 生成可执行文件 main<ul>
+<li><code>add_executable(mian mian.cpp)</code></li>
+</ul>
+</li>
+<li>target_link_libraries 为 target 添加需要连接的共享库 相当于 -l 参数<ul>
+<li><code>target_link_libraries(mian hello)</code> 将 hello 动态库链接到 mian 中</li>
+</ul>
+</li>
+<li>add_subdirectory 向当前工程添加源文件的子目录<ul>
+<li><code>add_subdirectory(src)</code> src 文件夹中必须存在一个 CMakeList.txt</li>
+</ul>
+</li>
+<li>aux_source_directory 发下一个目录下所有的源文件并将列表存储在一个变量中，这个指令临时用来自动构建源文件列表 <strong>？？？？不懂</strong></li>
+</ul>
+<h2 id="CMake-常用变量"><a href="#CMake-常用变量" class="headerlink" title="CMake 常用变量"></a>CMake 常用变量</h2><ul>
+<li>CMAKE_C_FLAGS gcc 编译选项</li>
+<li>CMAKE_CXX_FLAGS g++ 编译选项</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在 CMAKE_CXX_FLAGS 编译选项后追加 -std=c++11</span></span><br><span class="line"><span class="keyword">set</span>( CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -std=c++11&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>CMAKE_BUILD_TYPE 编译类型(debug, release)</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span>(CMAKE_BUILD_TYPE Debug)</span><br><span class="line"><span class="keyword">set</span>(CMAKE_BUILD_TYPE Release)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="CMake-编译工程"><a href="#CMake-编译工程" class="headerlink" title="CMake 编译工程"></a>CMake 编译工程</h2><p>CMake 目录结构：项目主目录存在 CMakeLists.txt</p>
+<p>两种方式设置编译规则：</p>
+<ol>
+<li>包含源文件的子文件夹包含 CMakeLists.txt 文件，主目录的 CMakelists.txt 通过 <code>add_subdirectory</code> 添加子目录即可</li>
+<li>包含源文件的子文件夹未包含 CMakeLists.txt 文件，子目录的编译规则体现在主目录的 CMakeLists.txt 中</li>
+</ol>
+<h3 id="编译流程"><a href="#编译流程" class="headerlink" title="编译流程"></a>编译流程</h3><ul>
+<li>手动编写 CMakeLists.txt </li>
+<li>执行命令 <code>cmake PATH</code> 生成 Makefile (PATH 是顶层 CMakeLists.txt 所在的目录)</li>
+<li>执行命令 <code>make</code> 进行</li>
+</ul>
+<h3 id="构建的两种方式"><a href="#构建的两种方式" class="headerlink" title="构建的两种方式"></a>构建的两种方式</h3><ul>
+<li>内部构件，在当前文件夹下，执行 make 命令。<strong>杂乱无章</strong></li>
+<li>外部构建 <strong>推荐</strong>，创建 build 文件夹，编译上级目录的 CMakeLists.txt 文件</li>
+</ul>
+<h3 id="CMake-实战"><a href="#CMake-实战" class="headerlink" title="CMake 实战"></a>CMake 实战</h3><p><img src="/2022/04/07/cmake/image-20220315155252463.jpg" alt="image-20220315155252463"></p>
+<center>两个工程的结构</center>
+
+<h4 id="构建-proj1"><a href="#构建-proj1" class="headerlink" title="构建 proj1"></a>构建 proj1</h4><p><code>g++ helloworld.cpp -o helloworld</code></p>
+<ol>
+<li>编写 CMakeLists.txt</li>
+</ol>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 指定版本号</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定工程文件名</span></span><br><span class="line"><span class="keyword">project</span>(HELLOWORLD)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 等价于 g++ helloworld.cpp -o helloworld_cmake</span></span><br><span class="line"><span class="keyword">add_executable</span>(helloWorld_cmake helloworld.cpp)</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p><strong>内部构建</strong>在 bash 中</p>
+<ol>
+<li><code>cmake .</code> 构建 <code>Makefile</code></li>
+<li><code>make</code> make Makefile</li>
+</ol>
+</li>
+<li><p><strong>外部构建</strong>在 bash 中</p>
+<ol>
+<li><code>mkdir build</code></li>
+<li><code>cd build</code></li>
+<li><code>cmake ..</code> 在 build 文件夹构建上一级目录的 <code>CMakeLists.txt</code></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 在 build 文件夹中构建</span></span><br><span class="line"><span class="built_in">mkdir</span> build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line"><span class="comment"># 生成 Makefile</span></span><br><span class="line">cmake ..</span><br><span class="line"><span class="comment"># make Makefile make 是编译的过程</span></span><br><span class="line">make</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><img src="/2022/04/07/cmake/image-20220315161112258.jpg" alt="image-20220315161112258"></p>
+<center>外部构建</center>
+
+<h4 id="构建-proj2"><a href="#构建-proj2" class="headerlink" title="构建 proj2"></a>构建 proj2</h4><p><code>g++ main.cpp ./src/swap.cpp -I ./include -o main</code></p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">project</span>(SWAP)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含头文件搜索路径 -I 选项</span></span><br><span class="line"><span class="keyword">include_directories</span>(./<span class="keyword">include</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 类似于 g++ main.cpp ./src/swap.cpp</span></span><br><span class="line"><span class="keyword">add_executable</span>(main_cmake main.cpp ./src/swap.cpp)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="实战-proj3"><a href="#实战-proj3" class="headerlink" title="实战 proj3"></a>实战 proj3</h1><p><img src="/2022/04/07/cmake/image-20220315164644371.jpg" alt="image-20220315164644371"></p>
+<p><code>g++ main.cpp src/Gun.cpp src/Solider.cpp -I ./include/ -o main</code></p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">project</span>(GO)</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -g -O2 -Wall -std=c++11&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含头文件</span></span><br><span class="line"><span class="keyword">include_directories</span>(<span class="keyword">include</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(main_cmake main.cpp src/Gun.cpp src/Solider.cpp)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="GDB"><a href="#GDB" class="headerlink" title="GDB"></a>GDB</h1><h2 id="launch-json"><a href="#launch-json" class="headerlink" title="launch.json"></a>launch.json</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line"></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;(gdb) 启动&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cppdbg&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;request&quot;</span><span class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="comment">// ***** 可执行文件路径</span></span><br><span class="line">            <span class="attr">&quot;program&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;/build/main_cmake&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;stopAtEntry&quot;</span><span class="punctuation">:</span> <span class="keyword">false</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;fileDirname&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;environment&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;externalConsole&quot;</span><span class="punctuation">:</span> <span class="keyword">false</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;MIMode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;gdb&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;setupCommands&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;为 gdb 启用整齐打印&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;text&quot;</span><span class="punctuation">:</span> <span class="string">&quot;-enable-pretty-printing&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;ignoreFailures&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span></span><br><span class="line">                <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;将反汇编风格设置为 Intel&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;text&quot;</span><span class="punctuation">:</span> <span class="string">&quot;-gdb-set disassembly-flavor intel&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;ignoreFailures&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span></span><br><span class="line">                <span class="punctuation">&#125;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="comment">// ***** 指向 Task.json 中的 Build</span></span><br><span class="line">            <span class="attr">&quot;preLaunchTask&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Build&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Tasks-json"><a href="#Tasks-json" class="headerlink" title="Tasks.json"></a>Tasks.json</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;options&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="comment">// cd ./build</span></span><br><span class="line">        <span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;/build&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="comment">// cmake ..</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cmake&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cmake&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;..&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">                </span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="comment">// make</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;make&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;kind&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;isDefault&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;make&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line"></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Build&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;dependsOrder&quot;</span><span class="punctuation">:</span> <span class="string">&quot;sequence&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;dependsOn&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="comment">// 调用 cmake 和 make 命令</span></span><br><span class="line">                <span class="string">&quot;cmake&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;make&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>常用 cmake 指令</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 指定最小版本号</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 项目名称</span></span><br><span class="line"><span class="keyword">project</span>(GO)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含头文件</span></span><br><span class="line"><span class="keyword">include</span>(./lib)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置编译参数</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -O2 -g&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置编译模式 Debug | Release</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_BUILD_TYPE Debug)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译</span></span><br><span class="line"><span class="keyword">add_executable</span>(main_cmake main.cpp [其他文件])</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>技术</tag>
+        <tag>cmake</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/04/06/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a class="link" href="https://hexo.io/">Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link" href="https://hexo.io/docs/">documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link" href="https://hexo.io/docs/troubleshooting.html">troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link" href="https://github.com/hexojs/hexo/issues">GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
@@ -959,6 +959,54 @@
       <tags>
         <tag>技术</tag>
         <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ACM 退役总结</title>
+    <url>/2022/04/17/retire-from-acm/</url>
+    <content><![CDATA[<h1 id="ACM-退役总结"><a href="#ACM-退役总结" class="headerlink" title="ACM 退役总结"></a>ACM 退役总结</h1><p>在开学后得知没有安排我参加昆明之后，我也算正式告别了 XCPC 的赛场。</p>
+<p>经过连续几周的面试，我也拿到了比较心仪的实习 offer，在和面试官交流的过程中也学到了很多计算机在生活中的应用。</p>
+<p>我渐渐发现之前那种只用考虑这一道题如何解决的时期已经过去了，所以在这一篇文章中纪念我的 acm 生涯。</p>
+<p>ACM 生涯中一共参加了 4 场 XCPC 的比赛，两铁一铜一银。这里要感谢陪伴我的队友 @xjw, @lyy, @zzy。感谢队友在这两年的陪伴。</p>
+<h4 id="第-45-届-icpc-昆明"><a href="#第-45-届-icpc-昆明" class="headerlink" title="第 45 届 icpc 昆明"></a>第 45 届 icpc 昆明</h4><p>当时寒假刚参加 acm 集训队，在一个寒假中勉强学会了一些板子题。莫名其妙的被 sj 拉着参加了延期的昆明。当时赛前勉强学会了一些算法的板子并不会，对算法的理解也不全面。导致比赛我全程宕机。最后拿了一个铁牌。</p>
+<p><img src="/2022/04/17/retire-from-acm/image-20220417143814047.png" alt="image-20220417143814047"></p>
+<p>不过第一次参加比赛就拿到 ACM 生涯中第一个，也是唯一一个一血。还是有一点意外的。</p>
+<h4 id="第-45-届-icpc-银川"><a href="#第-45-届-icpc-银川" class="headerlink" title="第 45 届 icpc 银川"></a>第 45 届 icpc 银川</h4><p>有了第一次比赛打铁的经验之后，我们自费参加了 45 届 icpc 银川。就是那个被 acmer 喷烂的比赛。</p>
+<p>当时比赛之前进行了比较充分的准备，但是还是没有防住银川的航模空格。好歹也报一个 PE 吧，老是来 WA 谁顶的住啊。</p>
+<p>最后还是打了铁。还是银川打铁，对我的心态影响属实不小。</p>
+<p>由于赛方没有公开 rk 数据，这里就不放排名了。</p>
+<p><a class="link" href="https://blog.csdn.net/myvanilla1/article/details/116903422">CSDN ICPC银川总结<i class="fas fa-external-link-alt"></i></a> 这里放一个当时打完比赛写的小作文。</p>
+<h4 id="第-7-届-CCPC-广州"><a href="#第-7-届-CCPC-广州" class="headerlink" title="第 7 届 CCPC 广州"></a>第 7 届 CCPC 广州</h4><p>经过了一个暑假的训练，以及队伍重组之后，我们参加了新赛季的第一场比赛。当时的我已经能够熟练的使用各种维护区间的数据架构了，同时对图论也有少量的了解。无奈前两次打铁，使我不敢放松。最后在比赛中获得了银。</p>
+<p>虽然这场比赛比较离谱，和我学过的算法并没有关系，全都是思维题。作为全队唯一一个没有脑子的选手，我化身码农狂写代码。最后的银牌打表题感谢队友 @xjw 的数据，当时我已经接近宕机并不是很想继续写题了。可能是老天爷的帮助，让我刚好看到了数据，也一眼看出了是斐波那契数列。最后拿下了银牌，不然真就从银牌区掉到了铜牌区。</p>
+<p><img src="/2022/04/17/retire-from-acm/image-20220417145957207.png" alt="image-20220417145957207"></p>
+<h4 id="第-46-届-icpc-沈阳"><a href="#第-46-届-icpc-沈阳" class="headerlink" title="第 46 届 icpc 沈阳"></a>第 46 届 icpc 沈阳</h4><p>拿到银之后，整个人都变成快乐人了。我们队也没有很认真的训练了。最后在欢声笑语中拿下一块铜牌。</p>
+<p>这里再次感谢 @xjw 的打表 idea。我愿称 @xjw 为打表的神。</p>
+<p><img src="/2022/04/17/retire-from-acm/image-20220417150404479.png" alt="image-20220417150404479"></p>
+<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>在 hr 面中，hr 问我为什么参加 xcpc 竞赛。当时我笑着说 <code>just for fun</code>。</p>
+<p>记得我第一次打算法竞赛是在分流之后，学校安排的一场夏季联赛，虽然当时连数据读入都不会，但是就被这个比赛深深的吸引住了。</p>
+<p>虽然当时也是出于之后好找工作，好保研的目的参加了这个竞赛。当时，退役之后回想起来 xcpc 给我带来的远不止这一些。它改变了我的思维方式，也使得我可以使用更加优雅的方式实现实际问题的求解。</p>
+<p>感谢你耐心的看完了我的流水账，下面我想给想参加 xcpc 的朋友一些建议：</p>
+<ol>
+<li>首先得了解你参加比赛所使用的语言，有利于你使用语言的特性优雅的低常数实现。</li>
+<li>熟悉至少一个编辑器的快捷键，可以让代码的编写跟的上脑子</li>
+<li>代码尽量规范，让代码看上去至少不会让你感到恶心</li>
+<li>尽早在 cf 和 atcoder 上面刷题，可以活跃你的思维。</li>
+<li>平时一定要好好补题，不要老学我天天搁那刷傻逼题。</li>
+</ol>
+<h4 id="最后的最后"><a href="#最后的最后" class="headerlink" title="最后的最后"></a>最后的最后</h4><p>感谢和我一起打过比赛的队友</p>
+<p>感谢实验室的朋友一路的陪伴</p>
+<p>感谢所有因为 acm 而相识的朋友</p>
+<p>退役，既是告别，也是开始</p>
+<p>愿今后：</p>
+<p>被打击时，记起你的珍贵</p>
+<p>迷茫时，坚信你的珍贵</p>
+<p>爱你所爱，行你所行</p>
+<p>听从你心，无问西东</p>
+<p>2022&#x2F;4&#x2F;17 (正好是第 46 届 icpc 昆明的比赛时间)</p>
+<p><img src="/2022/04/17/retire-from-acm/image-20220417153331430.png" alt="image-20220417153331430"></p>
+]]></content>
+      <tags>
+        <tag>日常</tag>
       </tags>
   </entry>
 </search>
