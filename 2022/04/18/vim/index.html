@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="write something interesting">
+    <meta name="author" content="Auggie">
+    
+    <title>
+        
+            vim 基础学习 |
+        
+        Auggie&#39;s blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"快快抹干眼泪，看昙花多美"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Auggie&#39;s blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">vim 基础学习</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Auggie</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-04-18 09:30:43</span>
+        <span class="mobile">2022-04-18 09:30</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/vim/">vim</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>592 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="Getting-Familiar"><a href="#Getting-Familiar" class="headerlink" title="Getting Familiar"></a>Getting Familiar</h1><h2 id="Vim-modes"><a href="#Vim-modes" class="headerlink" title="Vim modes"></a>Vim modes</h2><ul>
+<li>Command mode</li>
+<li>insert mode</li>
+<li>Command line mode</li>
+<li>Visual mode: switch from command mode to visual node type <code>v</code></li>
+</ul>
+<h2 id="operate-with-file"><a href="#operate-with-file" class="headerlink" title="operate with file"></a>operate with file</h2><blockquote>
+<p>create new file or load file</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:edit message.txt</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>open file in read-only mode</p>
+</blockquote>
+<p>use -R option</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ vim -R message.txt</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">$ view message.txt</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>edit existing file</p>
+</blockquote>
+<ul>
+<li><p>quit editor without saving changes</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:q!</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>save changes and quit editor</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="editing"><a href="#editing" class="headerlink" title="editing"></a>editing</h1><blockquote>
+<p>insert text <strong>before</strong> cursor</p>
+</blockquote>
+<p><code>i</code> switch to insert mode</p>
+<blockquote>
+<p>insert text at the <strong>beginning of line</strong></p>
+</blockquote>
+<p>problem: you want to insert text at the beginning of <strong>current line</strong> </p>
+<p>solve: use <code>I</code></p>
+<blockquote>
+<p>append text <strong>after</strong> cursor</p>
+</blockquote>
+<p><code>a</code></p>
+<blockquote>
+<p>append text at the end of line</p>
+</blockquote>
+<p><code>A</code></p>
+<blockquote>
+<p><strong>open new line</strong> <strong>below</strong> cursor</p>
+</blockquote>
+<p><code>o</code></p>
+<blockquote>
+<p>open new line <strong>above</strong> cursor</p>
+</blockquote>
+<p><code>O</code></p>
+<blockquote>
+<p>change text</p>
+</blockquote>
+<p>problem: want to change text in current line then insert</p>
+<p>solve: <code>cc</code> or <code>C</code></p>
+<blockquote>
+<p>replace text</p>
+</blockquote>
+<p>problem: want to replace character or entire line</p>
+<p>solve: <code>r</code> or <code>R</code></p>
+<blockquote>
+<p>Join text</p>
+</blockquote>
+<p>problem: want to merge two line (this line and next line)</p>
+<p>solve: <code>J</code></p>
+<h1 id="Navigating"><a href="#Navigating" class="headerlink" title="Navigating"></a>Navigating</h1><p>problem: how to quickly move cursor</p>
+<h2 id="Basic-navigation-move-cursor"><a href="#Basic-navigation-move-cursor" class="headerlink" title="Basic navigation (move cursor)"></a>Basic navigation (move cursor)</h2><ul>
+<li><code>h</code>: left</li>
+<li><code>l</code>: right</li>
+<li><code>j</code>: up</li>
+<li><code>k</code>: down</li>
+</ul>
+<blockquote>
+<p>more: navigation use number with those basic command, like 10j</p>
+</blockquote>
+<ul>
+<li><code>0</code>: move cursor to the beginning of current line. like <code>I</code> but not to insert mode</li>
+<li><code>$</code>: move cursor to the end of current line</li>
+<li><code>ctrl + f</code>: scroll down entire page</li>
+<li><code>ctrl + b</code>: scroll up entire page</li>
+</ul>
+<h2 id="navigate-to-lines"><a href="#navigate-to-lines" class="headerlink" title="navigate to lines"></a>navigate to lines</h2><ul>
+<li><code>:n</code>: jump to the nth line</li>
+<li><code>:0</code>: jump to the <strong>start</strong> of file</li>
+<li><code>:$</code>: jump to the <strong>end</strong> of file</li>
+</ul>
+<h2 id="word-navigation"><a href="#word-navigation" class="headerlink" title="word navigation"></a>word navigation</h2><ul>
+<li><code>w</code>: move cursor to the beginning of <strong>next</strong> word</li>
+<li><code>b</code>: move cursor to the end of <strong>previous</strong> word</li>
+<li><code>e</code>: move cursor to the end of <strong>current</strong> word</li>
+</ul>
+<h1 id="revisiting-editing"><a href="#revisiting-editing" class="headerlink" title="revisiting editing"></a>revisiting editing</h1><h2 id="cut-copy-and-paste"><a href="#cut-copy-and-paste" class="headerlink" title="cut, copy and paste"></a>cut, copy and paste</h2><ul>
+<li><code>x</code>: delete character from cursor position</li>
+<li><code>X</code>: delete previous character from cursor position</li>
+<li><code>y</code>: copy single character</li>
+<li><code>p</code>: paste character <strong>after</strong> cursor position</li>
+<li><code>P</code>: paste character <strong>before</strong> cursor position</li>
+</ul>
+<h2 id="multi-position-command"><a href="#multi-position-command" class="headerlink" title="multi-position command"></a>multi-position command</h2><ul>
+<li><code>dw</code>: Delete word <strong>from</strong> cursor position</li>
+<li><code>D</code>: Delete entire line from cursor position</li>
+<li><code>dd</code>: Delete entire line</li>
+<li><code>Y</code> or <code>yy</code>: Copies entire line</li>
+</ul>
+<p>more: <code>3dw</code> or <code>d3w</code> delete 3 words</p>
+<ul>
+<li><p><code>u</code>: undo like <code>ctrl + z</code></p>
+</li>
+<li><p><code>:red</code> or <code>ctrl + r</code>: redo like <code>ctrl + shift + z</code></p>
+</li>
+</ul>
+<h1 id="searching"><a href="#searching" class="headerlink" title="searching"></a>searching</h1><h2 id="search-in-current-file"><a href="#search-in-current-file" class="headerlink" title="search in current file"></a>search in current file</h2><blockquote>
+<p>search in <strong>forward</strong> direction</p>
+</blockquote>
+<ul>
+<li><code>/&lt;expression&gt;</code></li>
+<li><code>n</code>: next</li>
+<li><code>N</code>: previous</li>
+<li><code>//</code>: repeat search</li>
+</ul>
+<blockquote>
+<p>search in <strong>backward</strong> direction</p>
+</blockquote>
+<ul>
+<li><code>?&lt;expression&gt;</code></li>
+<li><code>n</code>: previous</li>
+<li><code>N</code>: next</li>
+<li><code>??</code>: repeat</li>
+</ul>
+<blockquote>
+<p>search word <strong>under cursor</strong></p>
+</blockquote>
+<ul>
+<li><code>*</code>: next </li>
+<li><code>#</code>: previous</li>
+</ul>
+<h1 id="macros"><a href="#macros" class="headerlink" title="macros"></a>macros</h1><blockquote>
+<p>start recording</p>
+</blockquote>
+<ol>
+<li>press <code>q</code> start</li>
+<li>use single character as a macros name</li>
+</ol>
+<blockquote>
+<p>stop recording</p>
+</blockquote>
+<p>press <code>q</code> again</p>
+<blockquote>
+<p>use macros</p>
+</blockquote>
+<p><code>@&#123;macros name&#125;</code> or <code>number@&#123;name&#125;</code></p>
+<blockquote>
+<p>list macros</p>
+</blockquote>
+<p><code>:registers</code></p>
+<h1 id="vimrc"><a href="#vimrc" class="headerlink" title="vimrc"></a>vimrc</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> mapleader=<span class="string">&quot; &quot;</span></span><br><span class="line">syntax on</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> number</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> cursorline</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> ignorecase</span><br><span class="line"><span class="built_in">set</span> smartcase</span><br><span class="line"><span class="built_in">set</span> hlsearch</span><br><span class="line"><span class="built_in">set</span> incsearch</span><br><span class="line"><span class="built_in">exec</span> <span class="string">&quot;nohlsearch&quot;</span></span><br><span class="line"></span><br><span class="line">nnoremap = nzz</span><br><span class="line">nnoremap - Nzz</span><br><span class="line"></span><br><span class="line">nnoremap &lt;LEADER&gt;&lt;CR&gt; :nohlsearch&lt;CR&gt;</span><br><span class="line">nnoremap sj :<span class="built_in">set</span> splitright&lt;CR&gt;:vsplit&lt;CR&gt;</span><br><span class="line">nnoremap sk :<span class="built_in">set</span> nosplitright&lt;CR&gt;:vspilt&lt;CR&gt;</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> noshowcmd</span><br><span class="line"><span class="built_in">set</span> wrap</span><br><span class="line"><span class="built_in">set</span> autowrite</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> smarttab</span><br><span class="line"><span class="built_in">set</span> tabstop=4</span><br><span class="line"><span class="built_in">set</span> shiftwidth=4</span><br><span class="line"><span class="built_in">set</span> expandtab</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> fileencodings=utf-9,gb2312,gbk,gb18030</span><br><span class="line"></span><br><span class="line">nnoremap tt :NERDTreeToggle&lt;CR&gt;</span><br><span class="line"></span><br><span class="line">nnoremap J 5j</span><br><span class="line">nnoremap K 5k</span><br><span class="line"></span><br><span class="line">call plug<span class="comment">#begin()</span></span><br><span class="line"></span><br><span class="line">Plug <span class="string">&#x27;connorholyday/vim-snazzy&#x27;</span></span><br><span class="line"></span><br><span class="line">Plug <span class="string">&#x27;wakatime/vim-wakatime&#x27;</span></span><br><span class="line"></span><br><span class="line">Plug <span class="string">&#x27;preservim/nerdtree&#x27;</span></span><br><span class="line"></span><br><span class="line">Plug <span class="string">&#x27;tpope/vim-sensible&#x27;</span></span><br><span class="line"></span><br><span class="line">Plug <span class="string">&#x27;vim-airline/vim-airline&#x27;</span></span><br><span class="line"></span><br><span class="line">Plug <span class="string">&#x27;Raimondi/delimitMate&#x27;</span></span><br><span class="line"></span><br><span class="line">Plug <span class="string">&#x27;ycm-core/YouCompleteMe&#x27;</span></span><br><span class="line"></span><br><span class="line">Plug <span class="string">&#x27;tpope/vim-fugitive&#x27;</span></span><br><span class="line"></span><br><span class="line">Plug <span class="string">&#x27;dracula/vim&#x27;</span>, &#123;<span class="string">&#x27;as&#x27;</span>: <span class="string">&#x27;dracula&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line">call plug<span class="comment">#end()</span></span><br><span class="line"></span><br><span class="line">colorscheme dracula</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> g:airline<span class="comment">#extensions#tabline#enabled=1</span></span><br><span class="line"><span class="built_in">let</span> g:airline<span class="comment">#extensions#branch#enabled=1</span></span><br><span class="line"><span class="built_in">let</span> g:airline_powerline_fonts=1</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：vim 基础学习</li>
+        <li>本文作者：Auggie</li>
+        <li>创建时间：2022-04-18 09:30:43</li>
+        <li>
+            本文链接：https://ruanjiancheng.github.io/2022/04/18/vim/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E6%8A%80%E6%9C%AF/">#技术</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/vim/">#vim</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/04/17/retire-from-acm/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">ACM 退役总结</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Auggie</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Getting-Familiar"><span class="nav-number">1.</span> <span class="nav-text">Getting Familiar</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim-modes"><span class="nav-number">1.1.</span> <span class="nav-text">Vim modes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#operate-with-file"><span class="nav-number">1.2.</span> <span class="nav-text">operate with file</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#editing"><span class="nav-number">2.</span> <span class="nav-text">editing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Navigating"><span class="nav-number">3.</span> <span class="nav-text">Navigating</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-navigation-move-cursor"><span class="nav-number">3.1.</span> <span class="nav-text">Basic navigation (move cursor)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#navigate-to-lines"><span class="nav-number">3.2.</span> <span class="nav-text">navigate to lines</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#word-navigation"><span class="nav-number">3.3.</span> <span class="nav-text">word navigation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#revisiting-editing"><span class="nav-number">4.</span> <span class="nav-text">revisiting editing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cut-copy-and-paste"><span class="nav-number">4.1.</span> <span class="nav-text">cut, copy and paste</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multi-position-command"><span class="nav-number">4.2.</span> <span class="nav-text">multi-position command</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#searching"><span class="nav-number">5.</span> <span class="nav-text">searching</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#search-in-current-file"><span class="nav-number">5.1.</span> <span class="nav-text">search in current file</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#macros"><span class="nav-number">6.</span> <span class="nav-text">macros</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vimrc"><span class="nav-number">7.</span> <span class="nav-text">vimrc</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
