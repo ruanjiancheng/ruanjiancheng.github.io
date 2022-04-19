@@ -962,7 +962,7 @@
       </tags>
   </entry>
   <entry>
-    <title>文件系统 &amp; IO 系统</title>
+    <title>内存管理 &amp; 文件管理 &amp; IO 管理</title>
     <url>/2022/04/18/os/</url>
     <content><![CDATA[<h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><p>问题：缓和 CPU 和磁盘之间的速度矛盾</p>
 <p>解决：引入内存</p>
