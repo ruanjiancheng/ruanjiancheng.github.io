@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="write something interesting">
+    <meta name="author" content="Auggie">
+    
+    <title>
+        
+            database1 |
+        
+        Auggie&#39;s blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"快快抹干眼泪，看昙花多美"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Auggie&#39;s blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">database1</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Auggie</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-04-25 17:13:08</span>
+        <span class="mobile">2022-04-25 17:13</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>3.5k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>12 Mins</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>理解数据库系统结构</li>
+<li>掌握数据库基本概念和理论知识</li>
+<li>了解数据库技术发展的趋势</li>
+<li>掌握关系代数、关系演算、SQL 语言</li>
+</ul>
+<h1 id="数据库发展史"><a href="#数据库发展史" class="headerlink" title="数据库发展史"></a>数据库发展史</h1><ul>
+<li>数据管理技术史</li>
+<li>数据库技术史</li>
+<li>数据库应用系统体系结构的发展</li>
+</ul>
+<h2 id="数据管理技术发展史"><a href="#数据管理技术发展史" class="headerlink" title="数据管理技术发展史"></a>数据管理技术发展史</h2><h4 id="人工管理阶段"><a href="#人工管理阶段" class="headerlink" title="人工管理阶段"></a>人工管理阶段</h4><ul>
+<li>数据的<strong>逻辑结构和物理结构相同</strong>，数据的组织方式必须由程序员自行设计和安排</li>
+<li>数据不保存在机器中</li>
+<li>没有专门的软件对数据进行管理</li>
+<li>只有程序的概念，<strong>没有文件的概念</strong>。<strong>数据面向应用</strong></li>
+</ul>
+<h4 id="文件系统阶段"><a href="#文件系统阶段" class="headerlink" title="文件系统阶段"></a>文件系统阶段</h4><ul>
+<li><strong>逻辑结构和物理结构有一定的区别</strong>，通过文件系统来实现两者的转化</li>
+<li>数据可以长期保存在外存上</li>
+<li>文件的逻辑结构多样化</li>
+<li><strong>数据面向应用</strong>，对数据的访问以记录为单位。</li>
+<li>数据可以被不用的程序重复利用</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>数据冗余</li>
+<li>数据不一致</li>
+<li>数据联系弱</li>
+</ul>
+<h4 id="倒排文件系统"><a href="#倒排文件系统" class="headerlink" title="倒排文件系统"></a>倒排文件系统</h4><p>提高系统性能，对索引文件进行推广。</p>
+<p><strong>优点</strong>：使用户不仅能用关键码，而且也能按字段的任何组合。容易地检索记录。很适合于信息检索系统。</p>
+<p><strong>缺点</strong>：1. 索引占用更多存储空间 2. 数据更新比较困难</p>
+<h4 id="数据库系统"><a href="#数据库系统" class="headerlink" title="数据库系统"></a>数据库系统</h4><p><strong>特点</strong></p>
+<ul>
+<li>面向全组织的复杂的数据结构，实现数据的结构化</li>
+<li>有较高的数据独立性</li>
+<li>系统提供了四个方面的控制功能<ul>
+<li>数据库恢复</li>
+<li>数据库并发控制</li>
+<li>数据完整性</li>
+<li>数据安全性</li>
+</ul>
+</li>
+<li>数据的操作可以以<strong>数据项</strong>为单位，增加了系统的灵活性</li>
+<li>用户可以采用程序方式或者交互方式操作数据库</li>
+</ul>
+<p><strong>数据库的三级模式结构</strong></p>
+<p><img src="/2022/04/25/database1/image-20220424214741945.png" alt="image-20220424214741945"></p>
+<ul>
+<li><p>模式 – 概念模式 – 全局模式</p>
+<p>数据库中全部数据的整体逻辑结构的描述。<strong>描述了全局数据视图</strong></p>
+<ul>
+<li>与数据的物理存储结构无关</li>
+<li>与具体用户应用程序、开发工具以及高级程序设计语言无关</li>
+</ul>
+</li>
+<li><p>外模式</p>
+<p>用户的数据视图，通常是模式的子集。</p>
+<ul>
+<li>保证了数据库的安全性提供了有力的措施</li>
+</ul>
+</li>
+<li><p>内模式 – 存储模式</p>
+<p>数据库的物理结构。定义了所有内部记录类型。实现了数据控制方面的细节。</p>
+</li>
+<li><p>模式 &#x2F; 内模式映像</p>
+<p>用于定义模式和内模式之间的对应性。</p>
+<ul>
+<li>需要说明记录和内部记录之间的对应性</li>
+<li>一般放在内模式中描述</li>
+</ul>
+</li>
+<li><p>外模式 &#x2F; 模式映像</p>
+<p>一般放在外模式中实现</p>
+</li>
+</ul>
+<p><strong>物理独立性</strong></p>
+<p>内模式修改，只需要对模式 &#x2F; 内模式映像，概念模式可以尽可能保持不变。</p>
+<p><strong>逻辑独立性</strong></p>
+<p>逻辑模式修改，只需要对外模式 &#x2F; 模式映像修改，就可以使外模式和应用程序尽可能保持不变。</p>
+<h2 id="数据库发展史-1"><a href="#数据库发展史-1" class="headerlink" title="数据库发展史"></a>数据库发展史</h2><ol>
+<li>IMS 系统 – <strong>层次模型</strong></li>
+<li>DBTG 报告 – <strong>网状模型</strong>（Charls Batchman 网状数据库之父）</li>
+<li>E.F.Codd 文章 – <strong>关系模型</strong></li>
+</ol>
+<h1 id="数据库系统结构"><a href="#数据库系统结构" class="headerlink" title="数据库系统结构"></a>数据库系统结构</h1><ul>
+<li>数据描述</li>
+<li>数据模型</li>
+<li>逻辑模型</li>
+<li>数据库体系结构</li>
+</ul>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>数据模型用于表示实体类型及实体之间联系的模型。通常使用概念数据模型和逻辑数据模型。</p>
+<p>概念设计描述数据库的概念结构 – ER 模型</p>
+<p>逻辑设计描述计算机的数据形式 – 逻辑模型（关系模型）</p>
+<p><strong>概念数据模型</strong> – ER 模型</p>
+<p><strong>逻辑数据模型</strong> – 结构数据模型</p>
+<h3 id="ER-模型"><a href="#ER-模型" class="headerlink" title="ER 模型"></a>ER 模型</h3><p>独立于计算机系统的模型，用于建立信息世界的数据模型。</p>
+<h3 id="逻辑数据模型"><a href="#逻辑数据模型" class="headerlink" title="逻辑数据模型"></a>逻辑数据模型</h3><p>面向数据库逻辑结构的模型</p>
+<ul>
+<li>数据结构：实体类型和实体联系的表达和实现</li>
+<li>数据操作：数据库的 CRUD</li>
+<li>数据完整性约束：<ul>
+<li>实体完整型</li>
+<li>参照完整型</li>
+</ul>
+</li>
+</ul>
+<h5 id="层次结构（指针导航）"><a href="#层次结构（指针导航）" class="headerlink" title="层次结构（指针导航）"></a>层次结构（指针导航）</h5><p>用<strong>有向树</strong>型结构表示实体类型及实体之间联系的模型称为层次模型。父子表示 1： N 的联系。</p>
+<p>优点：易于实现、查询效率高</p>
+<p>缺点：M：N 联系比较难实现、编写应用程序复杂</p>
+<h5 id="网状结构（指针导航）"><a href="#网状结构（指针导航）" class="headerlink" title="网状结构（指针导航）"></a>网状结构（指针导航）</h5><p>有向图</p>
+<p>优点：容易实现 M: N 联系、查询效率高</p>
+<p>缺点：需要掌握数据库的逻辑结构才能编写对应的代码</p>
+<h5 id="关系模型（关键码导航）"><a href="#关系模型（关键码导航）" class="headerlink" title="关系模型（关键码导航）"></a>关系模型（关键码导航）</h5><p>二维表格</p>
+<p>使用外键表示实体之间的联系</p>
+<p>优点：表格简单、用户易懂、编写程序不涉及存储结构和访问技术的问题</p>
+<h5 id="对象模型"><a href="#对象模型" class="headerlink" title="对象模型"></a>对象模型</h5><p>能表达递归和嵌套的数据结构</p>
+<h1 id="ER-模型-1"><a href="#ER-模型-1" class="headerlink" title="ER 模型"></a>ER 模型</h1><ul>
+<li>实体、属性的基本概念</li>
+<li>属性的分类</li>
+<li>实体和属性的设计</li>
+</ul>
+<h2 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h3><p>客观存在可以互相分开的事物</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>实体的某一个特征。<strong>关键属性加下划线</strong></p>
+<ul>
+<li>基本属性：不可再分割的属性</li>
+<li>复合属性：可以分割的属性</li>
+</ul>
+<p><img src="/2022/04/25/database1/image-20220424223002648.png" alt="image-20220424223002648"></p>
+<ul>
+<li>单值属性：只能取一个值，例如：年龄</li>
+<li>多值属性：可以取很多值，例如：学位（可以既是学士，又是硕士）。使用<strong>双椭圆</strong>表示</li>
+</ul>
+<p><img src="/2022/04/25/database1/image-20220424223226688.png" alt="image-20220424223226688"></p>
+<p><strong>表示多值属性的两种方法</strong></p>
+<p>问题：简单的表示多值属性，将会产生大量的数据冗余，造成数据库的潜在数据异常、数据不一致性和完整性的缺陷。</p>
+<ol>
+<li><p>增加新的属性</p>
+<p><img src="/2022/04/25/database1/image-20220424223601653.png" alt="image-20220424223601653"></p>
+</li>
+<li><p>增加一个新的实体 1: M 的联系，<strong>弱实体</strong></p>
+<p><img src="/2022/04/25/database1/image-20220424223621280.png" alt="image-20220424223621280"></p>
+</li>
+</ol>
+<ul>
+<li><p>导出属性：可以通过其他的属性或者实体导出</p>
+<p><img src="/2022/04/25/database1/image-20220424223745292.png" alt="image-20220424223745292"></p>
+</li>
+</ul>
+<h2 id="联系的设计和实现"><a href="#联系的设计和实现" class="headerlink" title="联系的设计和实现"></a>联系的设计和实现</h2><h3 id="一元联系"><a href="#一元联系" class="headerlink" title="一元联系"></a>一元联系</h3><ol>
+<li>1: N 只需要一个关系模型</li>
+<li>1: 1 只需要一个关系模型</li>
+<li>M: N 需要两个，增加一个表示关系的表（表示零件和零件之间的关系）</li>
+</ol>
+<h3 id="二元联系"><a href="#二元联系" class="headerlink" title="二元联系"></a>二元联系</h3><ol>
+<li>1: 1 需要两个</li>
+<li>1: N 需要两个</li>
+<li>M: N 需要三个，一个用于表示联系</li>
+</ol>
+<h3 id="三元联系"><a href="#三元联系" class="headerlink" title="三元联系"></a>三元联系</h3><ol>
+<li>1:1:1 三张表 每张表加入两个外键</li>
+<li>1:1:N 三张表，在 N 端加入两个外键</li>
+<li>1:M:N 三张表，在 N 端和 M 端加入一个外键</li>
+<li>M:N:P 四张表</li>
+</ol>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p><strong>弱实体</strong>：实体的主键部分或者全部从父实体中获得</p>
+<p><strong>子类和超类</strong>：转换成关系模式的主键相同</p>
+<h1 id="关系运算"><a href="#关系运算" class="headerlink" title="关系运算"></a>关系运算</h1><ul>
+<li>概念：关系模型、关键码、关系的定义和性质、三类完整型规则</li>
+<li>关系代数：基本操作、组合操作、扩充操作</li>
+<li>关系演算：元组演算、域演算、关系演算的安全性和等价性</li>
+<li>查询优化</li>
+</ul>
+<h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><h3 id="关系模型-E-F-Codd"><a href="#关系模型-E-F-Codd" class="headerlink" title="关系模型 E.F.Codd"></a>关系模型 E.F.Codd</h3><p>二维表格表示实体集、外键表示实体之间的联系。</p>
+<p>关系：对应的二维表格，元组的集合、属性值域笛卡尔积的子集</p>
+<p>元组：表中的<strong>行</strong></p>
+<p>属性：表中的<strong>列</strong></p>
+<p>域：属性的取值范围</p>
+<h3 id="关键码"><a href="#关键码" class="headerlink" title="关键码"></a>关键码</h3><p>超键：可以推导出完成的属性集合</p>
+<p>候选键：唯一标识元组的最小属性集合，极小的概念</p>
+<p>主键：候选键的一个</p>
+<p>外键：包含另一个关系的主键</p>
+<h3 id="三类完整性"><a href="#三类完整性" class="headerlink" title="三类完整性"></a>三类完整性</h3><ul>
+<li><p>实体完整性规则</p>
+<p>元组的主键值不能为空</p>
+</li>
+<li><p>参照完整性规则</p>
+<p>元组的外键值只能是空值或者对应参照关系中的某一个主键的值</p>
+</li>
+<li><p>用户定义的完整性规则</p>
+<p>由应用环境决定</p>
+</li>
+</ul>
+<h2 id="关系数据库语言"><a href="#关系数据库语言" class="headerlink" title="关系数据库语言"></a>关系数据库语言</h2><ul>
+<li>关系代数语言：集合操作为基础</li>
+<li>关系演算语言：谓词演算为基础<ul>
+<li>元组关系演算</li>
+<li>域关系演算</li>
+</ul>
+</li>
+<li>SQL：基于关系代数和关系演算语言双重特点的语言</li>
+</ul>
+<h3 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h3><h4 id="基本运算"><a href="#基本运算" class="headerlink" title="基本运算"></a>基本运算</h4><ul>
+<li><p>并</p>
+</li>
+<li><p>差</p>
+</li>
+<li><p>笛卡尔积：两个关系全部元组的连接</p>
+<p>R 是 n 行 r 列的关系，S 是 m 行 s 列的关系。</p>
+<p>$R \times S$ 是 nm 行 r + s 列的关系</p>
+</li>
+<li><p>选择</p>
+</li>
+<li><p>投影</p>
+</li>
+</ul>
+<h4 id="组合运算"><a href="#组合运算" class="headerlink" title="组合运算"></a>组合运算</h4><ul>
+<li><p>交：差</p>
+<p><img src="/2022/04/25/database1/image-20220425134214591.png" alt="image-20220425134214591"></p>
+</li>
+<li><p>联接：笛卡尔积、选择、投影</p>
+<ul>
+<li>θ 联接：一个逻辑运算表达式，当为 &#x3D;&#x3D; 的时候，称为等值连接</li>
+<li>F 联接：多个 θ 的逻辑运算表达式的联接</li>
+<li>自然联接：公共属性相等的联接</li>
+</ul>
+</li>
+<li><p>除：笛卡尔积、投影、差</p>
+<p><img src="/2022/04/25/database1/image-20220425135015806.png" alt="image-20220425135015806"></p>
+</li>
+</ul>
+<p><strong>常见题目</strong></p>
+<ol>
+<li><p>或：直接使用 或</p>
+<p><img src="/2022/04/25/database1/image-20220425140325751.png" alt="image-20220425140325751"></p>
+</li>
+<li><p>同时使用：笛卡尔积</p>
+<p><img src="/2022/04/25/database1/image-20220425140307218.png" alt="image-20220425140307218"></p>
+</li>
+<li><p>不使用：差</p>
+</li>
+<li><p>全部：除</p>
+<p><img src="/2022/04/25/database1/image-20220425140438969.png" alt="image-20220425140438969"></p>
+</li>
+</ol>
+<h4 id="扩充关系代数"><a href="#扩充关系代数" class="headerlink" title="扩充关系代数"></a>扩充关系代数</h4><ul>
+<li><p>外联接：缺少部分直接使用 null 表示</p>
+<p><img src="/2022/04/25/database1/image-20220425141340310.png" alt="image-20220425141340310"></p>
+</li>
+<li><p>外部并：两个关系直接并在一起，然后缺少的属性直接为空</p>
+</li>
+<li><p>半联接：<img src="/2022/04/25/database1/image-20220425141442074.png" alt="image-20220425141442074"></p>
+</li>
+</ul>
+<h3 id="关系演算"><a href="#关系演算" class="headerlink" title="关系演算"></a>关系演算</h3><p>以数理逻辑中的<strong>谓词演算</strong>为<strong>基础</strong>，用<strong>公式</strong>表示关系演算的条件</p>
+<p>按照变量分为：</p>
+<ul>
+<li>元组关系演算</li>
+<li>域关系演算</li>
+</ul>
+<h4 id="元组关系演算"><a href="#元组关系演算" class="headerlink" title="元组关系演算"></a>元组关系演算</h4><p><strong>原子公式</strong></p>
+<p><img src="/2022/04/25/database1/image-20220425141927129.png" alt="image-20220425141927129"></p>
+<p><strong>约束变量和只有变量</strong></p>
+<p><img src="/2022/04/25/database1/image-20220425142010261.png" alt="image-20220425142010261"></p>
+<p><strong>常见题目</strong></p>
+<ol>
+<li><p>使用两种：类似与笛卡尔积做法</p>
+<p><img src="/2022/04/25/database1/image-20220425145124165.png" alt="image-20220425145124165"></p>
+</li>
+<li><p>都使用：任意(蕴含(存在))</p>
+<p><img src="/2022/04/25/database1/image-20220425145144214.png" alt="image-20220425145144214"></p>
+</li>
+<li><p>不使用：任意(蕴含)</p>
+<p><img src="/2022/04/25/database1/image-20220425145208501.png" alt="image-20220425145208501"></p>
+</li>
+</ol>
+<h3 id="域关系演算"><a href="#域关系演算" class="headerlink" title="域关系演算"></a>域关系演算</h3><p>将元组拆成元素</p>
+<h3 id="安全性和等价性"><a href="#安全性和等价性" class="headerlink" title="安全性和等价性"></a>安全性和等价性</h3><p><img src="/2022/04/25/database1/image-20220425152428192.png" alt="image-20220425152428192"></p>
+<p>安全运算：不产生<strong>无限关系</strong>和<strong>无穷验证</strong>的运算称为安全运算。通常采用安全约束集 DOM</p>
+<h2 id="查询优化"><a href="#查询优化" class="headerlink" title="查询优化"></a>查询优化</h2><ul>
+<li>尽早执行选择操作</li>
+<li>把笛卡尔积和其后的选择操作合并成 F 联接</li>
+<li>同时运算选择和投影，避免多次扫描文件</li>
+<li>适当预处理</li>
+</ul>
+<p><strong>步骤</strong></p>
+<ol>
+<li>把<strong>选择</strong>全部<strong>拆开</strong></li>
+<li>把<strong>选择</strong>尽可能<strong>移动</strong>到<strong>树叶</strong>端</li>
+<li>把<strong>投影</strong>尽可能<strong>移动</strong>到<strong>树叶</strong>端</li>
+<li>把选择和投影<strong>合并</strong>为单个选择和投影</li>
+<li>分组<ol>
+<li>将二元运算和一元祖先节点和下面的一元运算节点组合。</li>
+<li>如果二元运算是笛卡尔积。如果选择不能组成<strong>等值连接</strong>的时候，不能并未同一组</li>
+</ol>
+</li>
+</ol>
+<h1 id="结构化查询语言-SQL"><a href="#结构化查询语言-SQL" class="headerlink" title="结构化查询语言 SQL"></a>结构化查询语言 SQL</h1><ul>
+<li>SQL 数据库的体系结构，SQL 的组成</li>
+<li>SQL 的数据定义：数据库、基本表、索引的创建和撤销</li>
+<li>SQL 的数据 CRUD</li>
+<li>视图的创建和撤销，对视图更新操作的限制</li>
+<li>嵌入式 SQL：预处理方法、使用规定、使用技术、动态 SQL 语句</li>
+</ul>
+<h2 id="SQL-数据库体系结构"><a href="#SQL-数据库体系结构" class="headerlink" title="SQL 数据库体系结构"></a>SQL 数据库体系结构</h2><p>外模式对应视图、模式对应基本表、内模式对应存储文件</p>
+<p><strong>特点</strong></p>
+<ul>
+<li>一体化</li>
+<li>两种使用方式，统一的语法结构</li>
+<li>高度非过程化</li>
+<li>语言简洁</li>
+</ul>
+<p><strong>组成</strong></p>
+<ul>
+<li>数据定义</li>
+<li>数据操控</li>
+<li>数据控制</li>
+<li>嵌入式 SQL</li>
+</ul>
+<h2 id="SQL-数据定义"><a href="#SQL-数据定义" class="headerlink" title="SQL 数据定义"></a>SQL 数据定义</h2><p><strong>模式（命名空间）和数据库的创建和撤销</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> SCHEMA <span class="operator">&lt;</span>NAME<span class="operator">&gt;</span> <span class="keyword">AUTHORIZATION</span> <span class="operator">&lt;</span><span class="keyword">USER</span><span class="operator">&gt;</span></span><br><span class="line"><span class="keyword">CREATE</span> DATABASE <span class="operator">&lt;</span>NAME<span class="operator">&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> SCHEMA <span class="operator">&lt;</span>NAME<span class="operator">&gt;</span> [CASCADE<span class="operator">|</span>RESTRICT]</span><br><span class="line"><span class="keyword">DROP</span> DATABASE <span class="operator">&lt;</span>NAME<span class="operator">&gt;</span> [CASCADE<span class="operator">|</span>RESTRICT]</span><br></pre></td></tr></table></figure>
+
+<p><strong>基本表的创建、修改和撤销</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> schema.name (</span><br><span class="line">	列名 类型,</span><br><span class="line">    完整性约束,</span><br><span class="line">    <span class="keyword">PRIMARY</span> KEY(SNO,PNO,JNO),</span><br><span class="line">	<span class="keyword">FOREIGN</span> KEY(SNO) <span class="keyword">REFERENCES</span> S(SNO),</span><br><span class="line">	<span class="keyword">CHECK</span>(QTY <span class="keyword">BETWEEN</span> <span class="number">0</span> <span class="keyword">AND</span> <span class="number">10000</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"># 增加属性</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> name <span class="keyword">ADD</span> attribute type</span><br><span class="line"></span><br><span class="line"># 删除属性</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> 基本表名 <span class="keyword">DROP</span> 属性名 [CASCADE<span class="operator">|</span>RESTRICT]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>主键子句 PRIMARY KEY()</li>
+<li>外键子句 FOREIGN KEY()</li>
+<li>检查子句 CHECK</li>
+</ul>
+<h2 id="SQL-的-CRUD"><a href="#SQL-的-CRUD" class="headerlink" title="SQL 的 CRUD"></a>SQL 的 CRUD</h2><p><img src="/2022/04/25/database1/image-20220425155637159.png" alt="image-20220425155637159"></p>
+<p>SELECT A FROM R WHERE F</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> [<span class="keyword">DISTINCT</span>] A</span><br><span class="line"><span class="keyword">FROM</span> R</span><br><span class="line">[<span class="keyword">WHERE</span> F]</span><br><span class="line">[<span class="keyword">GROUP</span> <span class="keyword">BY</span> a [<span class="keyword">HAVING</span> exp]]</span><br><span class="line">[<span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">array</span> [<span class="keyword">ASC</span><span class="operator">|</span><span class="keyword">DESC</span>]]；</span><br></pre></td></tr></table></figure>
+
+<p><strong>执行过程</strong></p>
+<ol>
+<li>FROM 读取基本表，执行笛卡尔积运算</li>
+<li>WHERE</li>
+<li>GROUP HAVING</li>
+<li>SELECT</li>
+<li>ORDER</li>
+</ol>
+<p><strong>使用 EXIST 和 NOT EXIST 谓词表示全称量词和逻辑蕴含⭐</strong></p>
+<ul>
+<li><p>全称量词</p>
+<p><img src="/2022/04/25/database1/image-20220425170939340.png" alt="image-20220425170939340"></p>
+<p>转化为不存在课程没有选修的学生</p>
+<p><img src="/2022/04/25/database1/image-20220425171004835.png" alt="image-20220425171004835"></p>
+</li>
+<li><p>逻辑蕴含</p>
+<img src="/2022/04/25/database1/04/25/database1/image-20220425171104747.png" class title="image-20220425171104747">
+
+<p>与上面相类似</p>
+</li>
+</ul>
+<p><strong>数据更新操作</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># <span class="keyword">insert</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> t (列名)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">(val);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> t <span class="keyword">SELECT</span> 查询语句;</span><br><span class="line"></span><br><span class="line"># <span class="keyword">update</span></span><br><span class="line"><span class="keyword">UPDATE</span> t</span><br><span class="line"><span class="keyword">SET</span> t1 <span class="operator">=</span> t2</span><br><span class="line"><span class="keyword">WHERE</span> 条件;</span><br><span class="line"></span><br><span class="line"># <span class="keyword">delete</span></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> t</span><br><span class="line"><span class="keyword">WHERE</span> 条件</span><br></pre></td></tr></table></figure>
+
+<h2 id="视图操作"><a href="#视图操作" class="headerlink" title="视图操作"></a>视图操作</h2><p>对于视图的更新 INSERT, DELETE, UPDATE</p>
+<ol>
+<li>多个表<strong>联接</strong>导出的话，不允许更新</li>
+<li>使用了<strong>分组和聚合</strong>导出，不允许更新</li>
+<li>从单个基本表导出，使用选择、投影导出，并且包含主键或某一个候选键，那么称为<strong>行列子集视图</strong>，并且可以被执行更新操作。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> name (列表名)</span><br><span class="line"><span class="keyword">AS</span> <span class="keyword">SELECT</span> 查询语句</span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> 视图名</span><br><span class="line"></span><br><span class="line"># 视图的更新操作</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> name </span><br><span class="line"><span class="keyword">VALUES</span> ()</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> name</span><br><span class="line"><span class="keyword">SET</span> t1<span class="operator">=</span>t2</span><br><span class="line"><span class="keyword">WHERE</span> 条件</span><br></pre></td></tr></table></figure>
+
+<h2 id="嵌入式-SQL"><a href="#嵌入式-SQL" class="headerlink" title="嵌入式 SQL"></a>嵌入式 SQL</h2><ul>
+<li>在终端交互方式，称为交互式 SQL</li>
+<li>嵌入高级语言的程序中使用，称为嵌入式。高级语言称为宿主语言</li>
+</ul>
+<p><strong>高级语言和 SQL 的区别</strong></p>
+<p>SQL 是基于关系数据模型的语言；高级语言是关于基本数据类型的语言。</p>
+<p><strong>如何实现嵌入式 SQL</strong></p>
+<ol>
+<li>扩充宿主语言的编译程序，能够直接处理 SQL 语句</li>
+<li>采用预处理的方式（多数系统采用）</li>
+</ol>
+<p><strong>预处理的实现</strong></p>
+<ol>
+<li>源程序扫描之后，识别出 SQL 语句。并处理成宿主语言的函数调用形式。</li>
+<li>然后编译</li>
+</ol>
+<p>通常是 DBMS 的制造商提供一个 SQL 函数定义库，供编译的时候使用。</p>
+<p><img src="/2022/04/25/database1/image-20220425165325731.png" alt="image-20220425165325731"></p>
+<p><strong>嵌入式 SQL 需要解决的问题</strong></p>
+<ol>
+<li><p>需要区分 SQL 语言和宿主语言</p>
+</li>
+<li><p>数据库工作单元和主程序工作单元之间的通信</p>
+<ol>
+<li><h5 id="允许嵌入式-SQL-语句引用宿主语言的程序变量"><a href="#允许嵌入式-SQL-语句引用宿主语言的程序变量" class="headerlink" title="允许嵌入式 SQL 语句引用宿主语言的程序变量"></a>允许嵌入式 SQL 语句引用宿主语言的程序变量</h5></li>
+<li><p><strong>主语言不能引用数据库中的字段变量</strong></p>
+</li>
+</ol>
+</li>
+<li><p>SQLSTATUS 是一个特殊的共享变量，用于解释 SQL 语句的执行情况。0 表示成功。</p>
+</li>
+<li><p>引入游标机制，将集合操作转换为单元组处理。用于协调不同数据处理方式</p>
+<ol>
+<li>SQL 面向集合，一条 SQL 可以产生或处理多条记录</li>
+<li>宿主语言面向记录</li>
+</ol>
+<p>与游标相关的语句</p>
+<ol>
+<li>定义游标 <code>EXEC SQL DECLEAR &lt;NAME&gt; CURSOR FOR &lt;SELECT&gt; END_EXEC</code></li>
+<li>使用 OPEM 打开游标 <code>EXEC SQL OPEN &lt;NAME&gt; END_EXEC</code></li>
+<li>推进游标 <code>EXEC SQL FETCH FROM &lt;游标名&gt; INTO &lt;变量表&gt; END_EXEC</code></li>
+<li>关闭游标 <code>EXEC SQL CLOSE &lt;NAME&gt; END_EXEC</code></li>
+</ol>
+</li>
+</ol>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：database1</li>
+        <li>Post author：Auggie</li>
+        <li>Create time：2022-04-25 17:13:08</li>
+        <li>
+            Post link：https://ruanjiancheng.github.io/2022/04/25/database1/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E6%8A%80%E6%9C%AF/">#技术</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/04/18/os/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">内存管理 &amp; 文件管理 &amp; IO 管理</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Auggie</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%91%E5%B1%95%E5%8F%B2"><span class="nav-number">2.</span> <span class="nav-text">数据库发展史</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95%E5%8F%B2"><span class="nav-number">2.1.</span> <span class="nav-text">数据管理技术发展史</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%BA%E5%B7%A5%E7%AE%A1%E7%90%86%E9%98%B6%E6%AE%B5"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">人工管理阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E9%98%B6%E6%AE%B5"><span class="nav-number">2.1.0.2.</span> <span class="nav-text">文件系统阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%80%92%E6%8E%92%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.1.0.3.</span> <span class="nav-text">倒排文件系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.1.0.4.</span> <span class="nav-text">数据库系统</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%91%E5%B1%95%E5%8F%B2-1"><span class="nav-number">2.2.</span> <span class="nav-text">数据库发展史</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84"><span class="nav-number">3.</span> <span class="nav-text">数据库系统结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">3.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ER-%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.1.1.</span> <span class="nav-text">ER 模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.1.2.</span> <span class="nav-text">逻辑数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%EF%BC%88%E6%8C%87%E9%92%88%E5%AF%BC%E8%88%AA%EF%BC%89"><span class="nav-number">3.1.2.0.1.</span> <span class="nav-text">层次结构（指针导航）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BD%91%E7%8A%B6%E7%BB%93%E6%9E%84%EF%BC%88%E6%8C%87%E9%92%88%E5%AF%BC%E8%88%AA%EF%BC%89"><span class="nav-number">3.1.2.0.2.</span> <span class="nav-text">网状结构（指针导航）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B%EF%BC%88%E5%85%B3%E9%94%AE%E7%A0%81%E5%AF%BC%E8%88%AA%EF%BC%89"><span class="nav-number">3.1.2.0.3.</span> <span class="nav-text">关系模型（关键码导航）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.1.2.0.4.</span> <span class="nav-text">对象模型</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ER-%E6%A8%A1%E5%9E%8B-1"><span class="nav-number">4.</span> <span class="nav-text">ER 模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-1"><span class="nav-number">4.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BD%93"><span class="nav-number">4.1.1.</span> <span class="nav-text">实体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7"><span class="nav-number">4.1.2.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%94%E7%B3%BB%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0"><span class="nav-number">4.2.</span> <span class="nav-text">联系的设计和实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E5%85%83%E8%81%94%E7%B3%BB"><span class="nav-number">4.2.1.</span> <span class="nav-text">一元联系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%85%83%E8%81%94%E7%B3%BB"><span class="nav-number">4.2.2.</span> <span class="nav-text">二元联系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E5%85%83%E8%81%94%E7%B3%BB"><span class="nav-number">4.2.3.</span> <span class="nav-text">三元联系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%B1%95"><span class="nav-number">4.3.</span> <span class="nav-text">扩展</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97"><span class="nav-number">5.</span> <span class="nav-text">关系运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD"><span class="nav-number">5.1.</span> <span class="nav-text">基本术语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B-E-F-Codd"><span class="nav-number">5.1.1.</span> <span class="nav-text">关系模型 E.F.Codd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E7%A0%81"><span class="nav-number">5.1.2.</span> <span class="nav-text">关键码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%B1%BB%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="nav-number">5.1.3.</span> <span class="nav-text">三类完整性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%AD%E8%A8%80"><span class="nav-number">5.2.</span> <span class="nav-text">关系数据库语言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0"><span class="nav-number">5.2.1.</span> <span class="nav-text">关系代数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97"><span class="nav-number">5.2.1.1.</span> <span class="nav-text">基本运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E8%BF%90%E7%AE%97"><span class="nav-number">5.2.1.2.</span> <span class="nav-text">组合运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A9%E5%85%85%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0"><span class="nav-number">5.2.1.3.</span> <span class="nav-text">扩充关系代数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E6%BC%94%E7%AE%97"><span class="nav-number">5.2.2.</span> <span class="nav-text">关系演算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%83%E7%BB%84%E5%85%B3%E7%B3%BB%E6%BC%94%E7%AE%97"><span class="nav-number">5.2.2.1.</span> <span class="nav-text">元组关系演算</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%9F%E5%85%B3%E7%B3%BB%E6%BC%94%E7%AE%97"><span class="nav-number">5.2.3.</span> <span class="nav-text">域关系演算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E6%80%A7%E5%92%8C%E7%AD%89%E4%BB%B7%E6%80%A7"><span class="nav-number">5.2.4.</span> <span class="nav-text">安全性和等价性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96"><span class="nav-number">5.3.</span> <span class="nav-text">查询优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E6%9F%A5%E8%AF%A2%E8%AF%AD%E8%A8%80-SQL"><span class="nav-number">6.</span> <span class="nav-text">结构化查询语言 SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-number">6.1.</span> <span class="nav-text">SQL 数据库体系结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89"><span class="nav-number">6.2.</span> <span class="nav-text">SQL 数据定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-%E7%9A%84-CRUD"><span class="nav-number">6.3.</span> <span class="nav-text">SQL 的 CRUD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%86%E5%9B%BE%E6%93%8D%E4%BD%9C"><span class="nav-number">6.4.</span> <span class="nav-text">视图操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B5%8C%E5%85%A5%E5%BC%8F-SQL"><span class="nav-number">6.5.</span> <span class="nav-text">嵌入式 SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%81%E8%AE%B8%E5%B5%8C%E5%85%A5%E5%BC%8F-SQL-%E8%AF%AD%E5%8F%A5%E5%BC%95%E7%94%A8%E5%AE%BF%E4%B8%BB%E8%AF%AD%E8%A8%80%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%8F%98%E9%87%8F"><span class="nav-number">6.5.0.0.1.</span> <span class="nav-text">允许嵌入式 SQL 语句引用宿主语言的程序变量</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
