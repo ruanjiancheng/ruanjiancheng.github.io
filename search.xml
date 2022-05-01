@@ -1,6 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>计算机网络</title>
+    <url>/2022/04/07/compute-network/</url>
+    <content><![CDATA[<h1 id="HTTP-专题"><a href="#HTTP-专题" class="headerlink" title="HTTP 专题"></a>HTTP 专题</h1><ol>
+<li>HTTP 报文</li>
+<li>GET 和 POST 方法</li>
+<li>Cookie 和 Session</li>
+<li>HTTP 缓存</li>
+<li>HTTPS</li>
+</ol>
+<h2 id="HTTP-报文"><a href="#HTTP-报文" class="headerlink" title="HTTP 报文"></a>HTTP 报文</h2><h3 id="HTTP-请求报文"><a href="#HTTP-请求报文" class="headerlink" title="HTTP 请求报文"></a>HTTP 请求报文</h3><ul>
+<li>请求行<ul>
+<li>请求方法</li>
+<li>HTTP 版本</li>
+<li>URL</li>
+</ul>
+</li>
+<li>首部行<ul>
+<li>Connection 表示要不要持续链接</li>
+<li>Accept-language 表示希望收到的语言版本</li>
+</ul>
+</li>
+<li>空行</li>
+<li>请求体：供 POST 方法使用</li>
+</ul>
+<h3 id="HTTP-响应报文"><a href="#HTTP-响应报文" class="headerlink" title="HTTP 响应报文"></a>HTTP 响应报文</h3><ul>
+<li>响应行<ul>
+<li>HTTP 版本</li>
+<li>状态码：<a class="link" href="https://github.com/TieMuZhen/Blog/issues/87">HTTP 常见的状态码和适用场景<i class="fas fa-external-link-alt"></i></a></li>
+<li>响应状态信息描述</li>
+</ul>
+</li>
+<li>首部行</li>
+<li>空行</li>
+<li>响应体</li>
+</ul>
+<h2 id="GET-和-POST-方法的区别"><a href="#GET-和-POST-方法的区别" class="headerlink" title="GET 和 POST 方法的区别"></a>GET 和 POST 方法的区别</h2><ul>
+<li>GET 方法把参数包含在 URL 中，POST 通过 Request Body 传递参数</li>
+<li>GET 方法比 POST 方法更快<ul>
+<li>POST 请求包含更多的首部行</li>
+<li><strong>POST 先将请求头发送给服务器进行确认，然后才真正发送数据</strong></li>
+</ul>
+</li>
+<li>GET 会将数据缓存起来</li>
+</ul>
+<blockquote>
+<p>总结</p>
+</blockquote>
+<ul>
+<li>POST 更安全，不会作为 URL 的一部分，不会被缓存。</li>
+<li>POST 发送的数据更大，GET 有 URL 长度限制</li>
+<li>POST 能发送跟多的数据类型，GET 只能发送 ASCII 字符</li>
+<li>POST 比 GET 慢</li>
+<li>POST 一般用于修改和写入数据，GET 一般用于搜索排序和筛选</li>
+</ul>
+<h2 id="Cookie-和-Session"><a href="#Cookie-和-Session" class="headerlink" title="Cookie 和 Session"></a>Cookie 和 Session</h2><ul>
+<li>Cookie</li>
+<li>Session</li>
+<li>Cookie 和 Session 的联系</li>
+<li>Cookie 和 Session 的区别</li>
+</ul>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p>问题：Web 站点希望能够识别用户，来对用户进行专门化服务，就生成一个唯一 ID，作为<strong>索引</strong>在数据库中产生表项。</p>
+<p>服务器通过一个包含 Set-cookie 首部行的 HTTP 响应报文进行响应。</p>
+<ul>
+<li>如果没有设置 Cookie 失效日期，他们仅保存在浏览器会话期间</li>
+<li>大多数浏览器支持的 Cookie 最大存储的数据量是 <code>4K</code>，因此不用来保存大数据</li>
+<li>Cookie 以明文的方式存储，并不安全</li>
+<li>Cookie 是不跨域名的</li>
+</ul>
+<h4 id="Cookie-的修改和删除"><a href="#Cookie-的修改和删除" class="headerlink" title="Cookie 的修改和删除"></a>Cookie 的修改和删除</h4><p>Cookie <strong>并不提供修改和删除</strong></p>
+<ul>
+<li>如果想要<strong>修改</strong>，需要服务器在 HTTP 响应报文中返回一个<strong>同名</strong>的 Cookie</li>
+<li>如果想要<strong>删除</strong>，只需要返回一个同名的 Cookie，并发 maxAge 设置为 0</li>
+</ul>
+<blockquote>
+<p>注意：返回同名 Cookie 的时候，需要除 maxAge，value 之外的全部信息都和原 Cookie 相同</p>
+</blockquote>
+<h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><p>client 访问 server 的时候，server 将 client 信息记录在 server 上面，这就是 session。</p>
+<p>用户和服务器建立连接的时候，服务器会为其分配一个 SessionId</p>
+<blockquote>
+<p>Session 的生命周期</p>
+</blockquote>
+<ul>
+<li>Session 在用户的第一次访问服务器的时候创建，只访问静态资源并不会创建 Session</li>
+<li>server 会将长时间没有活动的 Session 从服务器内存中清除，此时 Session 便失效。Tomcat 的默认失效时间为 30 min</li>
+<li>计时从 Session 未被访问的时候开始算起</li>
+</ul>
+<h3 id="Session-和-Cookie-的联系"><a href="#Session-和-Cookie-的联系" class="headerlink" title="Session 和 Cookie 的联系"></a>Session 和 Cookie 的联系</h3><p>Session 需要通过 Cookie 实现，服务器要向 client 发送一个 JSESSIONID 的 Cookie，它的值就是该 Session 的 id，Session 依据此 Cookie 来识别是否为同一用户</p>
+<ul>
+<li>该 Cookie 是服务器自动生成的，maxAge 一般为 <code>-1</code>，也就是关闭浏览器就会失效。</li>
+<li>因此同一计算机的两个浏览器窗口访问服务器时会生成两个不同的 Session ，但是由子窗口会共享父窗口的 Cookie ，共享一个 Session</li>
+</ul>
+<h3 id="Cookie-和-Session-的区别"><a href="#Cookie-和-Session-的区别" class="headerlink" title="Cookie 和 Session 的区别"></a>Cookie 和 Session 的区别</h3><ul>
+<li>存储位置</li>
+<li>安全性</li>
+<li>对服务器的影响</li>
+<li>数据大小：Cookie 保存的数据最多不超过 <code>4k</code> ，一般浏览器限制一个站点最多保存 20 个 Cookie</li>
+</ul>
+<h2 id="HTTP-缓存"><a href="#HTTP-缓存" class="headerlink" title="HTTP 缓存"></a>HTTP 缓存</h2><p>一般只用于 GET 请求</p>
+<img src="/2022/04/07/compute-network/edfb851e-fa61-4386-9c10-bf2105f55331-12785011.jpg" alt="img" style="zoom:50%;">
+
+<center>HTTP 缓存流程图</center>
+
+<h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><ul>
+<li>引入 CA 使用数字证书来<strong>保证公钥的合法性</strong>，避免了中间人攻击。</li>
+<li>使用<strong>非对称加密</strong>来约定<strong>对称加密</strong>要使用的 key</li>
+<li><strong>信息传递过程</strong>使用<strong>对称加密</strong>来实现</li>
+</ul>
+<h3 id="HTTPS-的核心-SSL-x2F-TLS-协议的工作原理"><a href="#HTTPS-的核心-SSL-x2F-TLS-协议的工作原理" class="headerlink" title="HTTPS 的核心 SSL&#x2F;TLS 协议的工作原理"></a>HTTPS 的核心 SSL&#x2F;TLS 协议的工作原理</h3><ul>
+<li>对称加密：如何约定密钥在计算机网络中存在问题，性能高很多</li>
+<li>非对称加密：<strong>可以使用公钥模拟用户发送信息，也存在问题</strong>，</li>
+</ul>
+<h4 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h4><p><strong>解决：第三方仿照 server 给 client 发送自己的公钥，并且中间截获的问题</strong></p>
+<img src="/2022/04/07/compute-network/attack1.cfda3eb1.png" alt="img" style="zoom: 80%;">
+
+<center>中间人攻击，server 根本看不懂密文的内容</center>
+
+<p>为了公钥传输的信赖性问题，第三方机构应运而生——证书颁发机构（CA，Certificate Authority）。CA 默认是受信任的第三方。CA 会给各个服务器颁发证书，证书存储在服务器上，并附有 CA 的<strong>电子签名</strong></p>
+<ol>
+<li>client 向 server 发送 HTTPS 请求时</li>
+<li>获取目标服务器的证书，并验证合法性</li>
+<li>证书内存在 server 的公钥</li>
+</ol>
+<h4 id="如何生成数字签名"><a href="#如何生成数字签名" class="headerlink" title="如何生成数字签名"></a>如何生成数字签名</h4><ul>
+<li>CA 使用<strong>散列</strong>技术生成一个<strong>摘要</strong>，并使用 CA 的密钥对<strong>摘要</strong>进行加密，然后将证书发给 server</li>
+<li>server 将证书发给 client 时，client 向 CA 获取加密摘要所用的公钥，并自己计算摘要，与 CA 解密出来的摘要进行比对。</li>
+<li>如果相同，则成功</li>
+</ul>
+<img src="/2022/04/07/compute-network/image-20220313151431722.png" alt="image-20220313151431722" style="zoom:50%;">
+
+<center>CA 数字签名的详细验证过程</center>
+
+<p>总结：通过引入第三方机构 CA 对 server 的公钥进行验证。</p>
+<img src="/2022/04/07/compute-network/image-20220313151635199.png" alt="image-20220313151635199" style="zoom: 33%;">
+
+<center>CA 的认证过程</center>
+
+<ul>
+<li>HTTP 协议运行在 TCP 之上，所有传输的内容都是明文，客户端和服务器端都无法验证对方的身份。</li>
+<li>HTTPS 是运行在 SSL&#x2F;TLS 之上的 HTTP 协议，SSL&#x2F;TLS 运行在 TCP 之上。所有传输的内容都经过加密，加密采用<strong>对称加密</strong>，但<strong>对称加密的密钥用服务器方的证书进行了非对称加密</strong>。所以说，HTTP 安全性没有 HTTPS 高，但是 HTTPS 比 HTTP 耗费更多服务器资源。</li>
+</ul>
+<h3 id="HTTPS-的工作流程"><a href="#HTTPS-的工作流程" class="headerlink" title="HTTPS 的工作流程"></a>HTTPS 的工作流程</h3><ul>
+<li>client 向 server 发起 HTTPS 请求</li>
+<li>server 将数字证书发送给 client</li>
+<li>client 校正数字证书的合法性，如果不通过产生 HTTPS 警告信息</li>
+<li>client <strong>通过公钥对对称加密要使用的 key 进行加密</strong>，发送给客户端</li>
+<li>server 通过密钥解密对称加密要使用的 key</li>
+<li>client 和 server 进行对称加密传输</li>
+</ul>
+<p>为什么不适用非对称加密？</p>
+<ul>
+<li>资源消耗远大于对称加密</li>
+</ul>
+<img src="/2022/04/07/compute-network/image-20220314172756595.png" alt="image-20220314172756595" style="zoom: 33%;">
+
+
+
+
+
+<h1 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h1><h2 id="TCP-报文格式"><a href="#TCP-报文格式" class="headerlink" title="TCP 报文格式"></a>TCP 报文格式</h2><ol>
+<li><p>序号 &amp;&amp; 确认号 (32 位)</p>
+<p>TCP 的 ACK 并不是立即发出的，因为 TCP 会采取累计确认的方式，一旦延迟期间后面的数据包也来了，就可以直接发送最新的 ACK，提高效率</p>
+</li>
+<li><p>首部长度 (4 位)</p>
+<p>一个单位表示 4 字节，最长是 64 字节</p>
+</li>
+<li><p>窗口大小 (16 位)</p>
+<p>用于流量控制，设置 cwnd</p>
+</li>
+<li><p>TCP 校验和 (16 位)</p>
+</li>
+</ol>
+<h2 id="拥塞控制-amp-流量控制"><a href="#拥塞控制-amp-流量控制" class="headerlink" title="拥塞控制 &amp; 流量控制"></a>拥塞控制 &amp; 流量控制</h2><h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><p>通过拥塞窗口实现</p>
+<p>TCP 维持一个 cwnd 和一个门限值</p>
+<ul>
+<li>慢开始</li>
+<li>拥塞避免</li>
+<li>快重传</li>
+<li>快恢复</li>
+</ul>
+<h3 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h3><p>通过滑动窗口来实现</p>
+<ul>
+<li>发送方维持一个 rwnd，接收方可以通过 TCP 报文来控制 rwnd</li>
+</ul>
+<h3 id="拥塞控制和流量控制的区别"><a href="#拥塞控制和流量控制的区别" class="headerlink" title="拥塞控制和流量控制的区别"></a>拥塞控制和流量控制的区别</h3><ul>
+<li>流量控制解决的是发送方和接收方<strong>速率不匹配</strong></li>
+<li>拥塞控制解决的是<strong>避免网络资源被耗尽</strong>的问题，全局性。</li>
+</ul>
+<h2 id="差错控制"><a href="#差错控制" class="headerlink" title="差错控制"></a>差错控制</h2><p>通过 TCP 校验和实现，如果发现错误，则不发送 ACK，等待重传。</p>
+<blockquote>
+<p>应用层可以使用更强力的手段，例如 CRC</p>
+</blockquote>
+<h2 id="TCP-粘包、拆包"><a href="#TCP-粘包、拆包" class="headerlink" title="TCP 粘包、拆包"></a>TCP 粘包、拆包</h2><p>发生的原因：</p>
+<ul>
+<li>要发送的数据大于或小于 TCP 发送缓冲区剩余空间大小</li>
+<li>待发送的数据大于 MSS</li>
+</ul>
+<p>解决方式：</p>
+<ul>
+<li>给每个数据包添加包首部，包含数据包的长度</li>
+<li>在数据包之间设置边界，添加特殊字符等</li>
+<li>设置消息定长</li>
+</ul>
+<h2 id="TCP-三次握手和四次挥手"><a href="#TCP-三次握手和四次挥手" class="headerlink" title="TCP 三次握手和四次挥手"></a>TCP 三次握手和四次挥手</h2><img src="/2022/04/07/compute-network/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA4oCNb09vT29Pb29PTw==,size_20,color_FFFFFF,t_70,g_se,x_16.png" alt="img" style="zoom:50%;">
+
+<h2 id="TCP-与-UDP-的区别"><a href="#TCP-与-UDP-的区别" class="headerlink" title="TCP 与 UDP 的区别"></a>TCP 与 UDP 的区别</h2><table>
+<thead>
+<tr>
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>面向连接，提供可靠交付</td>
+<td>无连接，尽最大努力交付</td>
+</tr>
+<tr>
+<td>面向字节流</td>
+<td>面向报文</td>
+</tr>
+<tr>
+<td>一对一</td>
+<td>一对多、一对一、多对一、多对多</td>
+</tr>
+<tr>
+<td>有拥塞控制、流量控制</td>
+<td>首部开销小</td>
+</tr>
+</tbody></table>
+<p>TCP：FTP、HTTP、HTTPS、SSH、SMTP、Telnet</p>
+<p>UDP：DNS、DHCP、TFTP</p>
+]]></content>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>字节跳动面经</title>
     <url>/2022/04/09/ByteDance-1/</url>
     <content><![CDATA[<p><img src="/2022/04/09/ByteDance-1/image-20220409140426049.jpg" alt="image-20220409140426049"></p>
@@ -356,350 +592,9 @@
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 指定最小版本号</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 项目名称</span></span><br><span class="line"><span class="keyword">project</span>(GO)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 包含头文件</span></span><br><span class="line"><span class="keyword">include</span>(./lib)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置编译参数</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -O2 -g&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置编译模式 Debug | Release</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_BUILD_TYPE Debug)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译</span></span><br><span class="line"><span class="keyword">add_executable</span>(main_cmake main.cpp [其他文件])</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
+        <tag>技术</tag>
         <tag>cmake</tag>
-        <tag>技术</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>计算机网络</title>
-    <url>/2022/04/07/compute-network/</url>
-    <content><![CDATA[<h1 id="HTTP-专题"><a href="#HTTP-专题" class="headerlink" title="HTTP 专题"></a>HTTP 专题</h1><ol>
-<li>HTTP 报文</li>
-<li>GET 和 POST 方法</li>
-<li>Cookie 和 Session</li>
-<li>HTTP 缓存</li>
-<li>HTTPS</li>
-</ol>
-<h2 id="HTTP-报文"><a href="#HTTP-报文" class="headerlink" title="HTTP 报文"></a>HTTP 报文</h2><h3 id="HTTP-请求报文"><a href="#HTTP-请求报文" class="headerlink" title="HTTP 请求报文"></a>HTTP 请求报文</h3><ul>
-<li>请求行<ul>
-<li>请求方法</li>
-<li>HTTP 版本</li>
-<li>URL</li>
-</ul>
-</li>
-<li>首部行<ul>
-<li>Connection 表示要不要持续链接</li>
-<li>Accept-language 表示希望收到的语言版本</li>
-</ul>
-</li>
-<li>空行</li>
-<li>请求体：供 POST 方法使用</li>
-</ul>
-<h3 id="HTTP-响应报文"><a href="#HTTP-响应报文" class="headerlink" title="HTTP 响应报文"></a>HTTP 响应报文</h3><ul>
-<li>响应行<ul>
-<li>HTTP 版本</li>
-<li>状态码：<a class="link" href="https://github.com/TieMuZhen/Blog/issues/87">HTTP 常见的状态码和适用场景<i class="fas fa-external-link-alt"></i></a></li>
-<li>响应状态信息描述</li>
-</ul>
-</li>
-<li>首部行</li>
-<li>空行</li>
-<li>响应体</li>
-</ul>
-<h2 id="GET-和-POST-方法的区别"><a href="#GET-和-POST-方法的区别" class="headerlink" title="GET 和 POST 方法的区别"></a>GET 和 POST 方法的区别</h2><ul>
-<li>GET 方法把参数包含在 URL 中，POST 通过 Request Body 传递参数</li>
-<li>GET 方法比 POST 方法更快<ul>
-<li>POST 请求包含更多的首部行</li>
-<li><strong>POST 先将请求头发送给服务器进行确认，然后才真正发送数据</strong></li>
-</ul>
-</li>
-<li>GET 会将数据缓存起来</li>
-</ul>
-<blockquote>
-<p>总结</p>
-</blockquote>
-<ul>
-<li>POST 更安全，不会作为 URL 的一部分，不会被缓存。</li>
-<li>POST 发送的数据更大，GET 有 URL 长度限制</li>
-<li>POST 能发送跟多的数据类型，GET 只能发送 ASCII 字符</li>
-<li>POST 比 GET 慢</li>
-<li>POST 一般用于修改和写入数据，GET 一般用于搜索排序和筛选</li>
-</ul>
-<h2 id="Cookie-和-Session"><a href="#Cookie-和-Session" class="headerlink" title="Cookie 和 Session"></a>Cookie 和 Session</h2><ul>
-<li>Cookie</li>
-<li>Session</li>
-<li>Cookie 和 Session 的联系</li>
-<li>Cookie 和 Session 的区别</li>
-</ul>
-<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p>问题：Web 站点希望能够识别用户，来对用户进行专门化服务，就生成一个唯一 ID，作为<strong>索引</strong>在数据库中产生表项。</p>
-<p>服务器通过一个包含 Set-cookie 首部行的 HTTP 响应报文进行响应。</p>
-<ul>
-<li>如果没有设置 Cookie 失效日期，他们仅保存在浏览器会话期间</li>
-<li>大多数浏览器支持的 Cookie 最大存储的数据量是 <code>4K</code>，因此不用来保存大数据</li>
-<li>Cookie 以明文的方式存储，并不安全</li>
-<li>Cookie 是不跨域名的</li>
-</ul>
-<h4 id="Cookie-的修改和删除"><a href="#Cookie-的修改和删除" class="headerlink" title="Cookie 的修改和删除"></a>Cookie 的修改和删除</h4><p>Cookie <strong>并不提供修改和删除</strong></p>
-<ul>
-<li>如果想要<strong>修改</strong>，需要服务器在 HTTP 响应报文中返回一个<strong>同名</strong>的 Cookie</li>
-<li>如果想要<strong>删除</strong>，只需要返回一个同名的 Cookie，并发 maxAge 设置为 0</li>
-</ul>
-<blockquote>
-<p>注意：返回同名 Cookie 的时候，需要除 maxAge，value 之外的全部信息都和原 Cookie 相同</p>
-</blockquote>
-<h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><p>client 访问 server 的时候，server 将 client 信息记录在 server 上面，这就是 session。</p>
-<p>用户和服务器建立连接的时候，服务器会为其分配一个 SessionId</p>
-<blockquote>
-<p>Session 的生命周期</p>
-</blockquote>
-<ul>
-<li>Session 在用户的第一次访问服务器的时候创建，只访问静态资源并不会创建 Session</li>
-<li>server 会将长时间没有活动的 Session 从服务器内存中清除，此时 Session 便失效。Tomcat 的默认失效时间为 30 min</li>
-<li>计时从 Session 未被访问的时候开始算起</li>
-</ul>
-<h3 id="Session-和-Cookie-的联系"><a href="#Session-和-Cookie-的联系" class="headerlink" title="Session 和 Cookie 的联系"></a>Session 和 Cookie 的联系</h3><p>Session 需要通过 Cookie 实现，服务器要向 client 发送一个 JSESSIONID 的 Cookie，它的值就是该 Session 的 id，Session 依据此 Cookie 来识别是否为同一用户</p>
-<ul>
-<li>该 Cookie 是服务器自动生成的，maxAge 一般为 <code>-1</code>，也就是关闭浏览器就会失效。</li>
-<li>因此同一计算机的两个浏览器窗口访问服务器时会生成两个不同的 Session ，但是由子窗口会共享父窗口的 Cookie ，共享一个 Session</li>
-</ul>
-<h3 id="Cookie-和-Session-的区别"><a href="#Cookie-和-Session-的区别" class="headerlink" title="Cookie 和 Session 的区别"></a>Cookie 和 Session 的区别</h3><ul>
-<li>存储位置</li>
-<li>安全性</li>
-<li>对服务器的影响</li>
-<li>数据大小：Cookie 保存的数据最多不超过 <code>4k</code> ，一般浏览器限制一个站点最多保存 20 个 Cookie</li>
-</ul>
-<h2 id="HTTP-缓存"><a href="#HTTP-缓存" class="headerlink" title="HTTP 缓存"></a>HTTP 缓存</h2><p>一般只用于 GET 请求</p>
-<img src="/2022/04/07/compute-network/edfb851e-fa61-4386-9c10-bf2105f55331-12785011.jpg" alt="img" style="zoom:50%;">
-
-<center>HTTP 缓存流程图</center>
-
-<h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><ul>
-<li>引入 CA 使用数字证书来<strong>保证公钥的合法性</strong>，避免了中间人攻击。</li>
-<li>使用<strong>非对称加密</strong>来约定<strong>对称加密</strong>要使用的 key</li>
-<li><strong>信息传递过程</strong>使用<strong>对称加密</strong>来实现</li>
-</ul>
-<h3 id="HTTPS-的核心-SSL-x2F-TLS-协议的工作原理"><a href="#HTTPS-的核心-SSL-x2F-TLS-协议的工作原理" class="headerlink" title="HTTPS 的核心 SSL&#x2F;TLS 协议的工作原理"></a>HTTPS 的核心 SSL&#x2F;TLS 协议的工作原理</h3><ul>
-<li>对称加密：如何约定密钥在计算机网络中存在问题，性能高很多</li>
-<li>非对称加密：<strong>可以使用公钥模拟用户发送信息，也存在问题</strong>，</li>
-</ul>
-<h4 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h4><p><strong>解决：第三方仿照 server 给 client 发送自己的公钥，并且中间截获的问题</strong></p>
-<img src="/2022/04/07/compute-network/attack1.cfda3eb1.png" alt="img" style="zoom: 80%;">
-
-<center>中间人攻击，server 根本看不懂密文的内容</center>
-
-<p>为了公钥传输的信赖性问题，第三方机构应运而生——证书颁发机构（CA，Certificate Authority）。CA 默认是受信任的第三方。CA 会给各个服务器颁发证书，证书存储在服务器上，并附有 CA 的<strong>电子签名</strong></p>
-<ol>
-<li>client 向 server 发送 HTTPS 请求时</li>
-<li>获取目标服务器的证书，并验证合法性</li>
-<li>证书内存在 server 的公钥</li>
-</ol>
-<h4 id="如何生成数字签名"><a href="#如何生成数字签名" class="headerlink" title="如何生成数字签名"></a>如何生成数字签名</h4><ul>
-<li>CA 使用<strong>散列</strong>技术生成一个<strong>摘要</strong>，并使用 CA 的密钥对<strong>摘要</strong>进行加密，然后将证书发给 server</li>
-<li>server 将证书发给 client 时，client 向 CA 获取加密摘要所用的公钥，并自己计算摘要，与 CA 解密出来的摘要进行比对。</li>
-<li>如果相同，则成功</li>
-</ul>
-<img src="/2022/04/07/compute-network/image-20220313151431722.png" alt="image-20220313151431722" style="zoom:50%;">
-
-<center>CA 数字签名的详细验证过程</center>
-
-<p>总结：通过引入第三方机构 CA 对 server 的公钥进行验证。</p>
-<img src="/2022/04/07/compute-network/image-20220313151635199.png" alt="image-20220313151635199" style="zoom: 33%;">
-
-<center>CA 的认证过程</center>
-
-<ul>
-<li>HTTP 协议运行在 TCP 之上，所有传输的内容都是明文，客户端和服务器端都无法验证对方的身份。</li>
-<li>HTTPS 是运行在 SSL&#x2F;TLS 之上的 HTTP 协议，SSL&#x2F;TLS 运行在 TCP 之上。所有传输的内容都经过加密，加密采用<strong>对称加密</strong>，但<strong>对称加密的密钥用服务器方的证书进行了非对称加密</strong>。所以说，HTTP 安全性没有 HTTPS 高，但是 HTTPS 比 HTTP 耗费更多服务器资源。</li>
-</ul>
-<h3 id="HTTPS-的工作流程"><a href="#HTTPS-的工作流程" class="headerlink" title="HTTPS 的工作流程"></a>HTTPS 的工作流程</h3><ul>
-<li>client 向 server 发起 HTTPS 请求</li>
-<li>server 将数字证书发送给 client</li>
-<li>client 校正数字证书的合法性，如果不通过产生 HTTPS 警告信息</li>
-<li>client <strong>通过公钥对对称加密要使用的 key 进行加密</strong>，发送给客户端</li>
-<li>server 通过密钥解密对称加密要使用的 key</li>
-<li>client 和 server 进行对称加密传输</li>
-</ul>
-<p>为什么不适用非对称加密？</p>
-<ul>
-<li>资源消耗远大于对称加密</li>
-</ul>
-<img src="/2022/04/07/compute-network/image-20220314172756595.png" alt="image-20220314172756595" style="zoom: 33%;">
-
-
-
-
-
-<h1 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h1><h2 id="TCP-报文格式"><a href="#TCP-报文格式" class="headerlink" title="TCP 报文格式"></a>TCP 报文格式</h2><ol>
-<li><p>序号 &amp;&amp; 确认号 (32 位)</p>
-<p>TCP 的 ACK 并不是立即发出的，因为 TCP 会采取累计确认的方式，一旦延迟期间后面的数据包也来了，就可以直接发送最新的 ACK，提高效率</p>
-</li>
-<li><p>首部长度 (4 位)</p>
-<p>一个单位表示 4 字节，最长是 64 字节</p>
-</li>
-<li><p>窗口大小 (16 位)</p>
-<p>用于流量控制，设置 cwnd</p>
-</li>
-<li><p>TCP 校验和 (16 位)</p>
-</li>
-</ol>
-<h2 id="拥塞控制-amp-流量控制"><a href="#拥塞控制-amp-流量控制" class="headerlink" title="拥塞控制 &amp; 流量控制"></a>拥塞控制 &amp; 流量控制</h2><h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><p>通过拥塞窗口实现</p>
-<p>TCP 维持一个 cwnd 和一个门限值</p>
-<ul>
-<li>慢开始</li>
-<li>拥塞避免</li>
-<li>快重传</li>
-<li>快恢复</li>
-</ul>
-<h3 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h3><p>通过滑动窗口来实现</p>
-<ul>
-<li>发送方维持一个 rwnd，接收方可以通过 TCP 报文来控制 rwnd</li>
-</ul>
-<h3 id="拥塞控制和流量控制的区别"><a href="#拥塞控制和流量控制的区别" class="headerlink" title="拥塞控制和流量控制的区别"></a>拥塞控制和流量控制的区别</h3><ul>
-<li>流量控制解决的是发送方和接收方<strong>速率不匹配</strong></li>
-<li>拥塞控制解决的是<strong>避免网络资源被耗尽</strong>的问题，全局性。</li>
-</ul>
-<h2 id="差错控制"><a href="#差错控制" class="headerlink" title="差错控制"></a>差错控制</h2><p>通过 TCP 校验和实现，如果发现错误，则不发送 ACK，等待重传。</p>
-<blockquote>
-<p>应用层可以使用更强力的手段，例如 CRC</p>
-</blockquote>
-<h2 id="TCP-粘包、拆包"><a href="#TCP-粘包、拆包" class="headerlink" title="TCP 粘包、拆包"></a>TCP 粘包、拆包</h2><p>发生的原因：</p>
-<ul>
-<li>要发送的数据大于或小于 TCP 发送缓冲区剩余空间大小</li>
-<li>待发送的数据大于 MSS</li>
-</ul>
-<p>解决方式：</p>
-<ul>
-<li>给每个数据包添加包首部，包含数据包的长度</li>
-<li>在数据包之间设置边界，添加特殊字符等</li>
-<li>设置消息定长</li>
-</ul>
-<h2 id="TCP-三次握手和四次挥手"><a href="#TCP-三次握手和四次挥手" class="headerlink" title="TCP 三次握手和四次挥手"></a>TCP 三次握手和四次挥手</h2><img src="/2022/04/07/compute-network/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA4oCNb09vT29Pb29PTw==,size_20,color_FFFFFF,t_70,g_se,x_16.png" alt="img" style="zoom:50%;">
-
-<h2 id="TCP-与-UDP-的区别"><a href="#TCP-与-UDP-的区别" class="headerlink" title="TCP 与 UDP 的区别"></a>TCP 与 UDP 的区别</h2><table>
-<thead>
-<tr>
-<th>TCP</th>
-<th>UDP</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>面向连接，提供可靠交付</td>
-<td>无连接，尽最大努力交付</td>
-</tr>
-<tr>
-<td>面向字节流</td>
-<td>面向报文</td>
-</tr>
-<tr>
-<td>一对一</td>
-<td>一对多、一对一、多对一、多对多</td>
-</tr>
-<tr>
-<td>有拥塞控制、流量控制</td>
-<td>首部开销小</td>
-</tr>
-</tbody></table>
-<p>TCP：FTP、HTTP、HTTPS、SSH、SMTP、Telnet</p>
-<p>UDP：DNS、DHCP、TFTP</p>
-]]></content>
-      <tags>
-        <tag>技术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python 编码规范</title>
-    <url>/2022/04/11/encode-python/</url>
-    <content><![CDATA[<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><ul>
-<li>无特殊情况，文件一律使用 UTF-8 编码</li>
-<li>无特殊情况，文件头部必须加入 <code># -*- coding: utf-8 -*-</code></li>
-</ul>
-<h3 id="缩进"><a href="#缩进" class="headerlink" title="缩进"></a>缩进</h3><ul>
-<li>统一使用 4 个空格进行缩进</li>
-</ul>
-<h3 id="引号"><a href="#引号" class="headerlink" title="引号"></a>引号</h3><ul>
-<li>自然语言，使用双引号。例如 <code>&quot;hello world&quot;</code></li>
-<li>机器标识，使用单引号。</li>
-<li>正则表达式，使用双引号。</li>
-<li>文档字符串，使用三引号。</li>
-</ul>
-<h3 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h3><ul>
-<li><strong>模块级函数</strong>和<strong>类定义</strong>之间空两行</li>
-<li><strong>类成员函数</strong>之间空一行</li>
-<li><strong>函数中</strong>可以使用空行分隔出逻辑相关的代码</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">hello</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="import-语句"><a href="#import-语句" class="headerlink" title="import 语句"></a>import 语句</h3><ul>
-<li>import 应该分行书写</li>
-<li>import 应该使用 absolute import</li>
-<li>import 放在文件头部，置于模块说明及 <code>docstring</code> 之后，与全局变量之前<ul>
-<li><code>docstring</code></li>
-<li>import</li>
-<li>全局变量</li>
-</ul>
-</li>
-</ul>
-<h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><ul>
-<li>二元运算符两边</li>
-<li>函数的参数列表 <code>, </code> 之后要有空格</li>
-<li>函数的参数列表中，默认值等号两边不要加空格</li>
-<li>括号不需要加空格，字典类似</li>
-<li>不要添加多余空格，用于对齐 <code>=</code></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">foo</span>(<span class="params">a, b=<span class="number">10</span></span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">foo(&#123;a: <span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><blockquote>
-<p>python 支持括号内的换行，第二行缩进到括号的起始处，<strong>参数对齐</strong></p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">bar = foo(a1, a2, </span><br><span class="line">a3, a4)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>使用反斜杠\换行，二元运算符+ .等应出现在行末；长字符串也可以用此法换行</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">session.query(MyTable).\</span><br><span class="line">        filter_by(<span class="built_in">id</span>=<span class="number">1</span>).\</span><br><span class="line">        one()</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>if &#x2F; for &#x2F; while 独占一行</p>
-</blockquote>
-<h3 id="Docstring"><a href="#Docstring" class="headerlink" title="Docstring"></a>Docstring</h3><p>作为文档的 Docstring 一般出现在模块的头部、函数和类的头部，这样在 python 中可以通过对象的 <code>__doc__</code> 对象获取文档。编辑器和 IDE 也可以根据 Docstring 给出自动提示。</p>
-<ul>
-<li>所有的公共模块、函数、类、方法，都应该写 <code>docstring</code>。私有方法不一定需要，def 后提供一个块注释来说明</li>
-<li>docstirng 的结束，应该独占一行，除非只有一行</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;Return a foobar</span></span><br><span class="line"><span class="string">hello python</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;Oneline docstring&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>Google 风格：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;Example docstrings.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">This module demonstrates documentation as specified by the `Google Python</span></span><br><span class="line"><span class="string">Style Guide`_. Docstrings may extend over multiple lines. Sections are created</span></span><br><span class="line"><span class="string">with a section header and a colon followed by a block of indented text.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Example:</span></span><br><span class="line"><span class="string">    Examples can be given using either the ``Example`` or ``Examples``</span></span><br><span class="line"><span class="string">    sections. Sections support any reStructuredText formatting, including</span></span><br><span class="line"><span class="string">    literal blocks::</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        $ python example_google.py</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Section breaks are created by resuming unindented text. Section breaks</span></span><br><span class="line"><span class="string">are also implicitly created anytime a new section starts.</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><h4 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h4><p>模块尽量使用小写命名，首字母保持小写，尽量不要使用下划线</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 正确的模块名</span></span><br><span class="line"><span class="keyword">import</span> decoder</span><br><span class="line"><span class="keyword">import</span> html_parser</span><br><span class="line"></span><br><span class="line"><span class="comment"># 不推荐的模块名</span></span><br><span class="line"><span class="keyword">import</span> Decoder</span><br></pre></td></tr></table></figure>
-
-<h4 id="类名"><a href="#类名" class="headerlink" title="类名"></a>类名</h4><p>类名使用<strong>驼峰命名</strong>风格，首字母大写，私有类可用下划线开头。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Farm</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">AnimalFarm</span>(<span class="title class_ inherited__">Farm</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">_PrivateFarm</span>(<span class="title class_ inherited__">Farm</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-
-<p>将相关的类和顶级函数放在同一个 module 里. 不像 Java , 没必要限制一个类一个 module.</p>
-<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><p>函数名一律小写，有多个单词，使用下划线隔开。私有函数在函数前加一个下划线。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">run</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run_with_env</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>():</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_private_func</span>():</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="变量名"><a href="#变量名" class="headerlink" title="变量名"></a>变量名</h4><p>尽量使用小写，如有多个单词，使用下划线隔开</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    school_name = <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>使用全部大写 </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">MAX_CLIENT = <span class="number">100</span></span><br><span class="line">MAX_CONNECTION = <span class="number">1000</span></span><br><span class="line">CONNECTION_TIMEOUT = <span class="number">600</span></span><br><span class="line"></span><br><span class="line">MAX_OVERFLOW = <span class="number">100</span></span><br><span class="line"></span><br><span class="line">Class FooBar:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">foo_bar</span>(<span class="params">self, print_</span>):</span><br><span class="line">        <span class="built_in">print</span>(print_)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>技术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/04/06/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a class="link" href="https://hexo.io/">Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link" href="https://hexo.io/docs/">documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link" href="https://hexo.io/docs/troubleshooting.html">troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link" href="https://github.com/hexojs/hexo/issues">GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/writing.html">Writing<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/server.html">Server<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/generating.html">Generating<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link" href="https://hexo.io/docs/one-command-deployment.html">Deployment<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="add-picture-use-relative-path"><a href="#add-picture-use-relative-path" class="headerlink" title="add picture use relative path"></a>add picture use relative path</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./<span class="variable">$&#123;filename&#125;</span>/name</span><br></pre></td></tr></table></figure>
-
-]]></content>
   </entry>
   <entry>
     <title>数据库原理一</title>
@@ -1122,6 +1017,159 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/04/06/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a class="link" href="https://hexo.io/">Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link" href="https://hexo.io/docs/">documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link" href="https://hexo.io/docs/troubleshooting.html">troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link" href="https://github.com/hexojs/hexo/issues">GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/writing.html">Writing<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/server.html">Server<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/generating.html">Generating<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a class="link" href="https://hexo.io/docs/one-command-deployment.html">Deployment<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="add-picture-use-relative-path"><a href="#add-picture-use-relative-path" class="headerlink" title="add picture use relative path"></a>add picture use relative path</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./<span class="variable">$&#123;filename&#125;</span>/name</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>python 编码规范</title>
+    <url>/2022/04/11/encode-python/</url>
+    <content><![CDATA[<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><ul>
+<li>无特殊情况，文件一律使用 UTF-8 编码</li>
+<li>无特殊情况，文件头部必须加入 <code># -*- coding: utf-8 -*-</code></li>
+</ul>
+<h3 id="缩进"><a href="#缩进" class="headerlink" title="缩进"></a>缩进</h3><ul>
+<li>统一使用 4 个空格进行缩进</li>
+</ul>
+<h3 id="引号"><a href="#引号" class="headerlink" title="引号"></a>引号</h3><ul>
+<li>自然语言，使用双引号。例如 <code>&quot;hello world&quot;</code></li>
+<li>机器标识，使用单引号。</li>
+<li>正则表达式，使用双引号。</li>
+<li>文档字符串，使用三引号。</li>
+</ul>
+<h3 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h3><ul>
+<li><strong>模块级函数</strong>和<strong>类定义</strong>之间空两行</li>
+<li><strong>类成员函数</strong>之间空一行</li>
+<li><strong>函数中</strong>可以使用空行分隔出逻辑相关的代码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">hello</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="import-语句"><a href="#import-语句" class="headerlink" title="import 语句"></a>import 语句</h3><ul>
+<li>import 应该分行书写</li>
+<li>import 应该使用 absolute import</li>
+<li>import 放在文件头部，置于模块说明及 <code>docstring</code> 之后，与全局变量之前<ul>
+<li><code>docstring</code></li>
+<li>import</li>
+<li>全局变量</li>
+</ul>
+</li>
+</ul>
+<h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><ul>
+<li>二元运算符两边</li>
+<li>函数的参数列表 <code>, </code> 之后要有空格</li>
+<li>函数的参数列表中，默认值等号两边不要加空格</li>
+<li>括号不需要加空格，字典类似</li>
+<li>不要添加多余空格，用于对齐 <code>=</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">foo</span>(<span class="params">a, b=<span class="number">10</span></span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">foo(&#123;a: <span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><blockquote>
+<p>python 支持括号内的换行，第二行缩进到括号的起始处，<strong>参数对齐</strong></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">bar = foo(a1, a2, </span><br><span class="line">a3, a4)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>使用反斜杠\换行，二元运算符+ .等应出现在行末；长字符串也可以用此法换行</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">session.query(MyTable).\</span><br><span class="line">        filter_by(<span class="built_in">id</span>=<span class="number">1</span>).\</span><br><span class="line">        one()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>if &#x2F; for &#x2F; while 独占一行</p>
+</blockquote>
+<h3 id="Docstring"><a href="#Docstring" class="headerlink" title="Docstring"></a>Docstring</h3><p>作为文档的 Docstring 一般出现在模块的头部、函数和类的头部，这样在 python 中可以通过对象的 <code>__doc__</code> 对象获取文档。编辑器和 IDE 也可以根据 Docstring 给出自动提示。</p>
+<ul>
+<li>所有的公共模块、函数、类、方法，都应该写 <code>docstring</code>。私有方法不一定需要，def 后提供一个块注释来说明</li>
+<li>docstirng 的结束，应该独占一行，除非只有一行</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;Return a foobar</span></span><br><span class="line"><span class="string">hello python</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;Oneline docstring&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>Google 风格：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;Example docstrings.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">This module demonstrates documentation as specified by the `Google Python</span></span><br><span class="line"><span class="string">Style Guide`_. Docstrings may extend over multiple lines. Sections are created</span></span><br><span class="line"><span class="string">with a section header and a colon followed by a block of indented text.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Example:</span></span><br><span class="line"><span class="string">    Examples can be given using either the ``Example`` or ``Examples``</span></span><br><span class="line"><span class="string">    sections. Sections support any reStructuredText formatting, including</span></span><br><span class="line"><span class="string">    literal blocks::</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        $ python example_google.py</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Section breaks are created by resuming unindented text. Section breaks</span></span><br><span class="line"><span class="string">are also implicitly created anytime a new section starts.</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h3><h4 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h4><p>模块尽量使用小写命名，首字母保持小写，尽量不要使用下划线</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 正确的模块名</span></span><br><span class="line"><span class="keyword">import</span> decoder</span><br><span class="line"><span class="keyword">import</span> html_parser</span><br><span class="line"></span><br><span class="line"><span class="comment"># 不推荐的模块名</span></span><br><span class="line"><span class="keyword">import</span> Decoder</span><br></pre></td></tr></table></figure>
+
+<h4 id="类名"><a href="#类名" class="headerlink" title="类名"></a>类名</h4><p>类名使用<strong>驼峰命名</strong>风格，首字母大写，私有类可用下划线开头。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Farm</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">AnimalFarm</span>(<span class="title class_ inherited__">Farm</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">_PrivateFarm</span>(<span class="title class_ inherited__">Farm</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>将相关的类和顶级函数放在同一个 module 里. 不像 Java , 没必要限制一个类一个 module.</p>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><p>函数名一律小写，有多个单词，使用下划线隔开。私有函数在函数前加一个下划线。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">run</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run_with_env</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>():</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_private_func</span>():</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="变量名"><a href="#变量名" class="headerlink" title="变量名"></a>变量名</h4><p>尽量使用小写，如有多个单词，使用下划线隔开</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    school_name = <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>使用全部大写 </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">MAX_CLIENT = <span class="number">100</span></span><br><span class="line">MAX_CONNECTION = <span class="number">1000</span></span><br><span class="line">CONNECTION_TIMEOUT = <span class="number">600</span></span><br><span class="line"></span><br><span class="line">MAX_OVERFLOW = <span class="number">100</span></span><br><span class="line"></span><br><span class="line">Class FooBar:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">foo_bar</span>(<span class="params">self, print_</span>):</span><br><span class="line">        <span class="built_in">print</span>(print_)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>tmux</title>
+    <url>/2022/04/30/tmux/</url>
+    <content><![CDATA[<h1 id="为什么使用-tmux"><a href="#为什么使用-tmux" class="headerlink" title="为什么使用 tmux"></a>为什么使用 tmux</h1><p>tmux 是一个 terminal multiplexer（终端复用器），可以启动一系列的终端会话。方便使用。</p>
+<p>tmux 同时解绑了会话和终端窗口的概念。关闭终端窗口，会话并不会终止，而是在运行。</p>
+<p><del>因为在 shell 中编写文件的时候，需要开多个终端，还要用鼠标切屏有点麻烦。</del></p>
+<p><strong>安装</strong> : <code>sudo apt-get install tmux</code></p>
+<h1 id="tmux-的使用"><a href="#tmux-的使用" class="headerlink" title="tmux 的使用"></a>tmux 的使用</h1><p><img src="/2022/04/30/tmux/image-20220501100622865.png" alt="image-20220501100622865"></p>
+<h2 id="session"><a href="#session" class="headerlink" title="session"></a>session</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 启动命名 tmux</span></span><br><span class="line">$ tmux new -s &lt;name&gt;</span><br><span class="line">$ ts &lt;name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出 tmux 会话</span></span><br><span class="line">$ tmux detach</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有 tmux 会话</span></span><br><span class="line">$ tmux <span class="built_in">ls</span></span><br><span class="line">$ tl</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入 tmux 会话</span></span><br><span class="line">$ tmux attach -t &lt;编号&gt; | &lt;会话名&gt;</span><br><span class="line">$ ta</span><br><span class="line"></span><br><span class="line"><span class="comment"># 杀死会话</span></span><br><span class="line">$ tmux kill-session -t &lt;编号&gt; | &lt;会话&gt;</span><br><span class="line">$ tkss</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换会话</span></span><br><span class="line">$ tmux switch -s &lt;<span class="built_in">id</span>&gt; | &lt;session-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># tmux 的其他命令</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有快捷键，及其对应的 Tmux 命令</span></span><br><span class="line">$ tmux list-keys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有 Tmux 命令及其参数</span></span><br><span class="line">$ tmux list-commands</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出当前所有 Tmux 会话的信息</span></span><br><span class="line">$ tmux info</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新加载当前的 Tmux 配置</span></span><br><span class="line">$ tmux source-file ~/.tmux.conf</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="pane"><a href="#pane" class="headerlink" title="pane"></a>pane</h2><h4 id="划分窗格"><a href="#划分窗格" class="headerlink" title="划分窗格"></a>划分窗格</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 划分上下两个窗格</span></span><br><span class="line">$ tmux split-window</span><br><span class="line"></span><br><span class="line"><span class="comment"># 划分左右两个窗格</span></span><br><span class="line">$ tmux split-window -h</span><br></pre></td></tr></table></figure>
+
+<h4 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ tmux select-pane -UDLR</span><br></pre></td></tr></table></figure>
+
+<h4 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h4><ul>
+<li><p>ctrl+b %：划分左右窗格</p>
+</li>
+<li><p>ctrl+b “：划分上下窗格</p>
+</li>
+<li><p>ctrl+b !: 将 pane 拆分成一个 window</p>
+</li>
+<li><p>ctrl+b z: 将 pane 全屏显示</p>
+</li>
+<li><p>ctrl+b 方向键：移动光标</p>
+</li>
+<li><p>ctrl+b x: 关闭窗格</p>
+</li>
+</ul>
+<h2 id="window"><a href="#window" class="headerlink" title="window"></a>window</h2><ul>
+<li>ctrl+b c：create</li>
+<li>ctrl+b ,: rename</li>
+<li>ctrl+b w: select</li>
+</ul>
+<h1 id="oh-my-tmux"><a href="#oh-my-tmux" class="headerlink" title="oh-my-tmux"></a>oh-my-tmux</h1><p><a class="link" href="https://github.com/gpakosz/.tmux">github: oh my tmux<i class="fas fa-external-link-alt"></i></a> </p>
+<p>使用 tmux 当然要美化一下捏，zsh 中的 tmux plugin 也挺好用的捏</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span></span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/gpakosz/.tmux.git</span><br><span class="line">$ <span class="built_in">ln</span> -s -f .tmux/.tmux.conf</span><br><span class="line">$ <span class="built_in">cp</span> .tmux/.tmux.conf.local .</span><br><span class="line"></span><br><span class="line">$ tmux <span class="built_in">source</span> ~/.tmux.conf</span><br></pre></td></tr></table></figure>
+
+<p>问题：色彩显示不完全</p>
+<p>需要在 <code>.tmux.conf</code> 中配置一下 color</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">if-shell <span class="string">&#x27;[ $(uname -s) = Linux ]&#x27;</span> \</span><br><span class="line">     <span class="string">&#x27;set -g default-terminal &quot;xterm-256color&quot;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>docker</title>
     <url>/2022/04/07/my-new-post/</url>
     <content><![CDATA[<h1 id="docker-安装以及-opengauss-安装"><a href="#docker-安装以及-opengauss-安装" class="headerlink" title="docker 安装以及 opengauss 安装"></a>docker 安装以及 opengauss 安装</h1><h2 id="docker-安装"><a href="#docker-安装" class="headerlink" title="docker 安装"></a>docker 安装</h2><ol>
@@ -1379,54 +1427,6 @@
       <tags>
         <tag>技术</tag>
         <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ACM 退役总结</title>
-    <url>/2022/04/17/retire-from-acm/</url>
-    <content><![CDATA[<h1 id="ACM-退役总结"><a href="#ACM-退役总结" class="headerlink" title="ACM 退役总结"></a>ACM 退役总结</h1><p>在开学后得知没有安排我参加昆明之后，我也算正式告别了 XCPC 的赛场。</p>
-<p>经过连续几周的面试，我也拿到了比较心仪的实习 offer，在和面试官交流的过程中也学到了很多计算机在生活中的应用。</p>
-<p>我渐渐发现之前那种只用考虑这一道题如何解决的时期已经过去了，所以在这一篇文章中纪念我的 acm 生涯。</p>
-<p>ACM 生涯中一共参加了 4 场 XCPC 的比赛，两铁一铜一银。这里要感谢陪伴我的队友 @xjw, @lyy, @zzy。感谢队友在这两年的陪伴。</p>
-<h4 id="第-45-届-icpc-昆明"><a href="#第-45-届-icpc-昆明" class="headerlink" title="第 45 届 icpc 昆明"></a>第 45 届 icpc 昆明</h4><p>当时寒假刚参加 acm 集训队，在一个寒假中勉强学会了一些板子题。莫名其妙的被 sj 拉着参加了延期的昆明。当时赛前勉强学会了一些算法的板子并不会，对算法的理解也不全面。导致比赛我全程宕机。最后拿了一个铁牌。</p>
-<p><img src="/2022/04/17/retire-from-acm/image-20220417143814047.png" alt="image-20220417143814047"></p>
-<p>不过第一次参加比赛就拿到 ACM 生涯中第一个，也是唯一一个一血。还是有一点意外的。</p>
-<h4 id="第-45-届-icpc-银川"><a href="#第-45-届-icpc-银川" class="headerlink" title="第 45 届 icpc 银川"></a>第 45 届 icpc 银川</h4><p>有了第一次比赛打铁的经验之后，我们自费参加了 45 届 icpc 银川。就是那个被 acmer 喷烂的比赛。</p>
-<p>当时比赛之前进行了比较充分的准备，但是还是没有防住银川的航模空格。好歹也报一个 PE 吧，老是来 WA 谁顶的住啊。</p>
-<p>最后还是打了铁。还是银川打铁，对我的心态影响属实不小。</p>
-<p>由于赛方没有公开 rk 数据，这里就不放排名了。</p>
-<p><a class="link" href="https://blog.csdn.net/myvanilla1/article/details/116903422">CSDN ICPC银川总结<i class="fas fa-external-link-alt"></i></a> 这里放一个当时打完比赛写的小作文。</p>
-<h4 id="第-7-届-CCPC-广州"><a href="#第-7-届-CCPC-广州" class="headerlink" title="第 7 届 CCPC 广州"></a>第 7 届 CCPC 广州</h4><p>经过了一个暑假的训练，以及队伍重组之后，我们参加了新赛季的第一场比赛。当时的我已经能够熟练的使用各种维护区间的数据架构了，同时对图论也有少量的了解。无奈前两次打铁，使我不敢放松。最后在比赛中获得了银。</p>
-<p>虽然这场比赛比较离谱，和我学过的算法并没有关系，全都是思维题。作为全队唯一一个没有脑子的选手，我化身码农狂写代码。最后的银牌打表题感谢队友 @xjw 的数据，当时我已经接近宕机并不是很想继续写题了。可能是老天爷的帮助，让我刚好看到了数据，也一眼看出了是斐波那契数列。最后拿下了银牌，不然真就从银牌区掉到了铜牌区。</p>
-<p><img src="/2022/04/17/retire-from-acm/image-20220417145957207.png" alt="image-20220417145957207"></p>
-<h4 id="第-46-届-icpc-沈阳"><a href="#第-46-届-icpc-沈阳" class="headerlink" title="第 46 届 icpc 沈阳"></a>第 46 届 icpc 沈阳</h4><p>拿到银之后，整个人都变成快乐人了。我们队也没有很认真的训练了。最后在欢声笑语中拿下一块铜牌。</p>
-<p>这里再次感谢 @xjw 的打表 idea。我愿称 @xjw 为打表的神。</p>
-<p><img src="/2022/04/17/retire-from-acm/image-20220417150404479.png" alt="image-20220417150404479"></p>
-<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>在 hr 面中，hr 问我为什么参加 xcpc 竞赛。当时我笑着说 <code>just for fun</code>。</p>
-<p>记得我第一次打算法竞赛是在分流之后，学校安排的一场夏季联赛，虽然当时连数据读入都不会，但是就被这个比赛深深的吸引住了。</p>
-<p>虽然当时也是出于之后好找工作，好保研的目的参加了这个竞赛。当时，退役之后回想起来 xcpc 给我带来的远不止这一些。它改变了我的思维方式，也使得我可以使用更加优雅的方式实现实际问题的求解。</p>
-<p>感谢你耐心的看完了我的流水账，下面我想给想参加 xcpc 的朋友一些建议：</p>
-<ol>
-<li>首先得了解你参加比赛所使用的语言，有利于你使用语言的特性优雅的低常数实现。</li>
-<li>熟悉至少一个编辑器的快捷键，可以让代码的编写跟的上脑子</li>
-<li>代码尽量规范，让代码看上去至少不会让你感到恶心</li>
-<li>尽早在 cf 和 atcoder 上面刷题，可以活跃你的思维。</li>
-<li>平时一定要好好补题，不要老学我天天搁那刷傻逼题。</li>
-</ol>
-<h4 id="最后的最后"><a href="#最后的最后" class="headerlink" title="最后的最后"></a>最后的最后</h4><p>感谢和我一起打过比赛的队友</p>
-<p>感谢实验室的朋友一路的陪伴</p>
-<p>感谢所有因为 acm 而相识的朋友</p>
-<p>退役，既是告别，也是开始</p>
-<p>愿今后：</p>
-<p>被打击时，记起你的珍贵</p>
-<p>迷茫时，坚信你的珍贵</p>
-<p>爱你所爱，行你所行</p>
-<p>听从你心，无问西东</p>
-<p>2022&#x2F;4&#x2F;17 (正好是第 46 届 icpc 昆明的比赛时间)</p>
-<p><img src="/2022/04/17/retire-from-acm/image-20220417153331430.png" alt="image-20220417153331430"></p>
-]]></content>
-      <tags>
-        <tag>日常</tag>
       </tags>
   </entry>
   <entry>
@@ -2530,6 +2530,54 @@
       <tags>
         <tag>技术</tag>
         <tag>os</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ACM 退役总结</title>
+    <url>/2022/04/17/retire-from-acm/</url>
+    <content><![CDATA[<h1 id="ACM-退役总结"><a href="#ACM-退役总结" class="headerlink" title="ACM 退役总结"></a>ACM 退役总结</h1><p>在开学后得知没有安排我参加昆明之后，我也算正式告别了 XCPC 的赛场。</p>
+<p>经过连续几周的面试，我也拿到了比较心仪的实习 offer，在和面试官交流的过程中也学到了很多计算机在生活中的应用。</p>
+<p>我渐渐发现之前那种只用考虑这一道题如何解决的时期已经过去了，所以在这一篇文章中纪念我的 acm 生涯。</p>
+<p>ACM 生涯中一共参加了 4 场 XCPC 的比赛，两铁一铜一银。这里要感谢陪伴我的队友 @xjw, @lyy, @zzy。感谢队友在这两年的陪伴。</p>
+<h4 id="第-45-届-icpc-昆明"><a href="#第-45-届-icpc-昆明" class="headerlink" title="第 45 届 icpc 昆明"></a>第 45 届 icpc 昆明</h4><p>当时寒假刚参加 acm 集训队，在一个寒假中勉强学会了一些板子题。莫名其妙的被 sj 拉着参加了延期的昆明。当时赛前勉强学会了一些算法的板子并不会，对算法的理解也不全面。导致比赛我全程宕机。最后拿了一个铁牌。</p>
+<p><img src="/2022/04/17/retire-from-acm/image-20220417143814047.png" alt="image-20220417143814047"></p>
+<p>不过第一次参加比赛就拿到 ACM 生涯中第一个，也是唯一一个一血。还是有一点意外的。</p>
+<h4 id="第-45-届-icpc-银川"><a href="#第-45-届-icpc-银川" class="headerlink" title="第 45 届 icpc 银川"></a>第 45 届 icpc 银川</h4><p>有了第一次比赛打铁的经验之后，我们自费参加了 45 届 icpc 银川。就是那个被 acmer 喷烂的比赛。</p>
+<p>当时比赛之前进行了比较充分的准备，但是还是没有防住银川的航模空格。好歹也报一个 PE 吧，老是来 WA 谁顶的住啊。</p>
+<p>最后还是打了铁。还是银川打铁，对我的心态影响属实不小。</p>
+<p>由于赛方没有公开 rk 数据，这里就不放排名了。</p>
+<p><a class="link" href="https://blog.csdn.net/myvanilla1/article/details/116903422">CSDN ICPC银川总结<i class="fas fa-external-link-alt"></i></a> 这里放一个当时打完比赛写的小作文。</p>
+<h4 id="第-7-届-CCPC-广州"><a href="#第-7-届-CCPC-广州" class="headerlink" title="第 7 届 CCPC 广州"></a>第 7 届 CCPC 广州</h4><p>经过了一个暑假的训练，以及队伍重组之后，我们参加了新赛季的第一场比赛。当时的我已经能够熟练的使用各种维护区间的数据架构了，同时对图论也有少量的了解。无奈前两次打铁，使我不敢放松。最后在比赛中获得了银。</p>
+<p>虽然这场比赛比较离谱，和我学过的算法并没有关系，全都是思维题。作为全队唯一一个没有脑子的选手，我化身码农狂写代码。最后的银牌打表题感谢队友 @xjw 的数据，当时我已经接近宕机并不是很想继续写题了。可能是老天爷的帮助，让我刚好看到了数据，也一眼看出了是斐波那契数列。最后拿下了银牌，不然真就从银牌区掉到了铜牌区。</p>
+<p><img src="/2022/04/17/retire-from-acm/image-20220417145957207.png" alt="image-20220417145957207"></p>
+<h4 id="第-46-届-icpc-沈阳"><a href="#第-46-届-icpc-沈阳" class="headerlink" title="第 46 届 icpc 沈阳"></a>第 46 届 icpc 沈阳</h4><p>拿到银之后，整个人都变成快乐人了。我们队也没有很认真的训练了。最后在欢声笑语中拿下一块铜牌。</p>
+<p>这里再次感谢 @xjw 的打表 idea。我愿称 @xjw 为打表的神。</p>
+<p><img src="/2022/04/17/retire-from-acm/image-20220417150404479.png" alt="image-20220417150404479"></p>
+<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>在 hr 面中，hr 问我为什么参加 xcpc 竞赛。当时我笑着说 <code>just for fun</code>。</p>
+<p>记得我第一次打算法竞赛是在分流之后，学校安排的一场夏季联赛，虽然当时连数据读入都不会，但是就被这个比赛深深的吸引住了。</p>
+<p>虽然当时也是出于之后好找工作，好保研的目的参加了这个竞赛。当时，退役之后回想起来 xcpc 给我带来的远不止这一些。它改变了我的思维方式，也使得我可以使用更加优雅的方式实现实际问题的求解。</p>
+<p>感谢你耐心的看完了我的流水账，下面我想给想参加 xcpc 的朋友一些建议：</p>
+<ol>
+<li>首先得了解你参加比赛所使用的语言，有利于你使用语言的特性优雅的低常数实现。</li>
+<li>熟悉至少一个编辑器的快捷键，可以让代码的编写跟的上脑子</li>
+<li>代码尽量规范，让代码看上去至少不会让你感到恶心</li>
+<li>尽早在 cf 和 atcoder 上面刷题，可以活跃你的思维。</li>
+<li>平时一定要好好补题，不要老学我天天搁那刷傻逼题。</li>
+</ol>
+<h4 id="最后的最后"><a href="#最后的最后" class="headerlink" title="最后的最后"></a>最后的最后</h4><p>感谢和我一起打过比赛的队友</p>
+<p>感谢实验室的朋友一路的陪伴</p>
+<p>感谢所有因为 acm 而相识的朋友</p>
+<p>退役，既是告别，也是开始</p>
+<p>愿今后：</p>
+<p>被打击时，记起你的珍贵</p>
+<p>迷茫时，坚信你的珍贵</p>
+<p>爱你所爱，行你所行</p>
+<p>听从你心，无问西东</p>
+<p>2022&#x2F;4&#x2F;17 (正好是第 46 届 icpc 昆明的比赛时间)</p>
+<p><img src="/2022/04/17/retire-from-acm/image-20220417153331430.png" alt="image-20220417153331430"></p>
+]]></content>
+      <tags>
+        <tag>日常</tag>
       </tags>
   </entry>
   <entry>
