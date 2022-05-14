@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="write something interesting">
+    <meta name="author" content="Auggie">
+    
+    <title>
+        
+            前端基础学习笔记 |
+        
+        Auggie&#39;s blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"快快抹干眼泪，看昙花多美"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Auggie&#39;s blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">前端基础学习笔记</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Auggie</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-05-14 21:48:00</span>
+        <span class="mobile">2022-05-14 21:48</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/vue/">vue</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/css/">css</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.1k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>10 Mins</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h2 id="什么是-Vue"><a href="#什么是-Vue" class="headerlink" title="什么是 Vue"></a>什么是 Vue</h2><ul>
+<li><p>Vue.js（读音 &#x2F;vjuː&#x2F;, 类似于 view） 是一套构建用户界面的渐进式框架。</p>
+</li>
+<li><p>Vue 只关注视图层， 采用自底向上增量开发的设计。</p>
+</li>
+<li><p>Vue 的目标是通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件。</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue@2.6.14&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><a class="link" target="_blank" rel="noopener" href="https://unpkg.com/vue/dist/vue.js">https://unpkg.com/vue/dist/vue.js<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link" target="_blank" rel="noopener" href="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js">https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+<h2 id="第一个-vue-程序"><a href="#第一个-vue-程序" class="headerlink" title="第一个 vue 程序"></a>第一个 vue 程序</h2><h3 id="el-挂载点"><a href="#el-挂载点" class="headerlink" title="el 挂载点"></a>el 挂载点</h3><ul>
+<li><p>Vue 实例的作用范围是什么？</p>
+<p>在 el 命中的内部都可以使用</p>
+</li>
+<li><p>是否可以使用其他的选择器？</p>
+<p>可以使用</p>
+<ul>
+<li>id 选择器 id&#x3D;””，建议挂载在 div 下面 <code>#app</code></li>
+<li>class 选择器 <code>.app</code></li>
+<li>标签选择器</li>
+</ul>
+</li>
+<li><p>作用域</p>
+<ul>
+<li>所有的双标签，除去 body，html</li>
+<li>不持支单标签</li>
+</ul>
+</li>
+</ul>
+<h3 id="data-数据对象"><a href="#data-数据对象" class="headerlink" title="data 数据对象"></a>data 数据对象</h3><ul>
+<li><p>基础类型 string</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">message:&quot;hello!&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组 array</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">campus:[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]</span><br></pre></td></tr></table></figure>
+
+<p>可以使用数组索引访问</p>
+</li>
+<li><p>对象 object</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">school : &#123;</span><br><span class="line">	name:&quot;name&quot;,</span><br><span class="line">	mobile:&quot;xxxx&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>支持全部渲染，也可以使用 <code>.</code> 访问</p>
+</li>
+</ul>
+<h3 id="methods-属性"><a href="#methods-属性" class="headerlink" title="methods 属性"></a>methods 属性</h3><p>用于添加方法</p>
+<h2 id="本地应用"><a href="#本地应用" class="headerlink" title="本地应用"></a>本地应用</h2><p>通过 vue 实现常见的网页效果</p>
+<ol>
+<li>内容绑定、事件绑定</li>
+<li>显示切换、属性绑定</li>
+<li>列表循环，表单元素绑定</li>
+</ol>
+<h3 id="内容绑定、事件绑定"><a href="#内容绑定、事件绑定" class="headerlink" title="内容绑定、事件绑定"></a>内容绑定、事件绑定</h3><h4 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h4><p>内容绑定</p>
+<p>用于设置标签的内容</p>
+<ol>
+<li>标签内部使用 v-text 语法，<strong>只能全部替换</strong></li>
+<li>使用插值表达式，<strong>支持部分替换</strong><ol>
+<li>支持内部字符串拼接</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        &#123;&#123; message + &quot; world&quot; &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-text</span>=<span class="string">&quot;message&quot;</span>&gt;</span>world<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2022/05/14/html-css-vue/05/14/html-css-vue/image-20220110165251780.png" class title="image-20220110165251780">
+
+<h4 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h4><p>内容绑定</p>
+<p>与 v-text 语法类似，但是设置的字符串是 html 标签的时候，<strong>v-html 会被解析出来</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-html</span>=<span class="string">&quot;tmp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-text</span>=<span class="string">&quot;tmp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2022/05/14/html-css-vue/05/14/html-css-vue/image-20220110165708426.png" class title="image-20220110165708426">
+
+<h4 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h4><p>事件绑定</p>
+<p><img src="/2022/05/14/html-css-vue/image-20220110170223158.png" alt="image-20220110170223158"></p>
+<ul>
+<li>传递兹定理参数</li>
+<li>事件修饰符</li>
+</ul>
+<p>容器：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;1&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;doit&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    单击--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;2&quot;</span> <span class="attr">v-on:click</span>=<span class="string">&quot;doit&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    双击--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;3&quot;</span> @<span class="attr">dblclick</span>=<span class="string">&quot;doit&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    鼠标移入--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;4&quot;</span> @<span class="attr">mouseenter</span>=<span class="string">&quot;doit&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>vue 实例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-handlebars"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    var app = new Vue(&#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        el: &quot;#app&quot;,</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        methods:&#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">            doit:function () &#123;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">                alert(&quot;go&quot;);</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">                <span class="comment">&lt;!--弹窗--&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">            &#125;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">        &#125;</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars">    &#125;)</span></span></span><br><span class="line"><span class="language-xml"><span class="language-handlebars"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>更改页面显示：</strong></p>
+<p>在事件中修改数据。</p>
+<p>计数器案例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;sub&quot;</span>&gt;</span></span><br><span class="line">        -</span><br><span class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-text</span>=<span class="string">&quot;msg&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span></span><br><span class="line">        +</span><br><span class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue@2.6.14&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> vm = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">data</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">msg</span>: <span class="number">1</span></span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">add</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;add&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">msg</span> &lt; <span class="number">10</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="variable language_">this</span>.<span class="property">msg</span> ++;</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="title function_">alert</span>(<span class="string">&#x27;too large&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">sub</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">msg</span> &gt; <span class="number">0</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="variable language_">this</span>.<span class="property">msg</span> --;</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="title function_">alert</span>(<span class="string">&#x27;too small&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="显示切换、属性绑定"><a href="#显示切换、属性绑定" class="headerlink" title="显示切换、属性绑定"></a>显示切换、属性绑定</h3><h4 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h4><p><strong>用于操作显示状态</strong></p>
+<p>根据表达式的真假，切换元素的显示和隐藏。</p>
+<p>可以直接在 v-show&#x3D;”” 中写表达式。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;change&quot;</span>&gt;</span>change<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;../resources/1.jpeg&quot;</span> <span class="attr">v-show</span>=<span class="string">&quot;isShow&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;../resources/2.jpeg&quot;</span> <span class="attr">v-show</span>=<span class="string">&quot;!isShow&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h4><p>与 v-show 类似。</p>
+<p>频繁切换的时候，使用 v-show，否则使用 v-if</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;change&quot;</span>&gt;</span>change<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;isShow&quot;</span>&gt;</span>show<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h4><p>操作元素属性</p>
+<h3 id="列表循环，表单元素绑定"><a href="#列表循环，表单元素绑定" class="headerlink" title="列表循环，表单元素绑定"></a>列表循环，表单元素绑定</h3><h4 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h4><p>用于列表循环遍历。</p>
+<p><code>(item, index) in DS</code></p>
+<p>可以动态修改</p>
+<h4 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h4><p>data 同步获得表单信息</p>
+<p>实例，记事本：</p>
+<ul>
+<li>v-for</li>
+<li>v-on</li>
+<li>v-model</li>
+<li>v-text</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;note&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;inputValue&quot;</span> <span class="attr">:value</span>=<span class="string">&quot;inputValue&quot;</span> @<span class="attr">keyup.enter</span>=<span class="string">&quot;add()&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">&quot;noteArr.length&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">ul</span> <span class="attr">title</span>=<span class="string">&quot;todolist&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;(item, index) in noteArr&quot;</span>&gt;</span></span><br><span class="line">                    &#123;&#123; index + 1 &#125;&#125;. &#123;&#123; item &#125;&#125;</span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;删除&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;del(index)&quot;</span> <span class="attr">class</span>=<span class="string">&quot;destroy&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; noteArr.length &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;delAll()&quot;</span> <span class="attr">style</span>=<span class="string">&quot;color: crimson&quot;</span> <span class="attr">value</span>=<span class="string">&quot;clear&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue@2.6.14&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> note = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">el</span>: <span class="string">&quot;#note&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">data</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">noteArr</span>: [<span class="string">&quot;name01&quot;</span>, <span class="string">&quot;name02&quot;</span>],</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">inputValue</span>: <span class="string">&quot;input string&quot;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">add</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="variable language_">this</span>.<span class="property">noteArr</span>.<span class="title function_">push</span>(<span class="variable language_">this</span>.<span class="property">inputValue</span>);</span></span><br><span class="line"><span class="language-javascript">            &#125;,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">del</span>: <span class="keyword">function</span> (<span class="params">index</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="variable language_">this</span>.<span class="property">noteArr</span>.<span class="title function_">splice</span>(index, <span class="number">1</span>);</span></span><br><span class="line"><span class="language-javascript">            &#125;,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">delAll</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="variable language_">this</span>.<span class="property">noteArr</span> = [];</span></span><br><span class="line"><span class="language-javascript">                <span class="variable language_">this</span>.<span class="property">inputValue</span> = <span class="string">&quot;&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="网络应用"><a href="#网络应用" class="headerlink" title="网络应用"></a>网络应用</h2><p>vue 如何结合网络数据开发应用</p>
+<p>axios 网络请求库</p>
+<h3 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h3><p>功能强大的网络请求库</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://autumnfish.cn/api/joke</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="简单-axios-vue-程序"><a href="#简单-axios-vue-程序" class="headerlink" title="简单 axios + vue 程序"></a>简单 axios + vue 程序</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">    getJoke: function () &#123;</span><br><span class="line">        var that = this;</span><br><span class="line">		// 函数中 this 已经改变，需要使用 that 将 this 存下来</span><br><span class="line">        axios.get(&quot;https://autumnfish.cn/api/joke&quot;).then(</span><br><span class="line">            function (response) &#123;</span><br><span class="line">                console.log(response.data)</span><br><span class="line">                that.msg = response.data;</span><br><span class="line">            &#125;,</span><br><span class="line">            function (error) &#123;</span><br><span class="line">                this.msg = &quot;error&quot;;</span><br><span class="line">            &#125;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="CSS-的导入方式"><a href="#CSS-的导入方式" class="headerlink" title="CSS 的导入方式"></a>CSS 的导入方式</h2><ol>
+<li><p>在 html 中直接编写 style（内部样式）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123;</span><br><span class="line">    声明<span class="number">1</span>:XXX;</span><br><span class="line">    声明<span class="number">2</span>:XXX;</span><br><span class="line">    声明<span class="number">3</span>:XXX;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>放在 CSS 文件夹中，引入 CSS</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;CSS/style.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>行内属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">&quot;color: cornflowerblue&quot;</span>&gt;</span>css<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>优先级：就近原则</p>
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><h3 id="1-基本选择器"><a href="#1-基本选择器" class="headerlink" title="1. 基本选择器"></a>1. 基本选择器</h3><ol>
+<li><p>标签选择器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blanchedalmond;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>类选择器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: aquamarine;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>id 选择器，id 全局唯一</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#test</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blueviolet;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><strong>不遵循就近原则，id &gt; class &gt; 标签</strong></p>
+<h3 id="2-层次选择器"><a href="#2-层次选择器" class="headerlink" title="2. 层次选择器"></a>2. 层次选择器</h3><ol>
+<li><p>后代选择器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: cornflowerblue;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子选择器</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &gt; <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: cornflowerblue;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>兄弟选择器</p>
+<p><strong>选择下面一个兄弟</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    <span class="selector-class">.active</span> + <span class="selector-tag">p</span> &#123;</span><br><span class="line">        <span class="attribute">background</span>: cornflowerblue;</span><br><span class="line">        <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通用选择器</p>
+<p><strong>当前标签下面的全部兄弟标签</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    <span class="selector-class">.active</span> ~ <span class="selector-tag">p</span> &#123;</span><br><span class="line">        <span class="attribute">background</span>: cornflowerblue;</span><br><span class="line">        <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="3-结构伪类选择器"><a href="#3-结构伪类选择器" class="headerlink" title="3. 结构伪类选择器"></a>3. 结构伪类选择器</h3><ul>
+<li>选中 ul 的第一个子元素</li>
+<li>选中 ul 的最后一个子元素</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:first</span>-child &#123;</span><br><span class="line">    <span class="attribute">color</span>: cornflowerblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-属性选择器"><a href="#4-属性选择器" class="headerlink" title="4. 属性选择器"></a>4. 属性选择器</h3><p><strong>“value 是完整单词”</strong> 类型的比较符号: <strong>~&#x3D;</strong>, <strong>|&#x3D;</strong></p>
+<p><strong>“拼接字符串</strong>“ 类型的比较符号: ***&#x3D;**, <strong>^&#x3D;</strong>, <strong>$&#x3D;</strong></p>
+<p><strong>1. attribute 属性中包含 value:</strong>　</p>
+<p>[attribute~&#x3D;value] 属性中包含独立的单词为 value，例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[title~=flower]</span>  --&gt;  &lt;<span class="selector-tag">img</span> <span class="attribute">src</span>=&quot;/<span class="selector-tag">i</span>/eg_tulip<span class="selector-class">.jpg</span>&quot; title=&quot;tulip flower&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>[attribute*&#x3D;value] 属性中做字符串拆分，只要能拆出来 value 这个词就行，例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[title*=flower]</span>   --&gt;  &lt;<span class="selector-tag">img</span> <span class="attribute">src</span>=&quot;/<span class="selector-tag">i</span>/eg_tulip<span class="selector-class">.jpg</span>&quot; title=&quot;ffffflowerrrrrr&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. attribute 属性以 value 开头:</strong></p>
+<p>[attribute|&#x3D;value] 属性中<strong>必须是完整且唯一的单词</strong>，或者以 <strong>-</strong> 分隔开：，例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[lang|=en]</span>     --&gt;  &lt;<span class="selector-tag">p</span> lang=&quot;en&quot;&gt;  &lt;<span class="selector-tag">p</span> lang=&quot;en-us&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>[attribute^&#x3D;value] 属性的<strong>前几个字母是 value 就可以</strong>，例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[lang^=en]</span>    --&gt;  &lt;<span class="selector-tag">p</span> lang=&quot;ennn&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3. attribute 属性以 value 结尾:</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[attribute$=value]</span> 属性的后几个字母是 value 就可以，例如：</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[src$=<span class="string">&quot;.pdf&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="美化网页元素"><a href="#美化网页元素" class="headerlink" title="美化网页元素"></a>美化网页元素</h2><p>约定使用的标签名：</p>
+<ul>
+<li>span 标签：重点要突出的字，使用 span 标签套起来。</li>
+</ul>
+<h3 id="字体样式"><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#font-test</span> &#123;</span><br><span class="line">    <span class="comment">/*字体*/</span></span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;Consolas&quot;</span>, 微软雅黑;</span><br><span class="line">    <span class="comment">/*字体大小*/</span></span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="comment">/*字体粗细*/</span></span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">    <span class="comment">/*字体颜色*/</span></span><br><span class="line">    <span class="attribute">color</span>: cornflowerblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h3><ul>
+<li>颜色</li>
+<li>对齐方式</li>
+<li>首行缩进</li>
+<li>行高</li>
+<li>装饰</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#text-test</span> &#123;</span><br><span class="line">    <span class="comment">/*居中*/</span></span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="comment">/*首行缩进*/</span></span><br><span class="line">    <span class="attribute">text-indent</span>: <span class="number">2em</span>;</span><br><span class="line">    <span class="comment">/*行高*/</span></span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="comment">/*下划线、中划线...*/</span></span><br><span class="line">    <span class="attribute">text-decoration</span>: underline;</span><br><span class="line">    <span class="comment">/**/</span></span><br><span class="line">    <span class="attribute">vertical-align</span>:middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>文本 与 图片对齐</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span>, <span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">p</span> id=&quot;text-test&quot;&gt;</span><br><span class="line">    &lt;<span class="selector-tag">img</span> <span class="attribute">src</span>=&quot;../resources/<span class="number">1</span><span class="selector-class">.jpeg</span>&quot; alt=&quot;&quot;&gt;</span><br><span class="line">    &lt;<span class="selector-tag">span</span>&gt;hello world&lt;/<span class="selector-tag">span</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">p</span>&gt;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：前端基础学习笔记</li>
+        <li>Post author：Auggie</li>
+        <li>Create time：2022-05-14 21:48:00</li>
+        <li>
+            Post link：https://ruanjiancheng.github.io/2022/05/14/html-css-vue/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/vue/">#vue</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/css/">#css</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/05/14/java/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">java</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/04/30/tmux/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">tmux</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Auggie</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue"><span class="nav-number">1.</span> <span class="nav-text">Vue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Vue"><span class="nav-number">1.1.</span> <span class="nav-text">什么是 Vue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA-vue-%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.2.</span> <span class="nav-text">第一个 vue 程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#el-%E6%8C%82%E8%BD%BD%E7%82%B9"><span class="nav-number">1.2.1.</span> <span class="nav-text">el 挂载点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#data-%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.2.2.</span> <span class="nav-text">data 数据对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#methods-%E5%B1%9E%E6%80%A7"><span class="nav-number">1.2.3.</span> <span class="nav-text">methods 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%BA%94%E7%94%A8"><span class="nav-number">1.3.</span> <span class="nav-text">本地应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E7%BB%91%E5%AE%9A%E3%80%81%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="nav-number">1.3.1.</span> <span class="nav-text">内容绑定、事件绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#v-text"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">v-text</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-html"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">v-html</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-on"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">v-on</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E5%88%87%E6%8D%A2%E3%80%81%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A"><span class="nav-number">1.3.2.</span> <span class="nav-text">显示切换、属性绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#v-show"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">v-show</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-if"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">v-if</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-bind"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">v-bind</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E5%BE%AA%E7%8E%AF%EF%BC%8C%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E7%BB%91%E5%AE%9A"><span class="nav-number">1.3.3.</span> <span class="nav-text">列表循环，表单元素绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#v-for"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">v-for</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-model"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">v-model</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8"><span class="nav-number">1.4.</span> <span class="nav-text">网络应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#axios"><span class="nav-number">1.4.1.</span> <span class="nav-text">axios</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95-axios-vue-%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.4.2.</span> <span class="nav-text">简单 axios + vue 程序</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS"><span class="nav-number">2.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-%E7%9A%84%E5%AF%BC%E5%85%A5%E6%96%B9%E5%BC%8F"><span class="nav-number">2.1.</span> <span class="nav-text">CSS 的导入方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">2.2.</span> <span class="nav-text">选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">2.2.1.</span> <span class="nav-text">1. 基本选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%B1%82%E6%AC%A1%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">2.2.2.</span> <span class="nav-text">2. 层次选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%BB%93%E6%9E%84%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">2.2.3.</span> <span class="nav-text">3. 结构伪类选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">2.2.4.</span> <span class="nav-text">4. 属性选择器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%8C%96%E7%BD%91%E9%A1%B5%E5%85%83%E7%B4%A0"><span class="nav-number">2.3.</span> <span class="nav-text">美化网页元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E6%A0%B7%E5%BC%8F"><span class="nav-number">2.3.1.</span> <span class="nav-text">字体样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E6%A0%B7%E5%BC%8F"><span class="nav-number">2.3.2.</span> <span class="nav-text">文本样式</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
