@@ -67,7 +67,7 @@
                             <a class=""
                                href="/"
                             >
-                                HOME
+                                首页
                             </a>
                         </li>
                     
@@ -75,7 +75,7 @@
                             <a class=""
                                href="/archives"
                             >
-                                ARCHIVES
+                                归档
                             </a>
                         </li>
                     
@@ -83,7 +83,7 @@
                             <a class=""
                                href="/about"
                             >
-                                ABOUT
+                                关于
                             </a>
                         </li>
                     
@@ -110,17 +110,17 @@
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/">HOME</a>
+                       href="/">首页</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/archives">ARCHIVES</a>
+                       href="/archives">归档</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/about">ABOUT</a>
+                       href="/about">关于</a>
                 </li>
             
         </ul>
@@ -183,12 +183,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>2.1k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.8k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>10 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>13 分钟</span>
         </span>
     
     
@@ -415,6 +415,82 @@
 <p>文本 与 图片对齐</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span>, <span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">p</span> id=&quot;text-test&quot;&gt;</span><br><span class="line">    &lt;<span class="selector-tag">img</span> <span class="attribute">src</span>=&quot;../resources/<span class="number">1</span><span class="selector-class">.jpeg</span>&quot; alt=&quot;&quot;&gt;</span><br><span class="line">    &lt;<span class="selector-tag">span</span>&gt;hello world&lt;/<span class="selector-tag">span</span>&gt;</span><br><span class="line">&lt;/<span class="selector-tag">p</span>&gt;</span><br></pre></td></tr></table></figure>
 
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><h3 id="创建文件时"><a href="#创建文件时" class="headerlink" title="创建文件时"></a>创建文件时</h3><ol>
+<li>使用 vue 开发。使用 vue ui 创建工程的时候，需要勾选两个服务 route 和它下面的一个。</li>
+<li>需要添加 axios 插件，通过 <code>vue add axios</code> 来完成</li>
+</ol>
+<h3 id="编写文件时"><a href="#编写文件时" class="headerlink" title="编写文件时"></a>编写文件时</h3><ol>
+<li>vue 是单文件项目，所有的文件都在一个 html 中，通过 ref-link 跳转到不同的 .vue 文件中，刷新页面</li>
+<li>在 views 中编写页面之后，需要在 router 下面的 index.js 注册路由</li>
+<li>在 app.vue 中，编写跳转标签</li>
+</ol>
+<h3 id="动态获取路由渲染-nav"><a href="#动态获取路由渲染-nav" class="headerlink" title="动态获取路由渲染 nav"></a>动态获取路由渲染 nav</h3><ol>
+<li>通过 <code>$router.options.routes</code> 获取路由信息，通过 <code>v-for</code> 即可获取当前项</li>
+</ol>
+<h3 id="前端处理表格"><a href="#前端处理表格" class="headerlink" title="前端处理表格"></a>前端处理表格</h3><h4 id="切换页面"><a href="#切换页面" class="headerlink" title="切换页面"></a>切换页面</h4><ol>
+<li>自带属性有 page-size，total 等</li>
+<li>切换页面可以通过 current-change 函数实现</li>
+</ol>
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><ol>
+<li>只会通过当前页面来渲染页面</li>
+</ol>
+<h3 id="前端表单处理"><a href="#前端表单处理" class="headerlink" title="前端表单处理"></a>前端表单处理</h3><ol>
+<li>可以前端校验表单的合法性</li>
+<li>直接向后端提交 axios 请求，通过 ，追加表单信息</li>
+<li>成功后，跳转</li>
+</ol>
+<h3 id="修改页的处理"><a href="#修改页的处理" class="headerlink" title="修改页的处理"></a>修改页的处理</h3><ol>
+<li><p>update 页面如何获取数据</p>
+<ol>
+<li>旧页面通过 <code>$router.push(&#123;path: &#39;url&#39;, query:&#123;id: row.id&#125;&#125;)</code> 传递参数</li>
+<li>新页面通过 <code>this.$route.query.id</code> 获取传递参数</li>
+</ol>
+</li>
+<li><p>触发点击事件后，将 id 传到另一个页面</p>
+</li>
+<li><p>新页面通过 id 请求后台数据</p>
+</li>
+</ol>
+<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ol>
+<li>添加 <code>created()&#123;&#125;</code> 函数可以在页面初始化的时候，刷新页面</li>
+<li>动态刷新 <code>windows.location.reload()</code></li>
+<li>跳转 <code>this.$router.push(&#123;path:&#39;&#39;, query:&#123;&#125;&#125;)</code></li>
+</ol>
+<h3 id="一些错误"><a href="#一些错误" class="headerlink" title="一些错误"></a>一些错误</h3><ol>
+<li>axios 采用 https 链接报错，采用 http 链接</li>
+<li>axios 需要在函数外面保存对象，<code>const _this = this</code></li>
+</ol>
+<h2 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h2><p>使用 springboot + mybatis 实现</p>
+<ol>
+<li>controller 需要添加 <code>@Controller</code> 注解</li>
+<li>service 需要添加 <code>@Service</code> 注解</li>
+<li>dao 需要添加 <code>@Mapper @Repository</code> 注解</li>
+<li>Test 需要给类添加 <code>@SpringBootTest</code> 和 函数添加 <code>@Test</code> 注解</li>
+</ol>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>application.yml</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://47.101.155.92:3306/studentms?setUnicode=true&amp;characterEncoding=utf8&amp;useAffectedRows=true</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">auggie</span></span><br><span class="line">    <span class="attr">password:</span> <span class="number">123</span></span><br><span class="line"></span><br><span class="line"><span class="attr">mybatis:</span></span><br><span class="line">  <span class="attr">type-aliases-package:</span> <span class="string">com.auggie.springboottest.bean</span></span><br><span class="line">  <span class="attr">mapper-locations:</span> <span class="string">classpath:mapper/*.xml</span></span><br><span class="line"></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8181</span></span><br></pre></td></tr></table></figure>
+
+<p>*Mapper.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span> ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">mapper</span></span></span><br><span class="line"><span class="meta">        <span class="keyword">PUBLIC</span> <span class="string">&quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span></span></span><br><span class="line"><span class="meta">        <span class="string">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;com.auggie.springboottest.mapper.StudentMapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;getStudentList&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;Student&quot;</span>&gt;</span></span><br><span class="line">        SELECT * FROM studentms.s;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="controller-文件"><a href="#controller-文件" class="headerlink" title="controller 文件"></a>controller 文件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用 restful 开发</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="comment">// 指定根路径</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/student&quot;)</span></span><br><span class="line"><span class="comment">// 解决跨域问题</span></span><br><span class="line"><span class="meta">@CrossOrigin(&quot;*&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StudentController</span> &#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> StudentMapper studentMapper;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/getStudentList&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> List&lt;Student&gt; <span class="title function_">getStudentList</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> studentMapper.getStudentList();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="后端处理表格"><a href="#后端处理表格" class="headerlink" title="后端处理表格"></a>后端处理表格</h3><ol>
+<li>编写获取数据大小的接口</li>
+<li>编写根据当前页和页面大小的数据接口，restful 风格获取</li>
+</ol>
+<h3 id="后端表单处理"><a href="#后端表单处理" class="headerlink" title="后端表单处理"></a>后端表单处理</h3><ol>
+<li>通过 @RequsetBody 获取 JSON 格式的信息</li>
+<li>然后处理即可</li>
+</ol>
+<h3 id="一些常犯的错误"><a href="#一些常犯的错误" class="headerlink" title="一些常犯的错误"></a>一些常犯的错误</h3><ol>
+<li>没有启动 mysql <code>service mysqld start</code></li>
+<li>mybatis 通过对象传递参数的时候，需要在函数中添加 @Param 的注解，并且不需要在 xml 中配置 paramType</li>
+</ol>
 
         </div>
 
@@ -422,14 +498,14 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：前端基础学习笔记</li>
-        <li>Post author：Auggie</li>
-        <li>Create time：2022-05-14 21:48:00</li>
+        <li>本文标题：前端基础学习笔记</li>
+        <li>本文作者：Auggie</li>
+        <li>创建时间：2022-05-14 21:48:00</li>
         <li>
-            Post link：https://ruanjiancheng.github.io/2022/05/14/html-css-vue/
+            本文链接：https://ruanjiancheng.github.io/2022/05/14/html-css-vue/
         </li>
         <li>
-            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -464,7 +540,7 @@
                             </span>
                             <span class="title flex-center">
                                 <span class="post-nav-title-item">java</span>
-                                <span class="post-nav-item">Prev posts</span>
+                                <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
                     </div>
@@ -477,7 +553,7 @@
                         >
                             <span class="title flex-center">
                                 <span class="post-nav-title-item">tmux</span>
-                                <span class="post-nav-item">Next posts</span>
+                                <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
                               <i class="fas fa-chevron-right"></i>
@@ -515,13 +591,13 @@
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
         </div>
         
         
@@ -598,7 +674,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue"><span class="nav-number">1.</span> <span class="nav-text">Vue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Vue"><span class="nav-number">1.1.</span> <span class="nav-text">什么是 Vue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA-vue-%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.2.</span> <span class="nav-text">第一个 vue 程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#el-%E6%8C%82%E8%BD%BD%E7%82%B9"><span class="nav-number">1.2.1.</span> <span class="nav-text">el 挂载点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#data-%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.2.2.</span> <span class="nav-text">data 数据对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#methods-%E5%B1%9E%E6%80%A7"><span class="nav-number">1.2.3.</span> <span class="nav-text">methods 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%BA%94%E7%94%A8"><span class="nav-number">1.3.</span> <span class="nav-text">本地应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E7%BB%91%E5%AE%9A%E3%80%81%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="nav-number">1.3.1.</span> <span class="nav-text">内容绑定、事件绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#v-text"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">v-text</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-html"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">v-html</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-on"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">v-on</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E5%88%87%E6%8D%A2%E3%80%81%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A"><span class="nav-number">1.3.2.</span> <span class="nav-text">显示切换、属性绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#v-show"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">v-show</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-if"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">v-if</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-bind"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">v-bind</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E5%BE%AA%E7%8E%AF%EF%BC%8C%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E7%BB%91%E5%AE%9A"><span class="nav-number">1.3.3.</span> <span class="nav-text">列表循环，表单元素绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#v-for"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">v-for</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-model"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">v-model</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8"><span class="nav-number">1.4.</span> <span class="nav-text">网络应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#axios"><span class="nav-number">1.4.1.</span> <span class="nav-text">axios</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95-axios-vue-%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.4.2.</span> <span class="nav-text">简单 axios + vue 程序</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS"><span class="nav-number">2.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-%E7%9A%84%E5%AF%BC%E5%85%A5%E6%96%B9%E5%BC%8F"><span class="nav-number">2.1.</span> <span class="nav-text">CSS 的导入方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">2.2.</span> <span class="nav-text">选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">2.2.1.</span> <span class="nav-text">1. 基本选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%B1%82%E6%AC%A1%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">2.2.2.</span> <span class="nav-text">2. 层次选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%BB%93%E6%9E%84%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">2.2.3.</span> <span class="nav-text">3. 结构伪类选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">2.2.4.</span> <span class="nav-text">4. 属性选择器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%8C%96%E7%BD%91%E9%A1%B5%E5%85%83%E7%B4%A0"><span class="nav-number">2.3.</span> <span class="nav-text">美化网页元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E6%A0%B7%E5%BC%8F"><span class="nav-number">2.3.1.</span> <span class="nav-text">字体样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E6%A0%B7%E5%BC%8F"><span class="nav-number">2.3.2.</span> <span class="nav-text">文本样式</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue"><span class="nav-number">1.</span> <span class="nav-text">Vue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Vue"><span class="nav-number">1.1.</span> <span class="nav-text">什么是 Vue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA-vue-%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.2.</span> <span class="nav-text">第一个 vue 程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#el-%E6%8C%82%E8%BD%BD%E7%82%B9"><span class="nav-number">1.2.1.</span> <span class="nav-text">el 挂载点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#data-%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.2.2.</span> <span class="nav-text">data 数据对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#methods-%E5%B1%9E%E6%80%A7"><span class="nav-number">1.2.3.</span> <span class="nav-text">methods 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%BA%94%E7%94%A8"><span class="nav-number">1.3.</span> <span class="nav-text">本地应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E7%BB%91%E5%AE%9A%E3%80%81%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="nav-number">1.3.1.</span> <span class="nav-text">内容绑定、事件绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#v-text"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">v-text</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-html"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">v-html</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-on"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">v-on</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E5%88%87%E6%8D%A2%E3%80%81%E5%B1%9E%E6%80%A7%E7%BB%91%E5%AE%9A"><span class="nav-number">1.3.2.</span> <span class="nav-text">显示切换、属性绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#v-show"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">v-show</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-if"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">v-if</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-bind"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">v-bind</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E5%BE%AA%E7%8E%AF%EF%BC%8C%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E7%BB%91%E5%AE%9A"><span class="nav-number">1.3.3.</span> <span class="nav-text">列表循环，表单元素绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#v-for"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">v-for</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-model"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">v-model</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8"><span class="nav-number">1.4.</span> <span class="nav-text">网络应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#axios"><span class="nav-number">1.4.1.</span> <span class="nav-text">axios</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95-axios-vue-%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.4.2.</span> <span class="nav-text">简单 axios + vue 程序</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS"><span class="nav-number">2.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-%E7%9A%84%E5%AF%BC%E5%85%A5%E6%96%B9%E5%BC%8F"><span class="nav-number">2.1.</span> <span class="nav-text">CSS 的导入方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">2.2.</span> <span class="nav-text">选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">2.2.1.</span> <span class="nav-text">1. 基本选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%B1%82%E6%AC%A1%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">2.2.2.</span> <span class="nav-text">2. 层次选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%BB%93%E6%9E%84%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">2.2.3.</span> <span class="nav-text">3. 结构伪类选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">2.2.4.</span> <span class="nav-text">4. 属性选择器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%8C%96%E7%BD%91%E9%A1%B5%E5%85%83%E7%B4%A0"><span class="nav-number">2.3.</span> <span class="nav-text">美化网页元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E6%A0%B7%E5%BC%8F"><span class="nav-number">2.3.1.</span> <span class="nav-text">字体样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E6%A0%B7%E5%BC%8F"><span class="nav-number">2.3.2.</span> <span class="nav-text">文本样式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF"><span class="nav-number">3.1.</span> <span class="nav-text">前端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E6%97%B6"><span class="nav-number">3.1.1.</span> <span class="nav-text">创建文件时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E6%96%87%E4%BB%B6%E6%97%B6"><span class="nav-number">3.1.2.</span> <span class="nav-text">编写文件时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%8E%B7%E5%8F%96%E8%B7%AF%E7%94%B1%E6%B8%B2%E6%9F%93-nav"><span class="nav-number">3.1.3.</span> <span class="nav-text">动态获取路由渲染 nav</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E5%A4%84%E7%90%86%E8%A1%A8%E6%A0%BC"><span class="nav-number">3.1.4.</span> <span class="nav-text">前端处理表格</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E9%A1%B5%E9%9D%A2"><span class="nav-number">3.1.4.1.</span> <span class="nav-text">切换页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="nav-number">3.1.4.2.</span> <span class="nav-text">表格</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E8%A1%A8%E5%8D%95%E5%A4%84%E7%90%86"><span class="nav-number">3.1.5.</span> <span class="nav-text">前端表单处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%A1%B5%E7%9A%84%E5%A4%84%E7%90%86"><span class="nav-number">3.1.6.</span> <span class="nav-text">修改页的处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="nav-number">3.1.7.</span> <span class="nav-text">知识点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E9%94%99%E8%AF%AF"><span class="nav-number">3.1.8.</span> <span class="nav-text">一些错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF"><span class="nav-number">3.2.</span> <span class="nav-text">后端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.2.1.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#controller-%E6%96%87%E4%BB%B6"><span class="nav-number">3.2.2.</span> <span class="nav-text">controller 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E5%A4%84%E7%90%86%E8%A1%A8%E6%A0%BC"><span class="nav-number">3.2.3.</span> <span class="nav-text">后端处理表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E8%A1%A8%E5%8D%95%E5%A4%84%E7%90%86"><span class="nav-number">3.2.4.</span> <span class="nav-text">后端表单处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%8A%AF%E7%9A%84%E9%94%99%E8%AF%AF"><span class="nav-number">3.2.5.</span> <span class="nav-text">一些常犯的错误</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>
@@ -620,7 +696,7 @@
                 <input autocomplete="off"
                        autocorrect="off"
                        autocapitalize="off"
-                       placeholder="Search..."
+                       placeholder="搜索..."
                        spellcheck="false"
                        type="search"
                        class="search-input"
